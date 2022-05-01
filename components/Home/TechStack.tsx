@@ -1,10 +1,12 @@
 import { TechStackModel } from "@libs/techstack";
+import Image from "next/image";
 import { FC } from "react";
 
 const StackItem: FC<{ model: TechStackModel }> = ({ model }) => {
     return (
         <div key={model.name} className="flex items-center py-4 px-4 bg-slate-50 rounded-lg border-slate-100 border-1">
-            <img className="w-8 h-8" alt={model.name} src={model.icon} />
+            {/* <img className="w-8 h-8" alt={model.name} src={model.icon} /> */}
+            <Image width={32} height={32} alt={model.name} src={model.icon} />
             <span className="ml-4 truncate">{model.name}</span>
         </div>
     )

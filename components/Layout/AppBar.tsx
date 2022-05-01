@@ -11,7 +11,7 @@ export const AppBar: FC<AppBarProps> = ({ onMenuClick }) => {
     return (
         <>
             <nav className="fixed flex justify-between items-center px-4 py-4 bg-white top-0 left-0 right-0 z-10 drop-shadow-sm">
-                <Link href="/#">
+                <Link href="/#" passHref>
                     <button className="flex items-center text-primary-color hover:text-primary">
                         <Logo size={40} />
                         <h1 className="grow px-4 text-xl font-semibold">

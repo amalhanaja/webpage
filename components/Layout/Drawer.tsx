@@ -15,16 +15,14 @@ interface MenuItemProps {
 
 const MenuItem: FC<MenuItemProps> = ({ link, title, isActive, icon, onItemClick }) => {
     return (
-        <Fragment key={link}>
-            <li className="w-auto">
-                <Link href={link}>
-                    <button className="flex items-center px-4 py-4 rounded-lg text-primary-color w-full hover:bg-primary hover:text-on-primary" onClick={onItemClick}>
-                        {icon}
-                        <span className="px-4">{title}</span>
-                    </button>
-                </Link>
-            </li>
-        </Fragment>
+        <li className="w-auto">
+            <Link href={link} passHref>
+                <button className="flex items-center px-4 py-4 rounded-lg text-primary-color w-full hover:bg-primary hover:text-on-primary" onClick={onItemClick}>
+                    {icon}
+                    <span className="px-4">{title}</span>
+                </button>
+            </Link>
+        </li>
     )
 }
 
@@ -32,8 +30,8 @@ const Menu: FC<{ items: MenuItemProps[] }> = ({ items }) => {
     return (
         <ul className="py-8 grid grid-cols-1 gap-y-4">
             {
-                items.map((item, index) =>
-                    (<MenuItem link={item.link} title={item.title} isActive={item.isActive} icon={item.icon} onItemClick={item.onItemClick} />)
+                items.map((item) =>
+                    (<MenuItem key={item.title} link={item.link} title={item.title} isActive={item.isActive} icon={item.icon} onItemClick={item.onItemClick} />)
                 )
             }
         </ul>
