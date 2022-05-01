@@ -1,3 +1,4 @@
+import { ContactModel } from "@libs/contacts";
 import classNames from "classnames";
 import { FC, ReactNode, useState } from "react";
 import { AppBar } from "./AppBar";
@@ -5,10 +6,10 @@ import { Drawer } from "./Drawer";
 import { Footer } from "./Footer";
 
 interface LayoutProps {
-    children: ReactNode
-}
+    contacts: ContactModel[]
+    children: ReactNode,}
 
-export const Layout: FC<LayoutProps> = ({ children }) => {
+export const Layout: FC<LayoutProps> = ({ contacts, children }) => {
     const [isDrawerVisible, setIsDrawerVisible] = useState(false)
     return (
         <>
@@ -19,7 +20,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
                     {children}
                 </div>
             </section>
-            <Footer />
+            <Footer contacts={contacts}/>
         </>
     )
 }

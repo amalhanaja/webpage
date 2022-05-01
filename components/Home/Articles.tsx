@@ -10,7 +10,7 @@ interface ArticlesProps {
 export const Articles: FC<ArticlesProps> = ({ articles }) => {
     return (
         <section id="articles" className="px-4 py-8">
-            <h2 className="font-bold text-2xl">Articles</h2>
+            <h3 className="font-bold text-2xl">Articles</h3>
             <ArticleList articles={articles} className="mt-6" />
         </section>
     )

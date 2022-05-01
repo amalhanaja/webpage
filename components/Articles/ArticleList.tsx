@@ -11,7 +11,7 @@ interface ProjectListProps {
 export const ArticleList: FC<ProjectListProps> = ({ articles, className }) => {
     return (
         <div className={classNames("grid", "grid-cols-1", "gap-2", className)}>
-            {articles.map((article) => (<ArticleListItem key={article.slug} article={article} />))}
+            {articles.map((article) => (<ArticleListItem key={article.url} article={article} />))}
         </div>
     )
 }
