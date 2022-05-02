@@ -21,7 +21,7 @@ export const Footer: FC<FooterProps> = ({ contacts }) => {
                 {contacts.map((contact) => {
                     return (
                         <Link key={contact.accountUrl} href={contact.accountUrl} passHref>
-                            <a className="text-primary-color hover:text-primary hover:cursor-pointer text-2xl p-2" href={contact.accountUrl}>
+                            <a className="text-primary-color hover:text-primary hover:cursor-pointer text-2xl p-2" href={contact.accountUrl} title={contact.name}>
                                 {getSocialIcon(contact.name)}
                             </a>
                         </Link>

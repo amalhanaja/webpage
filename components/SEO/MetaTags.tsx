@@ -20,8 +20,7 @@ export const MetaTags: FC<MetaTagsProps> = ({ title, description, url, imageUrl 
             <meta property="og:url" content={url} />
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
-            {/* {imageUrl && <meta property="og:image" content={imageUrl} />} */}
-            <meta property="og:image" content={imageUrl ?? '/android-chrome-192.png'} />
+            <meta property="og:image" content={imageUrl ?? '/android-chrome-192x192.png'} />
 
             {/* Twitter */}
             <meta property="twitter:card" content="summary_large_image" />
@@ -30,8 +29,7 @@ export const MetaTags: FC<MetaTagsProps> = ({ title, description, url, imageUrl 
             <meta name="twitter:site" content="@amalhanaja" />
             <meta name="twitter:creator" content="@amalhanaja" />
             <meta property="twitter:description" content={description} />
-            {/* {imageUrl && <meta property="twitter:image" content={imageUrl} />} */}
-            <meta property="twitter:image" content={imageUrl ?? '/android-chrome-192.png'} />
+            <meta property="twitter:image" content={imageUrl ?? '/android-chrome-192x192.png'} />
         </>
     )
 }
