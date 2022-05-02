@@ -7,10 +7,11 @@ import { MetaTags } from "@components/SEO/MetaTags"
 import { getSocialIcon } from "@libs/helpers/SocialIcons"
 
 interface ContactProps {
-    contacts: ContactModel[]
+    contacts: ContactModel[],
+    url: string
 }
 
-const Contacts: NextPage<ContactProps> = ({ contacts }) => {
+const Contacts: NextPage<ContactProps> = ({ contacts, url }) => {
 
     return (
         <>
@@ -19,7 +20,7 @@ const Contacts: NextPage<ContactProps> = ({ contacts }) => {
                 <MetaTags
                     title='Alfian Akmal Hanantio - Contacts'
                     description='Feel free to contacts me'
-                    url="https://amalhanaja.com/contacts"
+                    url={url}
                 />
             </Head>
             <Layout contacts={contacts}>
@@ -42,7 +43,8 @@ export async function getStaticProps() {
     const contacts = await getContacts()
     return {
         props: {
-            contacts: contacts
+            contacts: contacts,
+            url: process.env.SITE_URL + "/contacts"
         }
     }
 }

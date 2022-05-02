@@ -87,9 +87,7 @@ export const Drawer: FC<DrawerProps> = ({ isVisible, onClose }) => {
                 <div className="flex grow items-end">
                     <OutlinedButton
                         className="grow"
-                        onClick={() => {
-                            window.open("/Alfian_Akmal_Hanantio_Resume.pdf", "__blank")
-                        }}
+                        onClick={() => { window.open("/Alfian_Akmal_Hanantio_Resume.pdf", "__blank") }}
                     >
                         Resume
                     </OutlinedButton>

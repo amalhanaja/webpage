@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { FC, ReactElement, ReactNode } from "react";
 import { OutlinedButton } from "../Button";
 
 export const Hero: FC = () => {
+    const router = useRouter()
     return (
         <section className="bg-white relative min-h-screen sm:min-h-0 flex flex-col py-4 px-4">
             <div className="h-20 mb-4"></div>
@@ -17,7 +19,7 @@ export const Hero: FC = () => {
                     <span className="text-primary font-bold"> LinkAja</span>.
                 </p>
             </div>
-            <OutlinedButton className="mt-16" onClick={() => { window.location.href = "/contacts"}}>Contact Me</OutlinedButton>
+            <OutlinedButton className="mt-16" onClick={() => { router.push("/contacts") }}>Contact Me</OutlinedButton>
         </section>
     )
 }

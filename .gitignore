@@ -36,3 +36,8 @@ yarn-error.log*
 
 # package management
 yarn.lock
+
+# build
+robots.txt
+sitemap-*.xml
+sitemap.xml
