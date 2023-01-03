@@ -33,9 +33,8 @@ const Home: NextPage<HomeProps> = ({ projects, techStacks, articles, contacts, u
       </Head>
       <Layout contacts={contacts}>
         <Hero />
-        <TechStack stacks={techStacks} />
-        <Projects projects={projects} />
         <Articles articles={articles} />
+        <Projects projects={projects} />
       </Layout>
     </>
   )

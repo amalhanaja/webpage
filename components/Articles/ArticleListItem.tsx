@@ -2,16 +2,18 @@ import { ArticleListItemModel } from "@libs/articles";
 import { FC } from "react";
 
 interface ArticleListItemProps {
-    article: ArticleListItemModel
+  article: ArticleListItemModel;
 }
 
 export const ArticleListItem: FC<ArticleListItemProps> = ({ article }) => {
-    return (
-        <a href={article.url} target="__blank" className="bg-slate-50 rounded-lg flex border-slate-100 border-1 hover:shadow-xl">
-            <div className="px-4 py-6">
-                <h4 className="font-bold text-lg">{article.title}</h4>
-                <div className="mt-2 text-slate-500">Dec 2020 - {article.readTimeInMinutes} Minutes</div>
-            </div>
-        </a>
-    )
-}
+  return (
+     <a href={article.url} target="__blank" className="hover:bg-background-dark hover:rounded-lg">
+      <div className="p-2 flex flex-col">
+        <h4 className="font-semibold text-lg">{article.title}</h4>
+        <div className="mt-1 text-content-200-dark">
+          Dec 2020 - {article.readTimeInMinutes} Minutes
+        </div>
+      </div>
+    </a>
+  );
+};

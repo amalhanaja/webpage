@@ -10,13 +10,11 @@ interface LayoutProps {
     children: ReactNode,}
 
 export const Layout: FC<LayoutProps> = ({ contacts, children }) => {
-    const [isDrawerVisible, setIsDrawerVisible] = useState(false)
     return (
         <>
-            <AppBar onMenuClick={() => { setIsDrawerVisible(true) }} />
-            <Drawer isVisible={isDrawerVisible} onClose={() => { setIsDrawerVisible(false) }} />
-            <section className={classNames("flex flex-col items-center")}>
-                <div className="max-w-xl w-full">
+            <AppBar className=" bg-background-dark" />
+            <section className={classNames("flex flex-col items-center px-2 mt-32")}>
+                <div className="max-w-xl w-full bg-editor-dark">
                     {children}
                 </div>
             </section>

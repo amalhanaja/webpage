@@ -16,7 +16,7 @@ interface ArticleResponse {
 }
 
 export async function getArticleList(): Promise<ArticleListItemModel[]> {
-    const apiKey = process.env.DEV_TO_API_KEY ?? ""
+    const apiKey = process.env.DEV_TO_API_KEY ?? "4qiVTBXLhxA5fhj7r23nAKJm"
     const response = await fetch("https://dev.to/api/articles/me/published", {
         headers: {
             "api-key": apiKey

@@ -6,7 +6,7 @@ export interface ProjectModel {
     title: string
     description: string
     tags: string[]
-    thumbnailUrl: string | null
+    thumbnailUrl: string
     projectUrl: string
 }
 

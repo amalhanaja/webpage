@@ -10,13 +10,13 @@ interface ContactItemProps {
 export const ContactItem: FC<ContactItemProps> = ({ contact, icon }) => {
     return (
         <a href={contact.accountUrl} target="__blank" title={contact.name}>
-            <div className="bg-slate-50 rounded-lg flex items-center px-4 py-6 hover:cursor-pointer border-1 text-primary-color border-slate-100 hover:shadow-xl hover:bg-primary hover:text-on-primary hover:border-primary-dark">
+            <div className="rounded-lg flex items-center px-4 py-2 hover:cursor-pointer border-slate-100 hover:bg-background-dark hover:text-on-primary hover:border-primary-dark">
                 <div className="text-3xl">
                     {icon}
                 </div>
                 <div className="ml-4">
-                    <h4 className="font-bold text-lg text-col">{contact.name}</h4>
-                    <div className="">{contact.accountId}</div>
+                    <h4 className="font-semibold text-lg text-col">{contact.name}</h4>
+                    <div className="text-base text-content-200-dark">{contact.accountId}</div>
                 </div>
             </div>
         </a>

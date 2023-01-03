@@ -4,14 +4,16 @@ import { ProjectModel } from "@libs/projects";
 import { FC } from "react";
 
 interface ProjectsProps {
-    projects: ProjectModel[]
+  projects: ProjectModel[];
 }
 
 export const Projects: FC<ProjectsProps> = ({ projects }) => {
-    return (
-        <section id="projects" className="px-4 py-6">
-            <h3 className="font-bold text-2xl">Some Things I’ve Built</h3>
-            <ProjectList projects={projects} className="mt-6" />
-        </section>
-    )
-}
+  return (
+    <section id="projects" className="p-4">
+      <h3 className="text-secondary text-2xl font-bold">
+        Some Things I&apos;ve Built
+      </h3>
+      <ProjectList projects={projects} className="mt-4" />
+    </section>
+  );
+};
