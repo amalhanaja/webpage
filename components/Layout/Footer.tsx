@@ -9,7 +9,7 @@ interface FooterProps {
 
 export const Footer: FC<FooterProps> = ({ contacts }) => {
   return (
-    <footer className="flex flex-col items-center justify-center mb-4">
+    <footer className="flex flex-col items-center justify-center mb-4 px-2">
       <div className="max-w-xl w-full flex-col flex p-2 bg-window-footer-dark rounded-b-xl">
         <div className="self-center">
           Designed &amp; Built by
