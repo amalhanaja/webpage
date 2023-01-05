@@ -46,6 +46,11 @@ export const NavMenu: FC<{}> = () => {
       children: <span>Projects</span>,
     },
     {
+      link: "/uses",
+      isActive: true,
+      children: <span>Uses</span>,
+    },
+    {
       link: "/contacts",
       isActive: true,
       children: <span>Contact</span>,
