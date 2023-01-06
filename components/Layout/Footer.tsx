@@ -9,9 +9,9 @@ interface FooterProps {
 
 export const Footer: FC<FooterProps> = ({ contacts }) => {
   return (
-    <footer className="flex flex-col items-center justify-center mb-4 px-2">
+    <footer className="flex flex-col items-center justify-center mb-4 px-2 text-black">
       <div className="max-w-xl w-full flex-col flex p-2 bg-window-footer-dark rounded-b-xl">
-        <div className="self-center">
+        <div className="self-center text-center">
           Designed &amp; Built by
           <span>
             {" "}
@@ -24,6 +24,7 @@ export const Footer: FC<FooterProps> = ({ contacts }) => {
               Alfian Akmal Hanantio
             </a>{" "}
           </span>
+          <span>with support from Putri Jarina {" "}</span>
           using
           <span>
             {" "}
@@ -52,7 +53,7 @@ export const Footer: FC<FooterProps> = ({ contacts }) => {
             return (
               <Link key={contact.accountUrl} href={contact.accountUrl} passHref>
                 <a
-                  className="text-primary-color hover:text-primary hover:cursor-pointer text-2xl p-2"
+                  className="hover:scale-150 transition-transform hover:cursor-pointer text-2xl p-2"
                   href={contact.accountUrl}
                   title={contact.name}
                 >

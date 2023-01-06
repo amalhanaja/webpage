@@ -44,10 +44,10 @@ const Home: NextPage<HomeProps> = ({
         />
       </Head>
       <Layout contacts={contacts}>
-        <h2 className="text-primary text-2xl font-bold mt-8 px-2">
+        <h2 className="text-primary text-2xl font-bold mt-8 px-4">
           /Posts
         </h2>
-        <ArticleList articles={articles} className="px-2 py-4" />
+        <ArticleList articles={articles} className="px-4 py-4" />
       </Layout>
     </>
   );

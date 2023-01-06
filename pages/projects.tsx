@@ -1,24 +1,16 @@
-import { Articles } from "@components/Home/Articles";
-import { Projects } from "@components/Home/Projects";
 import { Layout } from "@components/Layout";
 import type {
-  GetStaticProps,
-  GetStaticPropsContext,
-  GetStaticPropsResult,
   NextPage,
 } from "next";
 import Head from "next/head";
-import { Hero } from "../components/Home/Hero";
-import { TechStack } from "../components/Home/TechStack";
 import { getProjects, ProjectModel } from "@libs/projects";
 import { getTechStacks, TechStackModel } from "@libs/techstack";
 import { ArticleListItemModel, getArticleList } from "@libs/articles";
 import { MetaTags } from "@components/SEO/MetaTags";
 import { ContactModel, getContacts } from "@libs/contacts";
-import { url } from "inspector";
 import { ProjectList } from "@components/Projects/ProjectList";
 
-interface HomeProps {
+interface PageProps {
   projects: ProjectModel[];
   techStacks: TechStackModel[];
   articles: ArticleListItemModel[];
@@ -26,7 +18,7 @@ interface HomeProps {
   url: string;
 }
 
-const Home: NextPage<HomeProps> = ({
+const Page: NextPage<PageProps> = ({
   projects,
   techStacks,
   articles,
@@ -44,14 +36,14 @@ const Home: NextPage<HomeProps> = ({
         />
       </Head>
       <Layout contacts={contacts}>
-        <h2 className="text-primary text-2xl font-bold mt-8 px-2">/Projects</h2>
-        <ProjectList projects={projects} className="py-4 px-2"/>
+        <h2 className="text-primary text-2xl font-bold mt-8 px-4">/Projects</h2>
+        <ProjectList projects={projects} className="py-4 px-4"/>
       </Layout>
     </>
   );
 };
 
-export default Home;
+export default Page;
 
 export async function getStaticProps() {
   const projects = await getProjects();

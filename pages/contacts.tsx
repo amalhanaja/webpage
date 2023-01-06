@@ -24,21 +24,17 @@ const Contacts: NextPage<ContactProps> = ({ contacts, url }) => {
         />
       </Head>
       <Layout contacts={contacts}>
-        <section id="contacts" className="px-4 py-8 mt-4">
-          <Link href="/contacts" passHref>
-            <h2 className="font-bold text-2xl text-primary">/Contacts</h2>
-          </Link>
-          <p className="mt-2">Feel free to contacts me</p>
-          <div className="grid grid-cols-1 gap-2 mt-6">
-            {contacts.map((contact) => (
-              <ContactItem
-                key={contact.accountUrl}
-                contact={contact}
-                icon={getSocialIcon(contact.name)}
-              />
-            ))}
-          </div>
-        </section>
+        <h2 className="font-bold text-2xl text-primary px-4 mt-8">/Contacts</h2>
+        <p className="mt-2 px-4">Feel free to contacts me</p>
+        <div className="grid grid-cols-1 gap-2 py-4 px-4">
+          {contacts.map((contact) => (
+            <ContactItem
+              key={contact.accountUrl}
+              contact={contact}
+              icon={getSocialIcon(contact.name)}
+            />
+          ))}
+        </div>
       </Layout>
     </>
   );

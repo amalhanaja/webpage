@@ -3,7 +3,7 @@ import Document, { Html, Main, NextScript, Head } from "next/document";
 export default class CustomDocument extends Document {
   render(): JSX.Element {
     return (
-      <Html lang="en_US">
+      <Html lang="en">
         <Head>
           {/* FONT */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
