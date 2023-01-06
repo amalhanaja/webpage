@@ -1,24 +1,33 @@
 ## Hardware
-- [MacBook Pro 13" M2 2022](https://support.apple.com/kb/SP870)
+- MacBook Pro 13" M2 2022
 - Logitech MX Keyboard Mini
 - Logitech MX Anywhere 3
 - Viewsonic VG1655 15.6"
-- Samsung S22+
+- Samsung S22+ 5G
 - Huawei FreeBuds Pro
 
 ## Software
-- Android Studio
-- Visual Studio Code
-- HTTP Toolkit
-- Figma
-- Notion
-- LastPass
-- Warp
-- Docker
+- [Android Studio](https://developer.android.com/studio)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [HTTP Toolkit](https://httptoolkit.com/)
+- [Figma](https://www.figma.com/)
+- [Notion](https://www.notion.so/)
+- [LastPass](https://www.lastpass.com/)
+- [Warp](https://warp.dev/)
+- [Docker](https://www.docker.com/)
+- [DBeaver](https://dbeaver.io/)
 
 ## Programming Language
-- Kotlin
-- Typescript
-- Python
-- Rust (in learning)
-- Go
+- [Kotlin](https://kotlinlang.org/)
+- [Java](https://www.java.com/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Python](https://www.python.org/)
+- [Rust (in learning)](https://www.rust-lang.org/)
+- [Go](https://go.dev/)
+
+## Storage
+- [PostgreSQL](https://www.postgresql.org/)
+- [MySQL](https://www.mysql.com/)
+- [MongoDB](https://www.mongodb.com/)
+- [Redis](https://redis.io/)
+- [Min.io](https://min.io/)
