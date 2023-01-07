@@ -31,3 +31,5 @@
 - [MongoDB](https://www.mongodb.com/)
 - [Redis](https://redis.io/)
 - [Min.io](https://min.io/)
+
+This page was inspired by [uses.tech](https://uses.tech/)
