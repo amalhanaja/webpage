@@ -19,7 +19,12 @@ interface ProjectItemProps {
 }
 
 export const ProjectItem: FC<ProjectItemProps> = ({ project }) => (
-  <a href={project.projectUrl} target="__blank" className="hover:bg-background-dark hover:rounded-lg">
+  <a
+    href={project.projectUrl}
+    target="__blank"
+    title={project.title}
+    className="hover:bg-background-dark hover:rounded-lg"
+  >
     <div className="p-2 flex flex-col">
       <h4 className="font-semibold text-lg">{project.title}</h4>
       <p className="mt-1 text-content-200-dark">{project.description}</p>

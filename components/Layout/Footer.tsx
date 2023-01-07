@@ -19,6 +19,7 @@ export const Footer: FC<FooterProps> = ({ contacts }) => {
               href="https://github.com/amalhanaja"
               target="__blank"
               className="font-bold hover:underline"
+              title="Github"
             >
               {" "}
               Alfian Akmal Hanantio
@@ -32,6 +33,7 @@ export const Footer: FC<FooterProps> = ({ contacts }) => {
               href="https://nextjs.org/"
               target="__blank"
               className="font-bold hover:underline"
+              title="NextJS"
             >
               NextJS
             </a>{" "}
@@ -43,6 +45,7 @@ export const Footer: FC<FooterProps> = ({ contacts }) => {
               href="https://tailwindcss.com/"
               target="__blank"
               className="font-bold hover:underline"
+              title="TailwindCSS"
             >
               TailwindCSS
             </a>{" "}
