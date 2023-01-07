@@ -37,8 +37,9 @@ export default class CustomDocument extends Document {
           />
           <link rel="manifest" href="/site.webmanifest" />
           <meta name="msapplication-config" content="/browserconfig.xml" />
-          <meta name="msapplication-TileColor" content="#DF2935" />
-          <meta name="theme-color" content="#DF2935" />
+          <meta name="msapplication-TileColor" content="#569CD6" />
+          <meta name="theme-color" content="#569CD6" />
+          <meta name="msapplication-TileColor" content="#569CD6" />
         </Head>
         <body className="bg-background-dark text-content-100-dark">
           <Main></Main>
