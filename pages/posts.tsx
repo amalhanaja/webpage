@@ -1,8 +1,6 @@
 import { Layout } from "@components/Layout";
 import type { GetStaticPropsResult, NextPage } from "next";
 import Head from "next/head";
-import { ProjectModel } from "@libs/projects";
-import { TechStackModel } from "@libs/techstack";
 import { ArticleListItemModel, getArticleList } from "@libs/articles";
 import { MetaTags } from "@components/SEO/MetaTags";
 import { ContactModel, getContacts } from "@libs/contacts";
