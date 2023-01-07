@@ -1,5 +1,5 @@
 import { Layout } from "@components/Layout";
-import type { NextPage } from "next";
+import type { GetStaticPropsResult, NextPage } from "next";
 import Head from "next/head";
 import { ProjectModel } from "@libs/projects";
 import { TechStackModel } from "@libs/techstack";
@@ -12,9 +12,10 @@ interface PageProps {
   articles: ArticleListItemModel[];
   contacts: ContactModel[];
   url: string;
+  siteUrl: string;
 }
 
-const Page: NextPage<PageProps> = ({ articles, contacts, url }) => {
+const Page: NextPage<PageProps> = ({ articles, contacts, url, siteUrl }) => {
   return (
     <>
       <Head>
@@ -23,6 +24,7 @@ const Page: NextPage<PageProps> = ({ articles, contacts, url }) => {
           title="Alfian Akmal Hanantio - Software Engineer"
           description={`I'm Alfian Akmal Hanantio. a software engineer specializing in android development based in Sidoarjo, Indonesia 🇮🇩 with rock-solid experience in building complex applications with modern technologies. I'm currently learning everything. I'm passionate about software engineering and love to stay updated with the latest technology trends. Apart from programming, I love to play video games like Mobile Legend Bang Bang with my friends and play guitar. I also love to watch movies, anime, and TV series.`}
           url={url}
+          siteUrl={siteUrl}
         />
       </Head>
       <Layout contacts={contacts}>
@@ -35,14 +37,18 @@ const Page: NextPage<PageProps> = ({ articles, contacts, url }) => {
 
 export default Page;
 
-export async function getStaticProps() {
+export async function getStaticProps(): Promise<
+  GetStaticPropsResult<PageProps>
+> {
   const articles = await getArticleList();
   const contacts = await getContacts();
+  const siteUrl: string = process.env.SITE_URL ?? "";
   return {
     props: {
       articles: articles,
       contacts: contacts,
-      url: process.env.SITE_URL + "/",
+      url: siteUrl + "/posts",
+      siteUrl: siteUrl,
     },
   };
 }
