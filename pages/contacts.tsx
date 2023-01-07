@@ -19,7 +19,7 @@ const Page: NextPage<PageProps> = ({ contacts, url, siteUrl }) => {
         <title>Alfian Akmal Hanantio - Contacts</title>
         <MetaTags
           title="Alfian Akmal Hanantio - Contacts"
-          description={`I'm Alfian Akmal Hanantio. a software engineer specializing in android development based in Sidoarjo, Indonesia 🇮🇩 with rock-solid experience in building complex applications with modern technologies. I'm currently learning everything. I'm passionate about software engineering and love to stay updated with the latest technology trends. Apart from programming, I love to play video games like Mobile Legend Bang Bang with my friends and play guitar. I also love to watch movies, anime, and TV series.`}
+          description={`I'm Alfian Akmal Hanantio. a software engineer specializing in android development based in Sidoarjo, Indonesia 🇮🇩`}
           url={url}
           siteUrl={siteUrl}
         />
@@ -43,14 +43,16 @@ const Page: NextPage<PageProps> = ({ contacts, url, siteUrl }) => {
 
 export default Page;
 
-export async function getStaticProps(): Promise<GetStaticPropsResult<PageProps>> {
+export async function getStaticProps(): Promise<
+  GetStaticPropsResult<PageProps>
+> {
   const contacts = await getContacts();
-  const siteUrl: string = process.env.SITE_URL ?? ""
+  const siteUrl: string = process.env.SITE_URL ?? "";
   return {
     props: {
       contacts: contacts,
       url: process.env.SITE_URL + "/contacts",
-      siteUrl: siteUrl
+      siteUrl: siteUrl,
     },
   };
 }
