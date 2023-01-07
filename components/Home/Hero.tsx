@@ -8,12 +8,12 @@ export const Hero: FC = () => {
   return (
     <section className="relative flex flex-col p-4 mt-4">
       <h2 className="text-primary text-2xl font-bold">Hello world</h2>
-      <p className="mt-2 text-primary-text">
+      <p className="mt-2 text-content-100-dark">
         I&apos;m Alfian Akmal Hanantio. a software engineer based in Sidoarjo,
         Indonesia 🇮🇩 with rock-solid experience in building complex applications
         with modern technologies. I&apos;m currently learning everything.
       </p>
-      <p>
+      <p className="mt-2 text-content-100-dark">
         I&apos;m passionate about software engineering and love to stay updated
         about the latest technology trends. Apart from programming, I love to
         play video games like Mobile Legend Bang Bang with my friends, play
