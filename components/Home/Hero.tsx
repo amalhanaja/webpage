@@ -17,7 +17,7 @@ export const Hero: FC = () => {
         I&apos;m passionate about software engineering and love to stay updated
         about the latest technology trends. Apart from programming, I love to
         play video games like Mobile Legend Bang Bang with my friends, play
-        guitar, and cullinary
+        guitar, and cullinary.
       </p>
     </section>
   );
