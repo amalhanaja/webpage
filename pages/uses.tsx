@@ -5,7 +5,6 @@ import { MetaTags } from "@components/SEO/MetaTags";
 import { getUsesContent } from "@libs/uses";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { ContactModel, getContacts } from "@libs/contacts";
-import Contacts from "./contacts";
 
 interface PageProps {
   contacts: ContactModel[];
@@ -17,10 +16,10 @@ const Page: NextPage<PageProps> = ({ contacts, content, url }) => {
   return (
     <>
       <Head>
-        <title>Alfian Akmal Hanantio - Sr. Android Developer</title>
+        <title>Alfian Akmal Hanantio - Uses</title>
         <MetaTags
-          title="Alfian Akmal Hanantio - Sr. Android Developer"
-          description="I'm an Android Developer with specializing in architecture, UX, design, and performance of Android applications with over 5 years of experience."
+          title="Alfian Akmal Hanantio - Software Engineer"
+          description={`I'm Alfian Akmal Hanantio. I'm a software engineer specialized in android development based in Sidoarjo, Indonesia 🇮🇩 with rock-solid experience in building complex applications with modern technologies. I'm currently learning everything.`}
           url={url}
         />
       </Head>

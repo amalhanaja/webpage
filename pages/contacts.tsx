@@ -5,7 +5,6 @@ import { NextPage } from "next";
 import Head from "next/head";
 import { MetaTags } from "@components/SEO/MetaTags";
 import { getSocialIcon } from "@libs/helpers/SocialIcons";
-import Link from "next/link";
 
 interface ContactProps {
   contacts: ContactModel[];
