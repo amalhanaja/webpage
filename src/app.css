@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 
+Primary DB652E
+Secondary 228CDB
+Background E7E5E4
+On Background 1C1917
+OnSecondary F4F4F5
+Surface F5F5F4
+OnSurface 1C1917
+Neutral 44403C
+Primary Hover DB652E 20%
++ Create variable */
+
+@layer base {
+	:root {
+		--color-primary: #db652e;
+		--color-primary-hover: #228cdb;
+		--color-secondary: #228cdb;
+		--color-background: #e7e5e4;
+		--color-on-secondary: #f4f4f5;
+		--color-surface: #f5f5f4;
+		--color-on-surface: #1c1917;
+		--color-neutral: #44403c;
+	}
+}
