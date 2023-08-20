@@ -12,15 +12,19 @@ export default {
 				surface: 'var(--color-surface)',
 				'on-surface': 'var(--color-on-surface)',
 				neutral: 'var(--color-neutral)'
-				// Secondary 228CDB
-				// Background E7E5E4
-				// On Background 1C1917
-				// OnSecondary F4F4F5
-				// Surface F5F5F4
-				// OnSurface 1C1917
-				// Neutral 44403C
-				// Primary Hover DB652E 20%
 			}
+		},
+		fontFamily: {
+			sans: [
+				'Outfit',
+				'ui-sans-serif',
+				'system-ui',
+				'sans-serif',
+				'"Apple Color Emoji"',
+				'"Segoe UI Emoji"',
+				'"Segoe UI Symbol"',
+				'"Noto Color Emoji"'
+			]
 		}
 	},
 	plugins: []
