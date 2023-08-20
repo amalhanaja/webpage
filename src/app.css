@@ -1,18 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* 
-Primary DB652E
-Secondary 228CDB
-Background E7E5E4
-On Background 1C1917
-OnSecondary F4F4F5
-Surface F5F5F4
-OnSurface 1C1917
-Neutral 44403C
-Primary Hover DB652E 20%
-+ Create variable */
 
 @layer base {
 	:root {
