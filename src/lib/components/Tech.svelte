@@ -29,6 +29,7 @@
 	import Git from './Icons/Git.svelte';
 	import Vite from './Icons/Vite.svelte';
 	import SqLite from './Icons/SQLite.svelte';
+	import Javascript from './Icons/Javascript.svelte';
 
 	export let tech: TechType;
 
@@ -40,6 +41,8 @@
 				return Python;
 			case 'TYPESCRIPT':
 				return Typescript;
+			case 'JAVASCRIPT':
+				return Javascript;
 			case 'GO':
 				return Golang;
 			case 'JAVA':
@@ -93,7 +96,7 @@
 </script>
 
 <div
-	class="flex h-[72px] w-16 items-center justify-center rounded-md fill-transparent stroke-secondary text-secondary transition-all duration-200 hover:scale-110 hover:fill-secondary hover:text-on-secondary"
+	class="tech flex h-[72px] w-16 items-center justify-center rounded-md fill-transparent stroke-secondary text-secondary transition-all duration-200 hover:scale-110 hover:fill-secondary hover:text-on-secondary"
 >
 	<span class="absolute -z-10 text-transparent"><Hexagonal /></span>
 	<span class="h-8 w-8"><svelte:component this={getIcon(tech)} /></span>

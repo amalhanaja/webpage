@@ -7,13 +7,23 @@
 <section class="py-8">
 	<h2 class=" rotate-2 text-4xl font-bold text-primary">What I do</h2>
 	<div class="h-1 w-[120px] rotate-2 rounded-sm bg-secondary"></div>
-	<h3 class="mt-4 text-sm">
-		Creative Android developer who loves to experiment with new technologies.
-	</h3>
+	<h3 class="mt-4">Creative Android developer who loves to experiment with new technologies.</h3>
 
-	<section class="flex flex-wrap">
+	<section class="techs my-8 flex flex-wrap justify-center gap-x-2 gap-y-[0.5rem]">
 		{#each Techs as t}
 			<Tech tech={t} />
 		{/each}
 	</section>
+	<article class="ml-4">
+		<ul class="list-disc">
+			<li>Build high-quality Android / Web Applications.</li>
+			<li>Work collaboratively with team members.</li>
+			<li>Stay up-to-date on the latest technologies and trends.</li>
+			<li>Deliver high-quality results on time and within budget.</li>
+			<li>Integration of third party services such as Firebase, Supabase, Mixpanel, etc.</li>
+		</ul>
+	</article>
 </section>
+
+<style>
+</style>
