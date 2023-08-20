@@ -4,4 +4,6 @@
 </script>
 
 <AppBar />
-<slot />
+<main class="px-4">
+	<slot />
+</main>

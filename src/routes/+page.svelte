@@ -1,2 +1,9 @@
-<h1 class="text-8xl font-bold text-primary">Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import HeroSection from '$lib/components/Sections/HeroSection.svelte';
+	import WhatIDoSection from '$lib/components/Sections/WhatIDoSection.svelte';
+	import type { PageData } from './$types';
+	export let data: PageData;
+</script>
+
+<HeroSection socials={data.socials} />
+<WhatIDoSection />
