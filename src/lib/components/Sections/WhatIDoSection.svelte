@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { Techs } from '$lib/models/Tech';
-	import Kotlin from '../Icons/Kotlin.svelte';
 	import SectionHeader from '../SectionHeader.svelte';
 	import Tech from '../Tech.svelte';
 </script>
