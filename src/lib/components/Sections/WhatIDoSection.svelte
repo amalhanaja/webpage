@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { Techs } from '$lib/models/Tech';
 	import Kotlin from '../Icons/Kotlin.svelte';
+	import SectionHeader from '../SectionHeader.svelte';
 	import Tech from '../Tech.svelte';
 </script>
 
 <section class="py-8">
-	<h2 class=" rotate-2 text-4xl font-bold text-primary">What I do</h2>
-	<div class="h-1 w-[120px] rotate-2 rounded-sm bg-secondary"></div>
+	<SectionHeader title="What I do" />
 	<h3 class="mt-4">Creative Android developer who loves to experiment with new technologies.</h3>
 
 	<section class="techs my-8 flex flex-wrap justify-center gap-x-2 gap-y-[0.5rem]">
