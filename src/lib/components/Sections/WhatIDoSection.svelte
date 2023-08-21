@@ -6,7 +6,7 @@
 
 <section class="py-8">
 	<SectionHeader title="What I do" />
-	<h3 class="mt-4">Creative Android developer who loves to experiment with new technologies.</h3>
+	<h3 class="mt-4 font-medium">Creative Android developer who loves to experiment with new technologies.</h3>
 
 	<section class="techs my-8 flex flex-wrap justify-center gap-x-2 gap-y-[0.5rem]">
 		{#each Techs as t}
