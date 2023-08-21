@@ -1,4 +1,5 @@
 <script lang="ts">
+	import FeaturedProjectSection from '$lib/components/Sections/FeaturedProjectSection.svelte';
 	import HeroSection from '$lib/components/Sections/HeroSection.svelte';
 	import WhatIDoSection from '$lib/components/Sections/WhatIDoSection.svelte';
 	import type { PageData } from './$types';
@@ -7,3 +8,4 @@
 
 <HeroSection socials={data.socials} />
 <WhatIDoSection />
+<FeaturedProjectSection />
