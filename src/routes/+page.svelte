@@ -10,4 +10,4 @@
 <HeroSection socials={data.socials} />
 <WhatIDoSection />
 <FeaturedProjectSection projects={data.projects} />
-<FeaturedArticleSection />
+<FeaturedArticleSection posts={data.posts} />
