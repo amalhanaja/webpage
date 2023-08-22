@@ -3,4 +3,5 @@ export type FeaturedProjectModel = {
 	imgSrc: string;
 	shortDescription: string;
 	tags: string[];
+	previewUrl: string;
 };
