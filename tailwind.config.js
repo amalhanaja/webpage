@@ -9,7 +9,7 @@ export default {
 				secondary: 'var(--color-secondary)',
 				'on-secondary': 'var(--color-on-secondary)',
 				background: 'var(--color-background)',
-				'on-background': 'var(--color-on-backgropund)',
+				'on-background': 'var(--color-on-background)',
 				surface: 'var(--color-surface)',
 				'on-surface': 'var(--color-on-surface)',
 				neutral: 'var(--color-neutral)'
