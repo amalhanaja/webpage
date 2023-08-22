@@ -8,7 +8,7 @@
 
 <section class="flex items-center gap-8 py-4">
 	<article>
-		<div class="text-sm">Welcome to My Site</div>
+		<div class="text-sm">Welcome to my site</div>
 		<h1 class="mt-1 text-4xl font-bold">
 			I'm <span class="text-primary">Alfian</span> <span class="text-secondary">Hanantio</span>
 		</h1>
