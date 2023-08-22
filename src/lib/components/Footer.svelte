@@ -4,8 +4,8 @@
 	const highlightSecondary = [...highlight, 'hover:text-secondary'].join(' ');
 </script>
 
-<footer class="px-4 py-8 bg-surface">
-	<div>
+<footer class="bg-surface px-4 py-8 flex justify-center">
+	<div class="max-w-md">
 		Loosely designed in <span class={highlightPrimary}>Figma</span> and coded in
 		<span class={highlightSecondary}>Visual Studio Code</span> by
 		<span class={highlightPrimary}>Alfian Akmal Hanantio</span>. Built with
