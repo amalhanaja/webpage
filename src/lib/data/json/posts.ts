@@ -9,11 +9,34 @@ type PostResponse = {
 	dateAdded: string;
 };
 
+const gql = async (query: string, variables: Record<string, unknown> = {}) => {
+	const response = await fetch('https://api.hashnode.com', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({ query: query, variables: variables })
+	});
+	return await response.json();
+};
+
+export const getPublicationUrl = async (): Promise<string> => {
+	const gqlQuery = `
+        query {
+            user(username:"amalhanaja") {
+                publicationDomain
+            }
+        }
+    `;
+	const json = await gql(gqlQuery);
+	const publicationDomain = json.data.user.publicationDomain;
+    return `https://${publicationDomain}`
+};
+
 export const fetchPosts = async (page: number = 0): Promise<PostModel[]> => {
 	const gqlQuery = `
         query GetUserArticles($page: Int!) {
             user(username: "amalhanaja") {
-                publicationDomain
                 publication {
                     posts(page: $page) {
                         title
@@ -27,16 +50,9 @@ export const fetchPosts = async (page: number = 0): Promise<PostModel[]> => {
             }
         }
     `;
-	const response = await fetch('https://api.hashnode.com', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify({ query: gqlQuery, variables: { page } })
-	});
 
-	const json = await response.json();
-	const publicationDomain = json.data.user.publicationDomain;
+	const json = await gql(gqlQuery, { page });
+	const publicationUrl = await getPublicationUrl();
 	const posts = <PostResponse[]>json.data.user.publication.posts;
 	return posts.map(
 		(p) =>
@@ -46,7 +62,7 @@ export const fetchPosts = async (page: number = 0): Promise<PostModel[]> => {
 				thumbnailUrl: p.coverImage,
 				publishedAt: new Date(p.dateAdded),
 				readTime: p.readTime,
-				link: `https://${publicationDomain}/${p.slug}`
+				link: `${publicationUrl}/${p.slug}`
 			}) satisfies PostModel
 	);
 };

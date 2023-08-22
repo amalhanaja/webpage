@@ -4,10 +4,11 @@
 	import SectionHeader from '../SectionHeader.svelte';
 
 	export let posts: PostModel[];
+	export let allPostUrl: string;
 </script>
 
 <section class="py-8">
-	<SectionHeader title="Articles" />
+	<SectionHeader title="Articles" href={allPostUrl} />
 	<h3 class="mt-4 font-medium">I love to share my knowledge through writing.</h3>
 	<section class="mt-6 grid grid-cols-1 gap-4">
 		{#each posts as post}
