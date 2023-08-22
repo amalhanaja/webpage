@@ -1,0 +1,20 @@
+[
+	{
+		"title": "DyahAcademy",
+		"shortDescription": "E-learning App",
+		"imgSrc": "/assets/dyahacademy.svg",
+		"tags": ["Android", "Typescript", "PostgreSQL"]
+	},
+	{
+		"title": "WiseScreen",
+		"shortDescription": "Screen Time management apps",
+		"imgSrc": "/assets/wisescreen.svg",
+		"tags": ["Android", "Kotlin", "Compose"]
+	},
+	{
+		"title": "Moview",
+		"shortDescription": "Movie Catalog application",
+		"imgSrc": "/assets/moview.svg",
+		"tags": ["Android", "Kotlin", "SQLite"]
+	}
+]
