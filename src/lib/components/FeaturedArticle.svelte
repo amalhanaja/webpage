@@ -1,11 +1,26 @@
-<div
+<script lang="ts">
+	import type { PostModel } from '$lib/models/PostModel';
+
+	export let post: PostModel;
+
+	const formattedDate = (date: Date): string => {
+		return date.toLocaleDateString('default', { year: 'numeric', month: 'short' });
+	};
+</script>
+
+<a
+	href={post.link}
+	target="_blank"
 	class="flex gap-4 rounded-lg bg-surface p-4 shadow-sm hover:bg-primary-hover hover:bg-opacity-20"
 >
 	<article class="overflow-hidden">
-		<h4 class="text-base font-semibold">SOLID: Single Responsibility</h4>
+		<h4 class="text-base font-semibold">{post.title}</h4>
 		<p class="w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm">
-			Another great articles who made by me as an Android Developer who track int
+			{post.brief}
 		</p>
-		<div class="mt-1 text-xs text-neutral">Dec 2020 • 2 Min</div>
+		<div class="mt-1 text-xs text-neutral">
+			{formattedDate(post.publishedAt)} • {post.readTime} min
+		</div>
 	</article>
-</div>
+	<img class="h-[72px] w-16" src={post.thumbnailUrl} alt={post.title} />
+</a>

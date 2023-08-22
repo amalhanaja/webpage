@@ -1,10 +1,17 @@
 <script lang="ts">
+	import type { PostModel } from '$lib/models/PostModel';
 	import FeaturedArticle from '../FeaturedArticle.svelte';
 	import SectionHeader from '../SectionHeader.svelte';
+
+	export let posts: PostModel[];
 </script>
 
 <section class="py-8">
 	<SectionHeader title="Articles" />
 	<h3 class="mt-4 font-medium">I love to share my knowledge through writing.</h3>
-	<FeaturedArticle />
+	<section class="mt-6 grid grid-cols-1 gap-4">
+		{#each posts as post}
+			<FeaturedArticle {post} />
+		{/each}
+	</section>
 </section>
