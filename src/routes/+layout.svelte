@@ -5,7 +5,7 @@
 </script>
 
 <AppBar />
-<main class="px-4">
+<main class="margin flex max-w-screen-md flex-col items-center px-4 m-auto">
 	<slot />
 </main>
 <Footer />

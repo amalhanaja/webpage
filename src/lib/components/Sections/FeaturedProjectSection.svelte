@@ -6,10 +6,10 @@
 	export let projects: FeaturedProjectModel[];
 </script>
 
-<section class="py-8">
+<section class="py-8 w-full">
 	<SectionHeader title="Projects" />
 	<h3 class="mt-4 font-medium">A glimpse into my work</h3>
-	<section class="mt-6 grid grid-cols-1 gap-4">
+	<section class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
 		{#each projects as project}
 			<FeaturedProject {project} />
 		{/each}
