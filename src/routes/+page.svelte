@@ -8,4 +8,4 @@
 
 <HeroSection socials={data.socials} />
 <WhatIDoSection />
-<FeaturedProjectSection />
+<FeaturedProjectSection projects={data.projects} />
