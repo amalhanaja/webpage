@@ -1,7 +1,7 @@
 import type { RequestHandler } from '@sveltejs/kit';
 
 export const GET: RequestHandler = async () => {
-	const body = generateSitemap(process.env.VERCEL_URL ?? '');
+	const body = generateSitemap(process.env.SITE_URL ?? '');
 	const response = new Response(body);
 	response.headers.set('Cache-Control', 'max-age=0, s-maxage=3600');
 	response.headers.set('Content-Type', 'application/xml');

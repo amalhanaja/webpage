@@ -8,8 +8,7 @@ import { fetchPosts, getPublicationUrl } from '$lib/data/json/posts';
 export const load: PageServerLoad = async () => {
 	const posts = await fetchPosts();
 	const publicationUrl = await getPublicationUrl();
-	const vercelUrl: string = process.env.VERCEL_URL ?? '';
-	const siteUrl = `https://${vercelUrl}`;
+	const siteUrl: string = process.env.SITE_URL ?? '';
 	return {
 		socials: <SocialMediaInfo[]>socialsMedia,
 		projects: <FeaturedProjectModel[]>featuredProjects,
