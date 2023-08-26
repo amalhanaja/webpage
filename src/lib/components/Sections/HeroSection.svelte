@@ -1,8 +1,7 @@
 <script lang="ts">
-	import type { SocialMediaInfo, SocialMediaType } from '$lib/models/SocialMediaModel';
-	import type { ComponentType } from 'svelte';
-	import SocialMedia from '../SocialMedia.svelte';
+	import type { SocialMediaInfo } from '$lib/models/SocialMediaModel';
 	import IlHero from '../Illustrations/IlHero.svelte';
+	import SocialMedia from '../SocialMedia.svelte';
 	export let socials: SocialMediaInfo[];
 </script>
 
