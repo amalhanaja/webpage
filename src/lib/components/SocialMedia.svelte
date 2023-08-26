@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { SocialMediaType } from '$lib/models/SocialMediaModel';
 	import type { ComponentType } from 'svelte';
+	import { slide } from 'svelte/transition';
 	import Github from '$lib/components/Icons/Github.svelte';
 	import Instagram from '$lib/components/Icons/Instagram.svelte';
 	import LinkedIn from '$lib/components/Icons/LinkedIn.svelte';
