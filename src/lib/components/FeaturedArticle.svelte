@@ -22,5 +22,5 @@
 			{formattedDate(post.publishedAt)} • {post.readTime} min
 		</div>
 	</article>
-	<img class="h-[72px] w-16" src={post.thumbnailUrl} alt={post.title} />
+	<img class="h-[72px] w-16" src={post.thumbnailUrl} alt={post.title} loading="lazy" />
 </a>
