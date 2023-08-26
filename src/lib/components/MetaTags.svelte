@@ -11,6 +11,7 @@
 
 <svelte:head>
 	<!-- Primary Tags  -->
+	<title>{content.title}</title>
 	<link rel="canonical" href={content.url} />
 	<meta name="title" content={content.title} />
 	<meta name="description" content={content.description} />
