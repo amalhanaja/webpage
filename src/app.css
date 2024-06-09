@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	html {
+		font-family: 'Urbanist', system-ui, sans-serif;
+	}
+}
+
+@layer components {
+	.btn-neobrutalism {
+		@apply border-2 rounded-md border-black shadow-[4px_4px_0_0] px-4 py-3 transition-all duration-150 font-bold text-lg shadow-black;
+		@apply hover:shadow-[6px_6px_0_0] hover:shadow-black;
+		@apply focus:shadow-[6px_6px_0_0] focus:shadow-black;
+		@apply active:shadow-none active:translate-x-[6px] active:translate-y-[6px];
+	}
+}
