@@ -1,33 +1,138 @@
-<script>
-	import { fly } from 'svelte/transition';
+<script lang="ts">
+	let { name, headline, shortBio, profilePicture } = $props<{
+		name: string;
+		headline: string;
+		shortBio: string;
+		profilePicture: string;
+	}>();
 </script>
 
-<section class="relative border-2 border-black">
+<section class="relative border-4 border-black">
 	<div class="h-full w-full absolute left-0 flex -z-10">
-		<div class="flex-1 flex-grow bg-red-300"></div>
-		<div class="border-r-2 border-black"></div>
-		<div class="flex-1 flex-grow bg-green-700"></div>
+		<div class="flex-1 flex-grow"></div>
+		<div class="border-r-4 border-black"></div>
+		<div class="hero-r flex-1 flex-grow bg-green-400"></div>
 	</div>
 	<div class="flex items-stretch mx-auto max-w-screen-xl">
-		<article class="flex-1 flex-grow px-6 py-20">
-			<h1 on:change={(e) => console.log(e)} class="text-6xl font-bold mb-1">
-				I'm Alfian Hanantio,
-			</h1>
-			<h2 class="text-6xl font-bold">Software Engineer</h2>
-			<p class="text-xl font-light mt-6 mb-8">
-				Software Engineer with a passion for learning and pushing boundaries. Specialized in android
-				development and always evolving.
-			</p>
+		<article class="flex-1 flex-grow px-6 py-20 flex flex-col justify-center">
+			<div class="relative">
+				<span
+					class="absolute top-0 left-0 py-2 px-4 bg-blue-300 rounded-full -translate-y-10 -translate-x-6 -rotate-12 border-black border-2 font-semibold text-sm"
+					>Hello, I'm</span
+				>
+				<h1 class="text-5xl font-black mb-1">{name}</h1>
+			</div>
+			<h2 class="text-3xl font-bold">{headline}</h2>
+			<p class="text-xl font-light mt-6 mb-8">{shortBio}</p>
 			<div class="flex flex-row gap-4">
 				<a class="btn-neobrutalism inline-flex items-center" href="/">Contact Me</a>
 				<a class="btn-neobrutalism inline-flex items-center" href="/">Contact Me</a>
 			</div>
 		</article>
-		<figure class="flex-1 flex-grow px-6 py-20 flex justify-center">
+		<figure class="flex-1 flex-grow px-6 py-20 flex justify-center relative">
+			<svg
+				class="absolute size-32 top-[33%] right-8 rotate-12"
+				width="468"
+				height="732"
+				viewBox="0 0 468 732"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<g filter="url(#filter0_d_1732_179)">
+					<path
+						class="fill-stone-300"
+						d="M444.632 245.569C443.499 243.503 441.825 241.785 439.788 240.601C437.752 239.417 435.432 238.811 433.077 238.849L239.8 243.099L333.919 17.7884C334.755 15.8421 335.084 13.716 334.877 11.6079C334.67 9.49991 333.933 7.47854 332.734 5.73235C331.578 3.96039 329.995 2.50728 328.131 1.50592C326.268 0.504565 324.183 -0.0130457 322.068 0.000757552H73.1885C70.1108 -0.0328022 67.1251 1.04967 64.7831 3.04788C62.4411 5.04608 60.9009 7.82498 60.4478 10.871L0.104443 400.025C-0.123428 401.788 0.0225149 403.58 0.53303 405.282C1.04354 406.985 1.90705 408.561 3.06718 409.907C4.27636 411.347 5.78903 412.501 7.49651 413.287C9.20399 414.073 11.064 414.471 12.9434 414.453H189.332L134.223 671.386C133.79 673.265 133.788 675.218 134.218 677.098C134.649 678.978 135.499 680.736 136.707 682.239C137.914 683.742 139.447 684.951 141.19 685.776C142.932 686.601 144.838 687.019 146.766 686.999C148.869 687.006 150.941 686.496 152.801 685.514C154.661 684.532 156.251 683.108 157.432 681.367L443.841 258.416C445.1 256.537 445.837 254.357 445.976 252.1C446.115 249.842 445.651 247.588 444.632 245.569Z"
+					/>
+					<path
+						class="stroke-black"
+						d="M233.341 240.401L229.191 250.334L239.954 250.097L433.191 245.848C433.196 245.848 433.201 245.848 433.207 245.848C434.281 245.834 435.339 246.111 436.269 246.652C437.17 247.176 437.916 247.927 438.435 248.829C438.858 249.713 439.049 250.69 438.989 251.67C438.927 252.683 438.598 253.661 438.035 254.506C438.032 254.51 438.029 254.515 438.026 254.519L151.639 677.437C151.101 678.23 150.378 678.878 149.533 679.324C148.687 679.771 147.745 680.003 146.789 679.999L146.742 679.999L146.695 680C145.827 680.008 144.969 679.82 144.184 679.449C143.399 679.077 142.708 678.532 142.164 677.855C141.62 677.178 141.236 676.385 141.042 675.536C140.848 674.688 140.849 673.807 141.044 672.959L141.056 672.907L141.068 672.854L196.176 415.921L197.993 407.453H189.332H12.9434H12.9096L12.8759 407.453C12.0303 407.462 11.1929 407.282 10.4233 406.928C9.65402 406.574 8.97236 406.054 8.42741 405.405L8.39896 405.371L8.37009 405.338C7.85197 404.737 7.46623 404.033 7.23814 403.272C7.01691 402.534 6.94884 401.758 7.03804 400.993L67.3651 11.9437L67.3684 11.9224L67.3716 11.901C67.576 10.5271 68.2707 9.27384 69.3266 8.37299C70.382 7.47246 71.7268 6.98524 73.1121 7.00034L73.1503 7.00076H73.1885H322.068H322.091L322.114 7.00061C323.056 6.99446 323.986 7.22519 324.818 7.67207C325.65 8.11904 326.356 8.7677 326.873 9.55873L326.917 9.62644L326.963 9.69311C327.493 10.4659 327.819 11.3603 327.911 12.2927C328.002 13.225 327.857 14.1659 327.487 15.0277L327.473 15.0589L327.46 15.0903L233.341 240.401Z"
+						stroke-width="14"
+					/>
+				</g>
+				<defs>
+					<filter
+						id="filter0_d_1732_179"
+						x="0"
+						y="0"
+						width="468"
+						height="732"
+						filterUnits="userSpaceOnUse"
+						color-interpolation-filters="sRGB"
+					>
+						<feFlood flood-opacity="0" result="BackgroundImageFix" />
+						<feColorMatrix
+							in="SourceAlpha"
+							type="matrix"
+							values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+							result="hardAlpha"
+						/>
+						<feOffset dx="22" dy="45" />
+						<feComposite in2="hardAlpha" operator="out" />
+						<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" />
+						<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1732_179" />
+						<feBlend
+							mode="normal"
+							in="SourceGraphic"
+							in2="effect1_dropShadow_1732_179"
+							result="shape"
+						/>
+					</filter>
+				</defs>
+			</svg>
+			<svg
+				class="rotate-12 size-24 absolute left-24"
+				width="625"
+				height="629"
+				viewBox="0 0 625 629"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<g filter="url(#filter0_d_1732_155)">
+					<path
+						class="fill-blue-500"
+						d="M278.563 12.9325C289.126 -4.07465 313.875 -4.07462 324.437 12.9325L371.408 88.5662C377.557 98.4662 389.363 103.304 400.691 100.565L489.269 79.1471C509.097 74.3527 526.876 92.4337 521.748 112.178L500.308 194.726C497.257 206.473 502.42 218.812 512.927 224.887L588.574 268.626C606.554 279.022 606.554 304.978 588.574 315.374L512.927 359.113C502.42 365.188 497.257 377.527 500.308 389.274L521.748 471.822C526.876 491.566 509.097 509.647 489.269 504.853L400.691 483.435C389.363 480.696 377.557 485.534 371.408 495.434L324.437 571.067C313.874 588.075 289.125 588.075 278.563 571.067L231.592 495.434C225.443 485.534 213.637 480.696 202.309 483.435L113.731 504.853C93.9031 509.647 76.1245 491.566 81.2524 471.822L102.692 389.274C105.743 377.527 100.58 365.188 90.0734 359.113L14.4262 315.374C-3.55407 304.978 -3.55407 279.022 14.4262 268.626L90.0734 224.887C100.58 218.812 105.743 206.473 102.692 194.726L81.2524 112.178C76.1245 92.4337 93.9031 74.3527 113.731 79.1471L202.309 100.565C213.637 103.304 225.443 98.4662 231.592 88.5661L278.563 12.9325Z"
+					/>
+					<path
+						class="stroke-black"
+						d="M318.49 16.6256L365.462 92.2592C373.204 104.726 388.072 110.818 402.336 107.369L490.914 85.951C505.601 82.3997 518.771 95.793 514.972 110.418L493.533 192.966C489.691 207.759 496.192 223.297 509.423 230.947L585.07 274.686C598.389 282.387 598.389 301.613 585.07 309.314L509.423 353.053C496.192 360.703 489.691 376.241 493.533 391.034L514.972 473.582C518.771 488.207 505.601 501.6 490.914 498.049L402.336 476.631C388.072 473.182 373.204 479.274 365.462 491.741L318.49 567.374C310.666 579.972 292.334 579.972 284.51 567.374L237.538 491.741C229.796 479.274 214.928 473.182 200.664 476.631L112.086 498.049C97.3985 501.6 84.2291 488.207 88.0276 473.582L109.467 391.034C113.309 376.241 106.808 360.703 93.5772 353.053L17.9301 309.314C4.61132 301.613 4.61132 282.387 17.9301 274.686L93.5772 230.947C106.808 223.297 113.309 207.759 109.467 192.966L88.0276 110.418C84.2291 95.793 97.3985 82.3997 112.086 85.951L200.664 107.369C214.928 110.818 229.796 104.726 237.538 92.2592L284.51 16.6256C292.334 4.02768 310.666 4.02768 318.49 16.6256Z"
+						stroke-width="14"
+					/>
+				</g>
+				<defs>
+					<filter
+						id="filter0_d_1732_155"
+						x="0.941406"
+						y="0.177124"
+						width="623.117"
+						height="628.646"
+						filterUnits="userSpaceOnUse"
+						color-interpolation-filters="sRGB"
+					>
+						<feFlood flood-opacity="0" result="BackgroundImageFix" />
+						<feColorMatrix
+							in="SourceAlpha"
+							type="matrix"
+							values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+							result="hardAlpha"
+						/>
+						<feOffset dx="22" dy="45" />
+						<feComposite in2="hardAlpha" operator="out" />
+						<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" />
+						<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1732_155" />
+						<feBlend
+							mode="normal"
+							in="SourceGraphic"
+							in2="effect1_dropShadow_1732_155"
+							result="shape"
+						/>
+					</filter>
+				</defs>
+			</svg>
+
 			<img
-				src="https://peanut.to/_next/static/media/peanutman-happy.70722911.svg"
-				alt="hero-img"
-				class=" size-96"
+				src={profilePicture}
+				alt="Hero"
+				class="rounded-t-full border-b-8 bg-red-500 border-black border-4 size-120 shadow-[8px_8px_0_0] shadow-black"
 			/>
 		</figure>
 	</div>
