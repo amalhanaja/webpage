@@ -1,0 +1,19 @@
+{
+	"name": "Alfian Akmal Hanantio",
+	"headline": "Senior Android Developer",
+	"short_bio": "Software Engineer with a passion for learning and pushing boundaries. Specialized in android development and always evolving.",
+	"projects": [
+		{
+			"name": "PomoBoost",
+			"description": "",
+			"url": "",
+			"skill_tags": ["git"]
+		}
+	],
+	"skills": {
+		"git": {
+			"name": "Git",
+			"icon_url": ""
+		}
+	}
+}
