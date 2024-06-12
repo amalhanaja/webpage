@@ -20,4 +20,4 @@
 		<span class="px-4 uppercase">{skill}</span>
 	{/each}
 </Marquee>
-<Activities activities={data.activities} />
+<Activities activities={data.activities} activityDuration={data.activityDuration} />

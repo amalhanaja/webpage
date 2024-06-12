@@ -1,9 +1,10 @@
-import type { Activity, Profile } from '$lib/model';
+import type { Activity, ActivityDuration, Profile } from '$lib/model';
 import imgProfile from '$lib/assets/images/profile.png';
 import { formatToyyyyMMdd } from '$lib/helpers/formatter';
 import { getCompletedKata } from '$lib/data/codewars';
 import { getContributionCalendar } from './github';
 import { getLastYear } from '$lib/helpers/date';
+import { getWakatimeCodingActivity } from './wakatime';
 
 export const getProfile = (): Profile => {
 	return {
@@ -118,4 +119,13 @@ export const getActivites = async (): Promise<Map<string, Activity[]>> => {
 	const github = await getContributionCalendar('amalhanaja');
 	const allActivities = [...codewars, ...github];
 	return Map.groupBy(allActivities, (activity) => activity.dateInyyyyMMdd);
+};
+
+export const getActivityDuration = async (): Promise<Map<string, number>> => {
+	const wakatimeDuration = await getWakatimeCodingActivity();
+	const map = new Map<string, number>();
+	wakatimeDuration.forEach(({ dateInyyyyMMdd, duration }) => {
+		map.set(dateInyyyyMMdd, duration);
+	});
+	return map;
 };
