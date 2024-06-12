@@ -5,19 +5,19 @@
 
 	export let data;
 
-	let skills = Object.entries(data.skills).map((entry) => entry[1].name.toUpperCase());
+	let skills = Object.entries(data.profile.skills).map((entry) => entry[1].name);
 </script>
 
 <Hero
-	name={data.name.toUpperCase()}
-	headline={data.headline}
-	shortBio={data.shortBio}
-	profilePicture={data.profilePicture}
+	name={data.profile.name.toUpperCase()}
+	headline={data.profile.headline}
+	shortBio={data.profile.shortBio}
+	profilePicture={data.profile.profilePicture}
 />
 <Marquee duration={20_000} classname="py-6 bg-black text-white font-bold text-xl">
 	{#each skills as skill}
 		<span class="px-4">⏺</span>
-		<span class="px-4">{skill}</span>
+		<span class="px-4 uppercase">{skill}</span>
 	{/each}
 </Marquee>
-<Activities />
+<Activities activities={data.activities} />

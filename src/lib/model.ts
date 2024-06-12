@@ -24,3 +24,13 @@ export type Project = {
 	link?: string;
 	repoUrl?: string;
 };
+
+export enum ActivityType {
+	CODEWARS = 0
+}
+
+export type Activity = {
+	activityType: ActivityType;
+	dateInyyyyMMdd: string;
+	count: number;
+};

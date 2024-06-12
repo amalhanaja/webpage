@@ -1,8 +1,13 @@
-import { get_profile } from '$lib/data/repository';
-import type { PageLoad } from './$types';
+import { getActivites, getProfile } from '$lib/data/repository';
+import type { Profile } from '$lib/model';
 
 export const prerender = true;
 
-export const load = () => {
-	return get_profile();
+export const load = async () => {
+	const profile: Profile = getProfile();
+	const activities = await getActivites();
+	return {
+		profile,
+		activities
+	};
 };
