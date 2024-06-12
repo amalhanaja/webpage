@@ -1,4 +1,4 @@
-import { getActivites, getProfile } from '$lib/data/repository';
+import { getActivites, getProfile } from '$lib/data/repository.server';
 import type { Profile } from '$lib/model';
 
 export const prerender = true;

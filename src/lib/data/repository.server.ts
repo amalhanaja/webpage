@@ -2,6 +2,8 @@ import type { Activity, Profile } from '$lib/model';
 import imgProfile from '$lib/assets/images/profile.png';
 import { formatToyyyyMMdd } from '$lib/helpers/formatter';
 import { getCompletedKata } from '$lib/data/codewars';
+import { getContributionCalendar } from './github';
+import { getLastYear } from '$lib/helpers/date';
 
 export const getProfile = (): Profile => {
 	return {
@@ -110,16 +112,10 @@ export const getProfile = (): Profile => {
 	} satisfies Profile;
 };
 
-export const getLastYear = (): Date => {
-	const now = new Date();
-	const lastYear = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate());
-	lastYear.setDate(lastYear.getDate() - lastYear.getDay());
-	return lastYear;
-};
-
 export const getActivites = async (): Promise<Map<string, Activity[]>> => {
-	const result = new Map<string, Activity[]>();
 	const lastYear = getLastYear();
-	const allActivities = await getCompletedKata(formatToyyyyMMdd(lastYear), 'amalhanaja');
-	return Map.groupBy(allActivities, (activity, index) => activity.dateInyyyyMMdd);
+	const codewars = await getCompletedKata(formatToyyyyMMdd(lastYear), 'amalhanaja');
+	const github = await getContributionCalendar('amalhanaja');
+	const allActivities = [...codewars, ...github];
+	return Map.groupBy(allActivities, (activity) => activity.dateInyyyyMMdd);
 };
