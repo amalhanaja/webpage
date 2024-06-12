@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { getLastYear } from '$lib/helpers/date';
-	import { formatToyyyyMMdd } from '$lib/helpers/formatter';
+	import { formatDuration, formatToyyyyMMdd } from '$lib/helpers/formatter';
 	import type { Activity } from '$lib/model';
 	import clsx from 'clsx';
 	export let activities: Map<string, Activity[]>;
+	export let activityDuration: Map<string, number>;
 
 	const now = new Date();
 	now.setMinutes(0);
@@ -17,6 +18,13 @@
 	const getActivities = (date: Date): Activity[] => {
 		const formattedDate = formatToyyyyMMdd(date);
 		return activities.get(formattedDate) ?? [];
+	};
+
+	const getFormattedDuration = (date: Date): string => {
+		const formattedDate = formatToyyyyMMdd(date);
+		const duration = activityDuration.get(formattedDate);
+		if (!duration) return '';
+		return formatDuration(duration);
 	};
 
 	const getColorLevel = (date: Date): string => {
@@ -40,16 +48,22 @@
 
 {#snippet activityItem(date: Date)}
 	<div
-		class={clsx('activity-item size-5 border-black border-1 mx-auto relative hover:shadow-sm', getColorLevel(date))}
+		class={clsx(
+			'activity-item size-5 border-black border-1 mx-auto relative hover:shadow-sm',
+			getColorLevel(date)
+		)}
 	>
 		<div class="tooltip w-48 -ml-20 text-sm absolute bg-black text-white z-10 py-1 px-2">
 			<div>
 				{date.toLocaleDateString()} -
-				<span class="font-semibold"
-					>{getActivities(date)
+				<span class="font-semibold">
+					{getActivities(date)
 						.map((v) => v.count)
-						.reduce((prev, current) => prev + current, 0)} activities</span
-				>
+						.reduce((prev, current) => prev + current, 0)} activities
+				</span>
+				{#if getFormattedDuration(date)}
+					<div class="font-semibold">⏳ Coding duration: {getFormattedDuration(date)}</div>
+				{/if}
 			</div>
 		</div>
 	</div>

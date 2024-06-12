@@ -35,3 +35,8 @@ export type Activity = {
 	dateInyyyyMMdd: string;
 	count: number;
 };
+
+export type ActivityDuration = {
+	duration: number;
+	dateInyyyyMMdd: string;
+};
