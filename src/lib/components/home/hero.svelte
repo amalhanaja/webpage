@@ -132,7 +132,7 @@
 			<img
 				src={profilePicture}
 				alt="Hero"
-				class="rounded-t-full border-b-8 bg-red-500 border-black border-4 size-120 shadow-[8px_8px_0_0] shadow-black"
+				class="rounded-t-full border-b-8 bg-red-500 border-black border-4 size-120 shadow-xl shadow-black"
 			/>
 		</figure>
 	</div>
