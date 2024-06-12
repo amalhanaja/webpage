@@ -26,7 +26,8 @@ export type Project = {
 };
 
 export enum ActivityType {
-	CODEWARS = 0
+	CODEWARS,
+	GITHUB
 }
 
 export type Activity = {

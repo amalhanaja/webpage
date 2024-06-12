@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getLastYear } from '$lib/data/repository';
+	import { getLastYear } from '$lib/helpers/date';
 	import { formatToyyyyMMdd } from '$lib/helpers/formatter';
 	import type { Activity } from '$lib/model';
 	import clsx from 'clsx';
