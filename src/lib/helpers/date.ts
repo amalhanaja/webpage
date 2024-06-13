@@ -1,6 +1,6 @@
 export const getLastYear = (): Date => {
 	const now = new Date();
-	const lastYear = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate());
-	lastYear.setDate(lastYear.getDate() - lastYear.getDay());
+	const oneYear = 364 * 24 * 60 * 60 * 1000;
+	const lastYear = new Date(now.getTime() - oneYear);
 	return lastYear;
 };

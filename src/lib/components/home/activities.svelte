@@ -6,14 +6,7 @@
 	export let activities: Map<string, Activity[]>;
 	export let activityDuration: Map<string, number>;
 
-	const now = new Date();
-	now.setMinutes(0);
-	now.setHours(0);
-	now.setSeconds(0);
-	now.setMilliseconds(0);
 	const lastYear = getLastYear();
-	const diff = now.getTime() - lastYear.getTime();
-	const dateDiff = diff / (1000 * 60 * 60 * 24) + 1;
 
 	const getActivities = (date: Date): Activity[] => {
 		const formattedDate = formatToyyyyMMdd(date);
@@ -49,22 +42,17 @@
 {#snippet activityItem(date: Date)}
 	<div
 		class={clsx(
-			'activity-item size-5 border-black border-1 mx-auto relative hover:shadow-sm',
+			'activity-item size-5 border-black border-1 hover:border-2 mx-auto relative hover:shadow-sm',
 			getColorLevel(date)
 		)}
 	>
-		<div class="tooltip w-48 -ml-20 text-sm absolute bg-black text-white z-10 py-1 px-2">
-			<div>
-				{date.toLocaleDateString()} -
-				<span class="font-semibold">
-					{getActivities(date)
-						.map((v) => v.count)
-						.reduce((prev, current) => prev + current, 0)} activities
-				</span>
-				{#if getFormattedDuration(date)}
-					<div class="font-semibold">⏳ Coding time:  {getFormattedDuration(date)}</div>
-				{/if}
-			</div>
+		<div
+			class="tooltip w-48 -ml-20 text-sm absolute bg-black text-white z-10 py-1 px-2 flex flex-col gap-1"
+		>
+			<div class="font-semibold text-base">{date.toDateString()}</div>
+			{#if getFormattedDuration(date)}
+				<div class="font-semibold">⏳ Coding time: {getFormattedDuration(date)}</div>
+			{/if}
 		</div>
 	</div>
 {/snippet}
@@ -76,7 +64,10 @@
 		<h2 class="text-5xl font-black uppercase mb-8">Activities</h2>
 		<span class="self-start">Last year</span>
 		<div class="grid grid-flow-col-dense grid-rows-[repeat(7,_20px)] gap-[0.125rem]">
-			{#each Array(dateDiff) as _, index}
+			{#each Array(lastYear.getDay()) as _}
+				<div></div>
+			{/each}
+			{#each Array(365) as _, index}
 				{@render activityItem(
 					new Date(lastYear.getFullYear(), lastYear.getMonth(), lastYear.getDate() + index)
 				)}
