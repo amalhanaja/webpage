@@ -27,8 +27,8 @@ export const getCompletedKata = async (
 		([key, value]) =>
 			({
 				dateInyyyyMMdd: key,
-				count: value,
-				activityType: ActivityType.CODEWARS
+				value: value,
+				activityType: ActivityType.CODEWARS,
 			}) satisfies Activity
 	);
 };

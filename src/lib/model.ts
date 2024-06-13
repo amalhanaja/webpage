@@ -27,16 +27,12 @@ export type Project = {
 
 export enum ActivityType {
 	CODEWARS,
-	GITHUB
+	GITHUB,
+	WAKATIME
 }
 
 export type Activity = {
 	activityType: ActivityType;
 	dateInyyyyMMdd: string;
-	count: number;
-};
-
-export type ActivityDuration = {
-	duration: number;
-	dateInyyyyMMdd: string;
+	value: number;
 };

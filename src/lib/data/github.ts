@@ -67,14 +67,16 @@ export const getContributionCalendar = async (username: string): Promise<Activit
 	const body: GithubResponse = await response.json();
 	return body.data.user.contributionsCollection.contributionCalendar.weeks
 		.map((week) =>
-			week.contributionDays.map(
-				(contributionDay) =>
-					({
-						activityType: ActivityType.GITHUB,
-						dateInyyyyMMdd: formatToyyyyMMdd(new Date(contributionDay.date)),
-						count: contributionDay.contributionCount
-					}) satisfies Activity
-			)
+			week.contributionDays
+				.filter((v) => v.contributionCount != 0)
+				.map(
+					(contributionDay) =>
+						({
+							activityType: ActivityType.GITHUB,
+							dateInyyyyMMdd: formatToyyyyMMdd(new Date(contributionDay.date)),
+							value: contributionDay.contributionCount
+						}) satisfies Activity
+				)
 		)
 		.flat();
 };
