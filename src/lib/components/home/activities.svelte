@@ -62,7 +62,7 @@
 						.reduce((prev, current) => prev + current, 0)} activities
 				</span>
 				{#if getFormattedDuration(date)}
-					<div class="font-semibold">⏳ Coding duration: {getFormattedDuration(date)}</div>
+					<div class="font-semibold">⏳ Coding time:  {getFormattedDuration(date)}</div>
 				{/if}
 			</div>
 		</div>
