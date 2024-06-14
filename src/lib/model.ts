@@ -36,3 +36,14 @@ export type Activity = {
 	dateInyyyyMMdd: string;
 	value: number;
 };
+
+export type ArticleSummary = {
+	link: string;
+	title: string;
+	tags: {
+		id: string;
+		name: string;
+	}[];
+	brief: string;
+	coverImageUrl: string;
+};

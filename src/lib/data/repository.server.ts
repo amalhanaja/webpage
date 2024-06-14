@@ -1,10 +1,12 @@
-import type { Activity, Profile } from '$lib/model';
+import type { Activity, ArticleSummary, Profile } from '$lib/model';
 import imgProfile from '$lib/assets/images/profile.png';
 import { formatToyyyyMMdd } from '$lib/helpers/formatter';
 import { getCompletedKata } from '$lib/data/codewars';
 import { getContributionCalendar } from './github';
 import { getLastYear } from '$lib/helpers/date';
 import { getWakatimeCodingActivity } from './wakatime';
+import type Articles from '$lib/components/home/articles.svelte';
+import { getLastHashnodeArticles } from './hashnode';
 
 export const getProfile = (): Profile => {
 	return {
@@ -120,4 +122,8 @@ export const getActivites = async (): Promise<Map<string, Activity[]>> => {
 	const wakatime = await getWakatimeCodingActivity();
 	const allActivities = [...codewars, ...github, ...wakatime];
 	return Map.groupBy(allActivities, (activity) => activity.dateInyyyyMMdd);
+};
+
+export const getLastArticle = async (): Promise<ArticleSummary[]> => {
+	return await getLastHashnodeArticles('amalhanaja');
 };
