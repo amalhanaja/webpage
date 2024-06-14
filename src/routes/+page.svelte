@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Activities from '$lib/components/home/activities.svelte';
+	import Articles from '$lib/components/home/articles.svelte';
 	import Hero from '$lib/components/home/hero.svelte';
 	import Marquee from '$lib/components/shared/marquee.svelte';
 
@@ -21,3 +22,5 @@
 	{/each}
 </Marquee>
 <Activities activities={data.activities} />
+<div class="h-2 bg-black"></div>
+<Articles articles={data.lastArticles} />
