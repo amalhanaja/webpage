@@ -25,4 +25,5 @@
 <Activities activities={data.activities} />
 <div class="h-2 bg-black"></div>
 <Articles articles={data.lastArticles} />
+<div class="h-2 bg-black"></div>
 <Projects projects={data.featuredProjects} skills={data.profile.skills} />
