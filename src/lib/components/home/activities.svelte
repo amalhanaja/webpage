@@ -90,7 +90,7 @@
 	>
 		<h2 class="text-5xl font-black uppercase mb-8 italic">Activities</h2>
 		<span class="self-start">Last year</span>
-		<div class="grid grid-flow-col-dense grid-rows-[repeat(7,_20px)] gap-[0.125rem]">
+		<div class="grid grid-flow-col-dense grid-rows-[repeat(7,_20px)] gap-[0.125rem] overflow-scroll">
 			{#each Array(lastYear.getDay()) as _}
 				<div></div>
 			{/each}

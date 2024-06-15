@@ -10,7 +10,7 @@
 
 @layer components {
 	.btn-neobrutalism {
-		@apply border-4 rounded-md border-black shadow-md px-4 py-3 transition-all duration-150 font-bold text-lg shadow-black;
+		@apply border-4 rounded-md border-black shadow-md px-6 py-3 transition-all duration-150 font-bold text-lg shadow-black;
 		@apply hover:shadow-lg hover:shadow-black;
 		@apply focus:shadow-lg focus:shadow-black;
 		@apply active:shadow-none active:translate-x-[6px] active:translate-y-[6px];
