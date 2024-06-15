@@ -2,6 +2,7 @@
 	import Activities from '$lib/components/home/activities.svelte';
 	import Articles from '$lib/components/home/articles.svelte';
 	import Hero from '$lib/components/home/hero.svelte';
+	import Projects from '$lib/components/home/projects.svelte';
 	import Marquee from '$lib/components/shared/marquee.svelte';
 
 	export let data;
@@ -24,3 +25,4 @@
 <Activities activities={data.activities} />
 <div class="h-2 bg-black"></div>
 <Articles articles={data.lastArticles} />
+<Projects projects={data.featuredProjects} skills={data.profile.skills} />

@@ -1,4 +1,4 @@
-import type { Activity, ArticleSummary, Profile } from '$lib/model';
+import type { Activity, ArticleSummary, Profile, Project } from '$lib/model';
 import imgProfile from '$lib/assets/images/profile.png';
 import { formatToyyyyMMdd } from '$lib/helpers/formatter';
 import { getCompletedKata } from '$lib/data/codewars';
@@ -7,6 +7,7 @@ import { getLastYear } from '$lib/helpers/date';
 import { getWakatimeCodingActivity } from './wakatime';
 import type Articles from '$lib/components/home/articles.svelte';
 import { getLastHashnodeArticles } from './hashnode';
+import { getAllProjects } from './projects';
 
 export const getProfile = (): Profile => {
 	return {
@@ -88,30 +89,7 @@ export const getProfile = (): Profile => {
 			compose: {
 				name: 'Compose'
 			}
-		},
-		projects: [
-			{
-				name: 'PomoBoost',
-				description:
-					'PomoBoost is your productivity sidekick! This streamlined Pomodoro timer helps you conquer your tasks in focused 25-minute intervals, punctuated by refreshing breaks.',
-				link: 'https://pomoboost.vercel.app/',
-				skills: ['git', 'svelte', 'ts']
-			},
-			{
-				name: 'DyahAcademy',
-				description:
-					'DyahAcademy is an Android application designed as an e-learning platform to support students at SMPN 49 Surabaya during COVID-19.',
-				link: 'https://play.google.com/store/apps/details?id=com.amalcodes.dyahacademy.android',
-				skills: ['android', 'kt', 'ts', 'nodejs', 'graphql', 'postgresql']
-			},
-			{
-				name: 'WiseScreen',
-				description:
-					'This project was built for the "Anak Indonesia Bijak Beraktivitas di Depan Layar" challenge by Dicoding Indonesia. I developed this project from the design process using Figma until it was selected as a Winning App. The main purpose of this project is to manage screen time while using mobile devices.',
-				skills: ['android', 'kt', 'compose'],
-				repoUrl: 'https://github.com/amalhanaja/WiseScreen'
-			}
-		]
+		}
 	} satisfies Profile;
 };
 
@@ -126,4 +104,8 @@ export const getActivites = async (): Promise<Map<string, Activity[]>> => {
 
 export const getLastArticle = async (): Promise<ArticleSummary[]> => {
 	return await getLastHashnodeArticles('amalhanaja');
+};
+
+export const getFeaturedProject = (): Project[] => {
+	return getAllProjects().slice(0, 2);
 };

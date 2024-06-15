@@ -3,7 +3,6 @@ export type Profile = {
 	headline: string;
 	shortBio: string;
 	profilePicture: string;
-	projects: Project[];
 	skills: Record<string, Skill>;
 };
 
@@ -21,6 +20,7 @@ export type Project = {
 	name: string;
 	description: string;
 	skills: string[];
+	imageUrl: string;
 	link?: string;
 	repoUrl?: string;
 };
