@@ -54,7 +54,9 @@
 					{@render skillItem(skill)}
 				{/each}
 			</div>
-			<div class="flex flex-row px-4 h-20 items-center gap-4 border-t-4 border-black bg-red-300 justify-end">
+			<div
+				class="flex flex-row px-4 h-20 items-center gap-4 border-t-4 border-black bg-red-300 justify-end"
+			>
 				{#if project.repoUrl}
 					<a
 						href={project.repoUrl}
@@ -79,7 +81,7 @@
 
 <section class="py-24 overflow-hidden">
 	<div class="max-w-screen-xl mx-auto">
-		<h2 class="text-5xl font-black mb-8 italic">Featured Projects</h2>
+		<h2 class="text-5xl font-black mb-10 italic">Featured Projects</h2>
 		<div class="flex flex-col gap-6">
 			{#each projects as project}
 				{@render projectItem(project)}
