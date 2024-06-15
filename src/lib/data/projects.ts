@@ -15,7 +15,7 @@ export const getAllProjects = (): Project[] => {
 		{
 			name: 'DyahAcademy',
 			description:
-				'From its humble beginnings as a response to the challenges of COVID-19, DyahAcademy has blossomed into a full-fledged Android application offering a comprehensive e-learning platform specifically designed for the bright students of SMPN 49 Surabaya. This innovative app empowers students to continue their educational journey even amidst disruptions, providing them with a safe and accessible space to learn, explore, and grow.',
+				'In response to the challenges of the COVID-19 pandemic, DyahAcademy emerged as a innovative Android application designed to function as a comprehensive e-learning platform. Developed specifically to support the educational needs of students attending SMPN 49 Surabaya, DyahAcademy provides a virtual space for continued learning and academic engagement, ensuring that students can thrive even amidst disruptions to traditional classroom settings.',
 			link: 'https://play.google.com/store/apps/details?id=com.amalcodes.dyahacademy.android',
 			skills: ['android', 'kt', 'ts', 'nodejs', 'graphql', 'postgresql'],
 			imageUrl: dyahacademy
