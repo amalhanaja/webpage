@@ -1,11 +1,18 @@
-import type { Activity, ArticleSummary, Profile, Project } from '$lib/model';
+import type { Activity, ArticleSummary, Contact, Profile, Project } from '$lib/model';
 import imgProfile from '$lib/assets/images/profile.png';
+import icGithub from '$lib/assets/images/icons/github.svg';
+import icCodewars from '$lib/assets/images/icons/codewars.svg';
+import icHashnode from '$lib/assets/images/icons/hashnode.svg';
+import icInstagram from '$lib/assets/images/icons/instagram.svg';
+import icLinkedIn from '$lib/assets/images/icons/linkedin.svg';
+import icTiktok from '$lib/assets/images/icons/tiktok.svg';
+import icXTwitter from '$lib/assets/images/icons/x-twitter.svg';
+import icYoutube from '$lib/assets/images/icons/youtube.svg';
 import { formatToyyyyMMdd } from '$lib/helpers/formatter';
 import { getCompletedKata } from '$lib/data/codewars';
 import { getContributionCalendar } from './github';
 import { getLastYear } from '$lib/helpers/date';
 import { getWakatimeCodingActivity } from './wakatime';
-import type Articles from '$lib/components/home/articles.svelte';
 import { getLastHashnodeArticles } from './hashnode';
 import { getAllProjects } from './projects';
 
@@ -108,4 +115,57 @@ export const getLastArticle = async (): Promise<ArticleSummary[]> => {
 
 export const getFeaturedProject = (): Project[] => {
 	return getAllProjects().slice(0, 2);
+};
+
+export const getContacts = (): Contact[] => {
+	return [
+		{
+			label: 'Github',
+			url: 'https://github.com/amalhanaja',
+			icon: icGithub,
+			username: '@amalhanaja'
+		},
+		{
+			label: 'LinkedIn',
+			url: 'https://linkedin.com/in/amalhanaja',
+			username: 'in/amalhanaja',
+			icon: icLinkedIn
+		},
+		{
+			label: 'Hashnode',
+			url: 'https://hashnode.com/@amalhanaja',
+			icon: icHashnode,
+			username: '@amalhanaja'
+		},
+		{
+			label: 'Youtube',
+			url: 'https://youtube.com/@amalhanaja',
+			icon: icYoutube,
+			username: '@amalhanaja'
+		},
+		{
+			label: 'TikTok',
+			url: 'https://www.tiktok.com/@amalhanaja',
+			icon: icTiktok,
+			username: '@amalhanaja'
+		},
+		{
+			label: 'Codewars',
+			url: 'https://www.codewars.com/users/amalhanaja',
+			username: '@amalhanaja',
+			icon: icCodewars
+		},
+		{
+			label: 'Instagram',
+			url: 'https://instagram.com/amalhanaja',
+			username: '@amalhanaja',
+			icon: icInstagram
+		},
+		{
+			label: 'X',
+			url: 'https://x.com/amalhanaja',
+			username: '@amalhanaja',
+			icon: icXTwitter
+		}
+	];
 };
