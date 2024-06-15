@@ -37,11 +37,10 @@
 
 	const getColorLevel = (date: Date): string => {
 		const activities = getActivities(date);
-		const rateTotal = activities.map((v) => rateActivity(v)).reduce((a, b) => a + b, 0);
-		const avgRate = Math.round(rateTotal / activities.length);
-		switch (avgRate) {
+		const maxRate = Math.max(...activities.map((v) => rateActivity(v)));
+		switch (maxRate) {
 			case 4:
-				return 'bg-emerald-900'
+				return 'bg-emerald-900';
 			case 3:
 				return 'bg-emerald-700';
 			case 2:
