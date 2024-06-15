@@ -14,6 +14,7 @@ export type Contact = {
 	label: string;
 	url: string;
 	icon: string;
+	username: string;
 };
 
 export type Project = {

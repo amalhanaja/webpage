@@ -1,5 +1,6 @@
 import {
 	getActivites,
+	getContacts,
 	getFeaturedProject,
 	getLastArticle,
 	getProfile
@@ -13,10 +14,12 @@ export const load = async () => {
 	const activities = await getActivites();
 	const lastArticles = await getLastArticle();
 	const featuredProjects = getFeaturedProject();
+	const contacts = getContacts();
 	return {
 		profile,
 		activities,
 		lastArticles,
-		featuredProjects
+		featuredProjects,
+		contacts
 	};
 };
