@@ -38,16 +38,16 @@
 	const getColorLevel = (date: Date): string => {
 		const activities = getActivities(date);
 		const rateTotal = activities.map((v) => rateActivity(v)).reduce((a, b) => a + b, 0);
-		const avgRate = Math.round(rateTotal / activityItem.length);
+		const avgRate = Math.round(rateTotal / activities.length);
 		switch (avgRate) {
 			case 4:
-				return 'bg-green-900';
+				return 'bg-emerald-900'
 			case 3:
-				return 'bg-green-700';
+				return 'bg-emerald-700';
 			case 2:
-				return 'bg-green-500';
+				return 'bg-emerald-500';
 			case 1:
-				return 'bg-green-300';
+				return 'bg-emerald-300';
 			default:
 				return 'bg-white';
 		}
