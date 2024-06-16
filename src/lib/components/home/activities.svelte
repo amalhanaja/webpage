@@ -4,7 +4,13 @@
 	import { rateActivity } from '$lib/helpers/rater';
 	import { ActivityType, type Activity } from '$lib/model';
 	import clsx from 'clsx';
-	export let activities: Map<string, Activity[]>;
+
+	type ActivityDetailState = {
+		date: Date;
+		x: number;
+		y: number;
+	};
+	const { activities } = $props<{ activities: Map<string, Activity[]> }>();
 
 	const lastYear = getLastYear();
 
@@ -51,7 +57,62 @@
 				return 'bg-white';
 		}
 	};
+	let hoveredActivity = $state<ActivityDetailState | null>(null);
+
+	const onActivityItemMouseOver = (
+		e: MouseEvent & { currentTarget: EventTarget & HTMLDivElement },
+		date: Date
+	) => {
+		if (hoveredActivity?.date == date) return;
+		let x: number;
+		switch (true) {
+			case e.pageX < 100:
+				x = 108;
+				break;
+			case e.pageX + 120 > document.body.clientWidth:
+				x = e.pageX - 112;
+				break;
+			default:
+				x = e.pageX;
+				break;
+		}
+		hoveredActivity = {
+			date: date,
+			x,
+			y: e.pageY - 20
+		};
+	};
+
+	const onActivityItemMouseLeave = (
+		e: MouseEvent & { currentTarget: EventTarget & HTMLDivElement }
+	) => {
+		hoveredActivity = null;
+	};
 </script>
+
+{#snippet activityDetaiTooltip(state: ActivityDetailState)}
+	<div
+		class="tooltip w-[200px] -ml-20 text-sm absolute bg-white text-black shadow-md border-2 border-black shadow-black z-10 py-2 px-2 flex flex-col gap-1 transition-all duration-150 ease-in-out"
+		style="top:{state.y}px;left:{state.x}px"
+	>
+		<table border="1">
+			<thead>
+				<tr>
+					<th colspan="3" class="font-bold text-base text-start">{state.date.toDateString()}</th>
+				</tr>
+			</thead>
+			<tbody class="text-sm">
+				{#each getActivities(state.date) as activity}
+					<tr>
+						<td>{getActivityTypeName(activity.activityType)}</td>
+						<td class="px-1">:</td>
+						<td class="font-semibold w-full text-end">{formatActivityValue(activity)}</td>
+					</tr>
+				{/each}
+			</tbody>
+		</table>
+	</div>
+{/snippet}
 
 {#snippet activityItem(date: Date)}
 	<div class="activity-item relative">
@@ -60,37 +121,27 @@
 				'rate-box size-5 border-black border-1 hover:border-2 mx-auto relative hover:shadow-sm',
 				getColorLevel(date)
 			)}
+			role="cell"
+			tabindex={date.getTime()}
+			onmouseover={(e) => onActivityItemMouseOver(e, date)}
+			onmouseleave={onActivityItemMouseLeave}
+			onfocus={(e) => {}}
 		></div>
-		<div
-			class="tooltip w-48 -ml-20 text-sm absolute bg-white text-black shadow-md border-2 border-black shadow-black z-10 py-2 px-2 flex flex-col gap-1 transition-all duration-150 ease-in-out"
-		>
-			<table border="1">
-				<thead>
-					<tr>
-						<th colspan="3" class="font-bold text-base text-start">{date.toDateString()}</th>
-					</tr>
-				</thead>
-				<tbody class="text-sm">
-					{#each getActivities(date) as activity}
-						<tr>
-							<td>{getActivityTypeName(activity.activityType)}</td>
-							<td class="px-1">:</td>
-							<td class="font-semibold w-full text-end">{formatActivityValue(activity)}</td>
-						</tr>
-					{/each}
-				</tbody>
-			</table>
-		</div>
 	</div>
 {/snippet}
 
-<section class="flex flex-col py-12">
+<section class="flex flex-col py-6 px-6 md:py-12">
+	{#if hoveredActivity}
+		{@render activityDetaiTooltip(hoveredActivity)}
+	{/if}
 	<div
 		class="activity-card max-w-screen-xl w-full mx-auto px-6 py-9 border-black border-4 flex flex-col"
 	>
 		<h2 class="text-5xl font-black uppercase mb-8 italic">Activities</h2>
 		<span class="self-start">Last year</span>
-		<div class="grid grid-flow-col-dense grid-rows-[repeat(7,_20px)] gap-[0.125rem] overflow-scroll">
+		<div
+			class="grid grid-flow-col-dense grid-rows-[repeat(7,_20px)] gap-[0.125rem] overflow-scroll"
+		>
 			{#each Array(lastYear.getDay()) as _}
 				<div></div>
 			{/each}
@@ -105,18 +156,7 @@
 </section>
 
 <style>
-	.activity-item .tooltip {
-		visibility: hidden;
-		opacity: 0;
-		bottom: 125%;
-	}
-	.activity-item:hover .tooltip {
-		visibility: visible;
-		opacity: 1;
-	}
-
-	.activity-item:hover .tooltip:hover {
-		visibility: hidden;
-		opacity: 0;
+	.tooltip {
+		transform: translateY(-100%);
 	}
 </style>
