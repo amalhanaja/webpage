@@ -24,10 +24,10 @@
 	</a>
 {/snippet}
 
-<section class="py-24 bg-blue-100">
+<section class="py-24 bg-blue-100 px-6">
 	<div class="max-w-screen-xl mx-auto flex flex-col">
 		<h2 class="italic font-black text-5xl uppercase mb-10">Articles</h2>
-		<div class="grid grid-cols-3 gap-5">
+		<div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
 			{#each articles as article}
 				{@render articleItem(article)}
 			{/each}
