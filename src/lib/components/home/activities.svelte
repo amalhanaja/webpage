@@ -137,7 +137,7 @@
 	<div
 		class="activity-card max-w-screen-xl w-full mx-auto px-6 py-9 border-black border-4 flex flex-col"
 	>
-		<h2 class="text-5xl font-black uppercase mb-8 italic">Activities</h2>
+		<h2 class="text-4xl font-black uppercase mb-8 italic sm:text-5xl">Activities</h2>
 		<span class="self-start">Last year</span>
 		<div
 			class="grid grid-flow-col-dense grid-rows-[repeat(7,_20px)] gap-[0.125rem] overflow-scroll"
