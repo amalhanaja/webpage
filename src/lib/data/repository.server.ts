@@ -106,7 +106,13 @@ export const getActivites = async (): Promise<Map<string, Activity[]>> => {
 	const github = await getContributionCalendar('amalhanaja');
 	const wakatime = await getWakatimeCodingActivity();
 	const allActivities = [...codewars, ...github, ...wakatime];
-	return Map.groupBy(allActivities, (activity) => activity.dateInyyyyMMdd);
+	return allActivities.reduce((acc, current) => {
+		const key = current.dateInyyyyMMdd;
+		const value = acc.get(key) ?? [];
+		value.push(current);
+		acc.set(key, value);
+		return acc;
+	}, new Map<string, Activity[]>());
 };
 
 export const getLastArticle = async (): Promise<ArticleSummary[]> => {
