@@ -135,6 +135,7 @@
 		{@render activityDetaiTooltip(hoveredActivity)}
 	{/if}
 	<div
+		data-aos="fade-up"
 		class="activity-card max-w-screen-xl w-full mx-auto px-6 py-9 border-black border-4 flex flex-col"
 	>
 		<h2 class="text-4xl font-black uppercase mb-8 italic sm:text-5xl">Activities</h2>

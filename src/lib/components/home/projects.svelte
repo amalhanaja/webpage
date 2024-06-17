@@ -36,6 +36,7 @@
 
 {#snippet projectItem(project: Project)}
 	<div
+		data-aos="fade-up"
 		class="grid grid-cols-1 border-black border-4 shadow-xl hover:shadow-3xl transition-all duration-200 lg:grid-cols-6 bg-white"
 	>
 		<div
@@ -86,7 +87,7 @@
 
 <section class="py-24 overflow-hidden px-6 relative">
 	<div class="max-w-screen-xl mx-auto">
-		<h2 class="text-5xl font-black mb-10 italic">Featured Projects</h2>
+		<h2 data-aos="fade-up" class="text-5xl font-black mb-10 italic">Featured Projects</h2>
 		<div class="flex flex-col gap-6">
 			{#each projects as project}
 				{@render projectItem(project)}
