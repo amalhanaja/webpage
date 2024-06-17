@@ -24,18 +24,30 @@
 	</a>
 {/snippet}
 
-<section class="py-24 bg-blue-100 px-6">
+<section class="py-24 px-6">
 	<div class="max-w-screen-xl mx-auto flex flex-col">
-		<h2 class="italic font-black text-5xl uppercase mb-10">Articles</h2>
+		<h2
+			class="italic font-black text-5xl uppercase mb-10 px-6 py-5 border-4 border-black bg-white w-fit"
+		>
+			Articles
+		</h2>
 		<div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
 			{#each articles as article}
 				{@render articleItem(article)}
 			{/each}
 		</div>
 		<a
-			class="btn-neobrutalism mx-auto mt-10 uppercase bg-blue-500 text-white"
+			class="btn-neobrutalism mx-auto mt-10 uppercase bg-blue-700 text-white transition-all hover:bg-black duration-200"
 			href="https://amalhanaja.hashnode.dev/"
-			target="_blank">More Article</a
+			target="_blank">More Articles</a
 		>
 	</div>
 </section>
+
+<style>
+	section {
+		background: theme(backgroundColor.blue.200) 50% / cover no-repeat
+			url('/images/bg-pattern-grid-curved.svg');
+		background-attachment: fixed;
+	}
+</style>
