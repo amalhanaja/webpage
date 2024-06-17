@@ -37,16 +37,16 @@
 
 {#snippet projectItem(project: Project)}
 	<div
-		class="grid grid-cols-6 border-black border-4 shadow-xl hover:shadow-3xl transition-all duration-200"
+		class="grid grid-cols-1 border-black border-4 shadow-xl hover:shadow-3xl transition-all duration-200 lg:grid-cols-6"
 	>
-		<div class="col-span-4 border-r-2 border-black">
-			<img class="object-cover h-96 w-full" src={project.imageUrl} alt={project.name} />
-			<div class="px-6 h-20 align-middle border-t-4 border-black flex items-center">
-				<h3 class="text-2xl font-bold">{project.name}</h3>
+		<div class="border-black border-b-4 flex flex-col-reverse lg:col-span-4 lg:flex-col lg:border-b-0 lg:border-r-4">
+			<img class="object-cover h-96 w-full border-black" src={project.imageUrl} alt={project.name} />
+			<div class="px-6 h-20 align-middle border-b-4 border-black flex items-center lg:border-b-0 lg:border-t-4">
+				<h3 class="text-2xl font-bold w-full text-center lg:text-start">{project.name}</h3>
 			</div>
 		</div>
-		<div class="text-base col-span-2 border-l-2 border-black flex flex-col">
-			<p class="text-base p-4 flex-1 font-light">{project.description}</p>
+		<div class="border-black flex flex-col lg:col-span-2">
+			<p class="p-4 flex-1 font-light">{project.description}</p>
 			<div
 				class="flex flex-row gap-2 flex-wrap px-4 py-4 border-t-4 border-black uppercase font-semibold"
 			>
@@ -79,7 +79,7 @@
 	</div>
 {/snippet}
 
-<section class="py-24 overflow-hidden">
+<section class="py-24 overflow-hidden px-6">
 	<div class="max-w-screen-xl mx-auto">
 		<h2 class="text-5xl font-black mb-10 italic">Featured Projects</h2>
 		<div class="flex flex-col gap-6">
