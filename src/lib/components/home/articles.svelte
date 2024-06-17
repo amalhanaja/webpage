@@ -6,6 +6,7 @@
 
 {#snippet articleItem(article: ArticleSummary)}
 	<a
+		data-aos="fade-up"
 		href={article.link}
 		class="flex flex-col bg-white border-black border-4 p-6 shadow-2xl shadow-blue-700 hover:shadow-3xl transition-all duration-200 hover:cursor-pointer ease-in-out"
 	>
@@ -27,6 +28,7 @@
 <section class="py-24 px-6">
 	<div class="max-w-screen-xl mx-auto flex flex-col">
 		<h2
+			data-aos="fade-up"
 			class="italic font-black text-5xl uppercase mb-10 px-6 py-5 border-4 border-black bg-white w-fit"
 		>
 			Articles

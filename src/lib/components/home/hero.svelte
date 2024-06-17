@@ -15,7 +15,10 @@
 		<div class="flex-1 hero-img-bg-pattern-md"></div>
 	</div>
 	<div class="flex items-stretch mx-auto max-w-screen-xl flex-col md:flex-row">
-		<article class="flex-1 flex flex-grow flex-col justify-center px-8 py-24 md:px-6">
+		<article
+			data-aos="fade-right"
+			class="flex-1 flex flex-grow flex-col justify-center px-8 py-24 md:px-6"
+		>
 			<div class="relative">
 				<span
 					class="absolute top-0 left-0 py-2 px-4 bg-blue-800 rounded-full -translate-y-10 -translate-x-6 -rotate-12 border-black border-2 font-semibold text-sm text-white shadow-md shadow-black"
@@ -35,6 +38,7 @@
 		</article>
 		<div class="border-t-4 border-black md:hidden"></div>
 		<div
+			data-aos="zoom-in"
 			class={clsx(
 				'hero-img-bg-pattern',
 				'flex-1 flex flex-grow justify-center w-full items-center px-8 py-24 md:px-6'
