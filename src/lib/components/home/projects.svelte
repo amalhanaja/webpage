@@ -5,8 +5,7 @@
 	import { getRandomNumberInRange } from '$lib/helpers/randomizer';
 	import clsx from 'clsx';
 
-	export let projects: Project[];
-	export let skills: Record<string, Skill>;
+	const { projects, skills } = $props<{ projects: Project[]; skills: Record<string, Skill> }>();
 
 	const getProjectSkills = (project: Project): Skill[] => {
 		return project.skills.map((tag) => skills[tag]);
@@ -39,9 +38,17 @@
 	<div
 		class="grid grid-cols-1 border-black border-4 shadow-xl hover:shadow-3xl transition-all duration-200 lg:grid-cols-6 bg-white"
 	>
-		<div class="border-black border-b-4 flex flex-col-reverse lg:col-span-4 lg:flex-col lg:border-b-0 lg:border-r-4">
-			<img class="object-cover h-96 w-full border-black" src={project.imageUrl} alt={project.name} />
-			<div class="px-6 h-20 align-middle border-b-4 border-black flex items-center lg:border-b-0 lg:border-t-4">
+		<div
+			class="border-black border-b-4 flex flex-col-reverse lg:col-span-4 lg:flex-col lg:border-b-0 lg:border-r-4"
+		>
+			<img
+				class="object-cover h-96 w-full border-black"
+				src={project.imageUrl}
+				alt={project.name}
+			/>
+			<div
+				class="px-6 h-20 align-middle border-b-4 border-black flex items-center lg:border-b-0 lg:border-t-4"
+			>
 				<h3 class="text-2xl font-bold w-full text-center lg:text-start">{project.name}</h3>
 			</div>
 		</div>
@@ -54,9 +61,7 @@
 					{@render skillItem(skill)}
 				{/each}
 			</div>
-			<div
-				class="flex flex-row px-4 h-20 items-center gap-4 border-t-4 border-black justify-end"
-			>
+			<div class="flex flex-row px-4 h-20 items-center gap-4 border-t-4 border-black justify-end">
 				{#if project.repoUrl}
 					<a
 						href={project.repoUrl}
@@ -91,7 +96,7 @@
 </section>
 
 <style>
-    section {
+	section {
 		background: theme(backgroundColor.yellow.200) 50% / cover no-repeat
 			url('/images/bg-pattern-grid-skew.svg');
 		background-attachment: fixed;

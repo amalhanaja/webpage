@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { ArticleSummary } from '$lib/model';
 
-	export let articles: ArticleSummary[];
+	const { articles } = $props<{ articles: ArticleSummary[] }>();
 </script>
 
 {#snippet articleItem(article: ArticleSummary)}

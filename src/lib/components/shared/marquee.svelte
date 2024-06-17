@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { clsx } from 'clsx';
 	import type { Snippet } from 'svelte';
-	let {
+	const {
 		children,
 		duration = 10_000,
 		classname = ''

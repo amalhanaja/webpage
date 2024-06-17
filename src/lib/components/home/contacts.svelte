@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Contact } from '$lib/model';
 
-	export let contacts: Contact[];
+	const { contacts } = $props<{ contacts: Contact[] }>();
 </script>
 
 {#snippet contactItem(contact: Contact)}
