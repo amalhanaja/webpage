@@ -1,6 +1,6 @@
 <script lang="ts">
 	import clsx from 'clsx';
-	let { name, headline, shortBio, profilePicture } = $props<{
+	const { name, headline, shortBio, profilePicture } = $props<{
 		name: string;
 		headline: string;
 		shortBio: string;
