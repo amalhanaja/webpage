@@ -46,7 +46,7 @@
 		>
 			<figure class="w-fit relative">
 				<svg
-					class="absolute size-32 top-[33%] rotate-12 -right-16"
+					class="lighting absolute size-32 top-[33%] rotate-12 -right-16"
 					width="468"
 					height="732"
 					viewBox="0 0 468 732"
@@ -99,7 +99,7 @@
 					</defs>
 				</svg>
 				<svg
-					class="rotate-12 size-24 absolute left-0"
+					class="stamp rotate-12 size-24 absolute left-0"
 					width="625"
 					height="629"
 					viewBox="0 0 625 629"
@@ -177,5 +177,73 @@
 		background: theme(backgroundColor.emerald.300) 50% / cover no-repeat
 			url('/images/bg-pattern-cylinder-grid.svg');
 		background-attachment: fixed;
+	}
+
+	.stamp {
+		animation: shakeRotateCirc 9s cubic-bezier(0.85, 0, 0.15, 1) 0s infinite alternate none;
+	}
+
+	.lighting {
+		/* Copy code to element you want to animate */
+		animation: lighting 3s cubic-bezier(0.12, 0, 0.39, 0) 0s infinite alternate none;
+	}
+	@keyframes shakeRotateCirc {
+		0%,
+		100% {
+			transform: rotate(0deg);
+			transform-origin: 50% 50%;
+		}
+
+		10% {
+			transform: rotate(8deg);
+		}
+
+		20%,
+		40%,
+		60% {
+			transform: rotate(-10deg);
+		}
+
+		30%,
+		50%,
+		70% {
+			transform: rotate(10deg);
+		}
+
+		80% {
+			transform: rotate(-8deg);
+		}
+
+		90% {
+			transform: rotate(8deg);
+		}
+	}
+	/* Copy this code after the above code */
+	@keyframes lighting {
+		0%,
+		100% {
+			transform: translateY(0) rotate(0);
+			transform-origin: 50% 50%;
+		}
+
+		15% {
+			transform: translateY(-30px) rotate(6deg);
+		}
+
+		30% {
+			transform: translateY(15px) rotate(-6deg);
+		}
+
+		45% {
+			transform: translateY(-15px) rotate(3.6deg);
+		}
+
+		60% {
+			transform: translateY(9px) rotate(-2.4deg);
+		}
+
+		75% {
+			transform: translateY(-6px) rotate(1.2deg);
+		}
 	}
 </style>
