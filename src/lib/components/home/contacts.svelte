@@ -17,10 +17,10 @@
 	</a>
 {/snippet}
 
-<section class="py-24">
+<section class="py-24 px-6">
 	<div class="max-w-screen-xl mx-auto">
 		<h3 class="text-5xl font-black italic mb-10">Let's Connect</h3>
-		<div class="grid grid-cols-4 gap-4">
+		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 			{#each contacts as contact}
 				{@render contactItem(contact)}
 			{/each}
