@@ -46,7 +46,7 @@
 
 <style>
 	section {
-		background: theme(backgroundColor.blue.200) 50% / cover no-repeat
+		background: theme(backgroundColor.sky.200) 50% / cover no-repeat
 			url('/images/bg-pattern-grid-curved.svg');
 		background-attachment: fixed;
 	}

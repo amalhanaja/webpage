@@ -37,7 +37,7 @@
 
 {#snippet projectItem(project: Project)}
 	<div
-		class="grid grid-cols-1 border-black border-4 shadow-xl hover:shadow-3xl transition-all duration-200 lg:grid-cols-6"
+		class="grid grid-cols-1 border-black border-4 shadow-xl hover:shadow-3xl transition-all duration-200 lg:grid-cols-6 bg-white"
 	>
 		<div class="border-black border-b-4 flex flex-col-reverse lg:col-span-4 lg:flex-col lg:border-b-0 lg:border-r-4">
 			<img class="object-cover h-96 w-full border-black" src={project.imageUrl} alt={project.name} />
@@ -55,7 +55,7 @@
 				{/each}
 			</div>
 			<div
-				class="flex flex-row px-4 h-20 items-center gap-4 border-t-4 border-black bg-red-300 justify-end"
+				class="flex flex-row px-4 h-20 items-center gap-4 border-t-4 border-black justify-end"
 			>
 				{#if project.repoUrl}
 					<a
@@ -79,7 +79,7 @@
 	</div>
 {/snippet}
 
-<section class="py-24 overflow-hidden px-6">
+<section class="py-24 overflow-hidden px-6 relative">
 	<div class="max-w-screen-xl mx-auto">
 		<h2 class="text-5xl font-black mb-10 italic">Featured Projects</h2>
 		<div class="flex flex-col gap-6">
@@ -89,3 +89,11 @@
 		</div>
 	</div>
 </section>
+
+<style>
+    section {
+		background: theme(backgroundColor.yellow.200) 50% / cover no-repeat
+			url('/images/bg-pattern-grid-skew.svg');
+		background-attachment: fixed;
+	}
+</style>
