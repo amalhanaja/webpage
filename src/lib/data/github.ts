@@ -60,7 +60,7 @@ export const getContributionCalendar = async (username: string): Promise<Activit
 	const response = await fetch('https://api.github.com/graphql', {
 		method: 'post',
 		headers: {
-			Authorization: `Bearer ${GITHUB_ACCESS_TOKEN}`
+			Authorization: `Bearer ${GH_ACCESS_TOKEN}`
 		},
 		body: JSON.stringify(jsonBody)
 	});
