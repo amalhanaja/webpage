@@ -1,6 +1,6 @@
 import { formatToyyyyMMdd } from '$lib/helpers/formatter';
 import { ActivityType, type Activity } from '$lib/model';
-import { GITHUB_ACCESS_TOKEN } from '$env/static/private';
+import { GH_ACCESS_TOKEN } from '$env/static/private';
 
 type GithubResponse = {
 	data: Data;
