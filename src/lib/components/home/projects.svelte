@@ -68,7 +68,7 @@
 							href={project.repoUrl}
 							class="btn-neobrutalism flex-1 flex py-2 px-3 gap-2 justify-center items-center"
 						>
-							<img src={github} alt="Github" class="size-8" />
+							<img src={github} alt="github_icon" class="size-8" />
 							<span>Github</span>
 						</a>
 					{/if}
