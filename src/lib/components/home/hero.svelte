@@ -30,7 +30,7 @@
 			<p class="text-xl font-light mt-6 mb-8">{shortBio}</p>
 			<div class="flex flex-row gap-4">
 				<a
-					class="btn-neobrutalism items-center bg-blue-300 hover:bg-blue-800 hover:text-white focus:bg-blue-800 focus:text-white active:bg-blue-800 active:text-white"
+					class="btn-neobrutalism items-center bg-blue-300 hover:bg-blue-800 hover:text-white focus:bg-blue-800 focus:text-white active:bg-blue-800 active:text-white uppercase"
 					href="/alfian-resume.pdf"
 					target="_blank">Resume</a
 				>
