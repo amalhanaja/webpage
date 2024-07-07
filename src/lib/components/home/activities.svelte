@@ -130,13 +130,13 @@
 	</div>
 {/snippet}
 
-<section class="flex flex-col py-6 px-6 md:py-12">
+<section class="flex flex-col py-6 px-6 md:py-12 bg-green-400">
 	{#if hoveredActivity}
 		{@render activityDetaiTooltip(hoveredActivity)}
 	{/if}
 	<div
 		data-aos="fade-up"
-		class="activity-card max-w-screen-xl w-full mx-auto px-6 py-9 border-black border-4 flex flex-col"
+		class="activity-card max-w-screen-xl w-full mx-auto px-6 py-9 border-black border-4 flex flex-col bg-white"
 	>
 		<h2 class="text-4xl font-black uppercase mb-8 italic sm:text-5xl">Activities</h2>
 		<span class="self-start">Last year</span>
