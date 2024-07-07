@@ -11,6 +11,11 @@
 	let skills = Object.entries(data.profile.skills).map((entry) => entry[1].name);
 </script>
 
+<svelte:head>
+	<title>{data.profile.name} | {data.profile.headline}</title>
+	<meta name="description" content={data.profile.shortBio} />
+</svelte:head>
+
 <Hero
 	name={data.profile.name.toUpperCase()}
 	headline={data.profile.headline}

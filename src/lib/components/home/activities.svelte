@@ -121,8 +121,7 @@
 				'rate-box size-5 border-black border-1 hover:border-2 mx-auto relative hover:shadow-sm transition-all duration-200',
 				getColorLevel(date)
 			)}
-			role="cell"
-			tabindex={date.getTime()}
+			role="contentinfo"
 			onmouseover={(e) => onActivityItemMouseOver(e, date)}
 			onmouseleave={onActivityItemMouseLeave}
 			onfocus={(e) => {}}
