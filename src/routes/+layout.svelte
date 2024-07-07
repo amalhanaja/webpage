@@ -9,5 +9,7 @@
 	});
 </script>
 
-<slot />
+<main>
+	<slot />
+</main>
 <Footer />
