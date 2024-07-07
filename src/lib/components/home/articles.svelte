@@ -5,24 +5,25 @@
 </script>
 
 {#snippet articleItem(article: ArticleSummary)}
-	<a
-		data-aos="fade-up"
-		href={article.link}
-		class="flex flex-col bg-white border-black border-4 p-6 shadow-2xl shadow-blue-700 hover:shadow-3xl transition-all duration-200 hover:cursor-pointer ease-in-out"
-	>
-		<img src={article.coverImageUrl} class="h-60 object-cover mb-5" alt={article.title} />
-		<div>
-			<h3 class="text-2xl font-semibold">{article.title}</h3>
-			<p class="text-base mt-2">{article.brief}</p>
-		</div>
-		<div class="flex flex-row flex-wrap gap-2 mt-4">
-			{#each article.tags as tag}
-				<span class="text-xs bg-black p-2 rounded-lg border-2 border-black text-white"
-					>{tag.name}</span
-				>
-			{/each}
-		</div>
-	</a>
+	<div data-aos="fade-up" class="flex">
+		<a
+			href={article.link}
+			class="flex flex-col bg-white border-black border-4 p-6 shadow-2xl shadow-blue-700 hover:shadow-3xl transition-all duration-200 hover:cursor-pointer ease-in-out"
+		>
+			<img src={article.coverImageUrl} class="h-60 object-cover mb-5" alt={article.title} />
+			<div>
+				<h3 class="text-2xl font-semibold">{article.title}</h3>
+				<p class="text-base mt-2">{article.brief}</p>
+			</div>
+			<div class="flex flex-row flex-wrap gap-2 mt-4">
+				{#each article.tags as tag}
+					<span class="text-xs bg-black p-2 rounded-lg border-2 border-black text-white"
+						>{tag.name}</span
+					>
+				{/each}
+			</div>
+		</a>
+	</div>
 {/snippet}
 
 <section class="py-24 px-6">
