@@ -35,51 +35,52 @@
 {/snippet}
 
 {#snippet projectItem(project: Project)}
-	<div
-		data-aos="fade-up"
-		class="grid grid-cols-1 border-black border-4 shadow-xl hover:shadow-3xl transition-all duration-200 lg:grid-cols-6 bg-white"
-	>
+	<div data-aos="fade-up">
 		<div
-			class="border-black border-b-4 flex flex-col-reverse lg:col-span-4 lg:flex-col lg:border-b-0 lg:border-r-4"
+			class="grid grid-cols-1 border-black border-4 shadow-xl hover:shadow-3xl transition-all duration-200 lg:grid-cols-6 bg-white"
 		>
-			<img
-				class="object-cover h-96 w-full border-black"
-				src={project.imageUrl}
-				alt={project.name}
-			/>
 			<div
-				class="px-6 h-20 align-middle border-b-4 border-black flex items-center lg:border-b-0 lg:border-t-4"
+				class="border-black border-b-4 flex flex-col-reverse lg:col-span-4 lg:flex-col lg:border-b-0 lg:border-r-4"
 			>
-				<h3 class="text-2xl font-bold w-full text-center lg:text-start">{project.name}</h3>
+				<img
+					class="object-cover h-96 w-full border-black"
+					src={project.imageUrl}
+					alt={project.name}
+				/>
+				<div
+					class="px-6 h-20 align-middle border-b-4 border-black flex items-center lg:border-b-0 lg:border-t-4"
+				>
+					<h3 class="text-2xl font-bold w-full text-center lg:text-start">{project.name}</h3>
+				</div>
 			</div>
-		</div>
-		<div class="border-black flex flex-col lg:col-span-2">
-			<p class="p-4 flex-1 font-light">{project.description}</p>
-			<div
-				class="flex flex-row gap-2 flex-wrap px-4 py-4 border-t-4 border-black uppercase font-semibold"
-			>
-				{#each getProjectSkills(project) as skill}
-					{@render skillItem(skill)}
-				{/each}
-			</div>
-			<div class="flex flex-row px-4 h-20 items-center gap-4 border-t-4 border-black justify-end">
-				{#if project.repoUrl}
-					<a
-						href={project.repoUrl}
-						class="btn-neobrutalism flex-1 flex py-2 px-3 gap-2 justify-center items-center"
-					>
-						<img src={github} alt="Github" class="size-8" />
-						<span>Github</span>
-					</a>
-				{/if}
-				{#if project.link}
-					<a
-						href={project.link}
-						class="btn-neobrutalism flex py-3 px-3 gap-2 justify-center items-center"
-					>
-						<img src={externalLink} alt="Github" class="size-5" />
-					</a>
-				{/if}
+			<div class="border-black flex flex-col lg:col-span-2">
+				<p class="p-4 flex-1 font-light">{project.description}</p>
+				<div
+					class="flex flex-row gap-2 flex-wrap px-4 py-4 border-t-4 border-black uppercase font-semibold"
+				>
+					{#each getProjectSkills(project) as skill}
+						{@render skillItem(skill)}
+					{/each}
+				</div>
+				<div class="flex flex-row px-4 h-20 items-center gap-4 border-t-4 border-black justify-end">
+					{#if project.repoUrl}
+						<a
+							href={project.repoUrl}
+							class="btn-neobrutalism flex-1 flex py-2 px-3 gap-2 justify-center items-center"
+						>
+							<img src={github} alt="Github" class="size-8" />
+							<span>Github</span>
+						</a>
+					{/if}
+					{#if project.link}
+						<a
+							href={project.link}
+							class="btn-neobrutalism flex py-3 px-3 gap-2 justify-center items-center"
+						>
+							<img src={externalLink} alt="Github" class="size-5" />
+						</a>
+					{/if}
+				</div>
 			</div>
 		</div>
 	</div>
