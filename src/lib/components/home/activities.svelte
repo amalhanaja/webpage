@@ -118,7 +118,7 @@
 	<div class="activity-item relative">
 		<div
 			class={clsx(
-				'rate-box size-5 border-black border-1 hover:border-2 mx-auto relative hover:shadow-sm',
+				'rate-box size-5 border-black border-1 hover:border-2 mx-auto relative hover:shadow-sm transition-all duration-200',
 				getColorLevel(date)
 			)}
 			role="cell"
@@ -141,7 +141,7 @@
 		<h2 class="text-4xl font-black uppercase mb-8 italic sm:text-5xl">Activities</h2>
 		<span class="self-start">Last year</span>
 		<div
-			class="grid grid-flow-col-dense grid-rows-[repeat(7,_20px)] gap-[0.125rem] overflow-scroll"
+			class="grid grid-flow-col-dense grid-rows-[repeat(7,_20px)] gap-[0.125rem] overflow-x-scroll"
 		>
 			{#each Array(lastYear.getDay()) as _}
 				<div></div>
