@@ -44,5 +44,5 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           secrets: |
-            GH_ACCESS_TOKEN=${{ secrets.GH_ACCESS_TOKEN }}
-            WAKATIME_SHAREABLE_CODING_ACTIVITY_TABLE_URL=${{ secrets.WAKATIME_SHAREABLE_CODING_ACTIVITY_TABLE_URL }}
+            gh_access_token=${{ secrets.GH_ACCESS_TOKEN }}
+            wakatime_shareable_coding_activity_table=${{ secrets.WAKATIME_SHAREABLE_CODING_ACTIVITY_TABLE_URL }}
