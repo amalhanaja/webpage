@@ -1,0 +1,16 @@
+BUILD_IMAGE ?= node:22-alpine
+
+VERSION := latest
+IMAGE_TAG := webpage:$(VERSION)
+
+build-image:
+	@podman build -t $(IMAGE_TAG) . \
+        --env GH_ACCESS_TOKEN=$$GH_ACCESS_TOKEN \
+        --env WAKATIME_SHAREABLE_CODING_ACTIVITY_TABLE_URL=$$WAKATIME_SHAREABLE_CODING_ACTIVITY_TABLE_URL
+
+run:
+	@podman run --rm --name webpage \
+		--env GH_ACCESS_TOKEN=$$GH_ACCESS_TOKEN \
+        --env WAKATIME_SHAREABLE_CODING_ACTIVITY_TABLE_URL=$$WAKATIME_SHAREABLE_CODING_ACTIVITY_TABLE_URL \
+		-p 3000:3000 \
+		$(IMAGE_TAG)

@@ -7,7 +7,7 @@ import {
 } from '$lib/data/repository.server';
 import type { Profile } from '$lib/model';
 
-export const prerender = true;
+export const prerender = false;
 
 export const load = async () => {
 	const profile: Profile = getProfile();

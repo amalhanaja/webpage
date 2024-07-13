@@ -56,6 +56,6 @@ const getCompletedKataRecursive = async (
 		}
 		await getCompletedKataRecursive(maxDate, username, page + 1, out);
 	} catch (error) {
-		console.error('Error While Get Completed Kata');
+		console.error('Error While Get Completed Kata', error);
 	}
 };
