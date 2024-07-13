@@ -37,7 +37,7 @@ jobs:
         with:
           images: webpage
       - name: Build and push
-        uses: docker/build-pu sh-action@v6
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
