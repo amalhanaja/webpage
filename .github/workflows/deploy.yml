@@ -37,11 +37,11 @@ jobs:
         with:
           images: webpage
       - name: Build and push
-        uses: docker/build-push-action@v6
+        uses: docker/build-pu sh-action@v6
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ghcr.io/${{ github.repository }}/webpage:${{ github.sha }}
+          tags: ghcr.io/${{ github.repository }}:latest
           labels: ${{ steps.meta.outputs.labels }}
           secrets: |
             gh_access_token=${{ secrets.GH_ACCESS_TOKEN }}
