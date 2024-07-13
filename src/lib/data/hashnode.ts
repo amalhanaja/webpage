@@ -68,7 +68,6 @@ export const getLastHashnodeArticles = async (username: string): Promise<Article
 	const response = await fetch('https://gql.hashnode.com', {
 		method: 'post',
 		headers: {
-			Authorization: 'e3ce3994-3072-43bd-adea-f5cbb420a557',
 			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify(reqBody)

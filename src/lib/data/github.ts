@@ -1,6 +1,6 @@
 import { formatToyyyyMMdd } from '$lib/helpers/formatter';
 import { ActivityType, type Activity } from '$lib/model';
-import { GH_ACCESS_TOKEN } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 
 type GithubResponse = {
 	data: Data;
@@ -60,7 +60,7 @@ export const getContributionCalendar = async (username: string): Promise<Activit
 	const response = await fetch('https://api.github.com/graphql', {
 		method: 'post',
 		headers: {
-			Authorization: `Bearer ${GH_ACCESS_TOKEN}`
+			Authorization: `Bearer ${env.GH_ACCESS_TOKEN}`
 		},
 		body: JSON.stringify(jsonBody)
 	});
