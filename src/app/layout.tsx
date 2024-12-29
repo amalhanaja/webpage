@@ -5,6 +5,7 @@ import { Nav } from '@/components/ui/nav';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { ThemeProvider } from '@/components/theme-provider';
 import { cn } from '@/lib/utils';
+import { CanvasCursor } from '@/components/canvas-cursor';
 
 const workSans = Work_Sans({
 	variable: '--font-work-sans',
@@ -30,6 +31,7 @@ export default function RootLayout({
 			)}
 		>
 		<ThemeProvider attribute="class">
+			<CanvasCursor />
 			<Nav />
 			<main>
 				{children}
