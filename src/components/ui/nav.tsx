@@ -61,7 +61,7 @@ export const Nav = () => {
 	});
 	return (
 		<motion.nav
-			className="sticky top-0 pt-4 px-1 z-20"
+			className="sticky top-0 pt-2 px-1 z-20 flex flex-row sm:px-1"
 			animate={isNavHidden ? 'hidden' : 'visible'}
 			variants={{
 				hidden: {
@@ -74,29 +74,29 @@ export const Nav = () => {
 			transition={{ duration: 0.25 }}
 			whileHover="visible"
 		>
-			<ul
-				ref={ulRef}
-				onMouseLeave={hideIndicator}
-				className={
-					cn(
-						'relative mx-auto flex w-fit rounded-lg border-2 p-2',
-						'bg-background'
-					)
-				}
-			>
-				<motion.li className="justify-center items-center mx-2 hidden md:flex" onMouseEnter={hideIndicator}>
+			<div className="bg-background border-2 p-2 rounded-lg mx-auto w-fit sm:flex sm:w-full">
+				<div className="justify-center items-center mx-2 hidden sm:flex">
 					<Link href="/"><Logo className="size-8" /></Link>
-				</motion.li>
-				<li><Separator orientation="vertical" className="hidden md:block mx-2" /></li>
-				{items.map((item) => (
-					<NavItem key={item.href} state={item} setIndicatorState={setIndicatorState} />
-				))}
-				<li><Separator orientation="vertical" className="hidden md:block mx-2" /></li>
-				<motion.li className="hidden md:flex justify-center items-center mx-2" onMouseEnter={hideIndicator}>
-					<ThemeToggle className="-translate-x-0.5 -translate-y-0.5 shadow-sm hover:translate-x-0 hover:translate-y-0 hover:shadow-none" />
-				</motion.li>
-				<Indicator state={indicatorState} />
-			</ul>
+				</div>
+				<Separator orientation="vertical" className="hidden sm:block mx-2" />
+				<div className="flex-1">
+					<ul
+						ref={ulRef}
+						onMouseLeave={hideIndicator}
+						className="relative mx-auto flex w-fit"
+					>
+						{items.map((item) => (
+							<NavItem key={item.href} state={item} setIndicatorState={setIndicatorState} />
+						))}
+						<Indicator state={indicatorState} />
+					</ul>
+				</div>
+				<Separator orientation="vertical" className="hidden sm:block mx-2" />
+				<div className="hidden sm:flex justify-center items-center mx-2">
+					<ThemeToggle
+						className="-translate-x-0.5 -translate-y-0.5 shadow-sm hover:translate-x-0 hover:translate-y-0 hover:shadow-none" />
+				</div>
+			</div>
 		</motion.nav>
 	);
 };
