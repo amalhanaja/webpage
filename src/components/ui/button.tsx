@@ -19,7 +19,7 @@ const buttonVariants = cva(
 			size: {
 				default: 'h-9 px-4 py-2 -translate-x-1 -translate-y-1 shadow hover:translate-x-0 hover:translate-y-0 hover:shadow-none',
 				sm: 'h-8 rounded-md px-3 text-xs',
-				lg: 'h-10 rounded-md text-lg px-8 -translate-x-1 -translate-y-1 shadow hover:translate-x-0 hover:translate-y-0 hover:shadow-none [&_svg]:size-6',
+				lg: 'h-12 rounded-md text-lg px-8 -translate-x-1 -translate-y-1 shadow hover:translate-x-0 hover:translate-y-0 hover:shadow-none [&_svg]:size-6',
 				icon: 'h-9 w-9 -translate-x-1 -translate-y-1 shadow hover:translate-x-0 hover:translate-y-0 hover:shadow-none'
 			}
 		},
