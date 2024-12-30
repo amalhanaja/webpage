@@ -9,7 +9,7 @@ import { CanvasCursor } from '@/components/canvas-cursor';
 
 const workSans = Work_Sans({
 	variable: '--font-work-sans',
-	subsets: ['latin']
+	subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
@@ -26,15 +26,13 @@ export default function RootLayout({
 		<html lang="en" suppressHydrationWarning>
 		<body
 			className={cn(
-				`${workSans.variable} antialiased`,
-				'back'
+				`${workSans.variable} antialiased font-sans`
 			)}
 		>
 		<ThemeProvider attribute="class">
 			<CanvasCursor />
 			<Nav />
 			<main>
-				{children}
 				{children}
 			</main>
 			<ThemeToggle className="fixed bottom-8 right-8 z-20" />

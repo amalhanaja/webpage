@@ -1,5 +1,22 @@
 import type { Config } from 'tailwindcss';
-import defaultTheme from 'tailwindcss/defaultTheme';
+import svgToDataUri from 'mini-svg-data-uri';
+import plugin from 'tailwindcss/plugin';
+import { PluginCreator } from 'tailwindcss/types/config';
+
+const {
+	default: flattenColorPalette
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+} = require('tailwindcss/lib/util/flattenColorPalette');
+
+const addVariableForColors: PluginCreator = ({ addBase, theme }) => {
+	const allColors = flattenColorPalette(theme('colors'));
+	const newVars = Object.fromEntries(
+		Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+	);
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// @ts-ignore
+	addBase({ ':root': newVars });
+};
 
 export default {
 	darkMode: ['class'],
@@ -14,8 +31,8 @@ export default {
 				foreground: 'var(--foreground)',
 				background: 'var(--background)',
 				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
+					DEFAULT: 'var(--card)',
+					foreground: 'var(--card-foreground)'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -66,8 +83,26 @@ export default {
 				xl: '8px 8px 0 0 var(--shadow)',
 				'2xl': '12px 12px 0 0 var(--shadow)',
 				'3xl': '16px 16px 0 0 var(--shadow)'
+			},
+			fontFamily: {
+				sans: ['var(--font-work-sans)'],
 			}
 		}
 	},
-	plugins: [require('tailwindcss-animate')]
+	plugins: [
+		require('tailwindcss-animate'),
+		plugin(addVariableForColors),
+		plugin(function({ matchUtilities, theme}) {
+			matchUtilities(
+				{
+					"bg-dot-thick": (value: unknown) => ({
+						backgroundImage: `url("${svgToDataUri(
+							`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="2.5"></circle></svg>`
+						)}")`,
+					}),
+				},
+				{ values: flattenColorPalette(theme("backgroundColor")), type: "color" }
+			);
+		}),
+	]
 } satisfies Config;
