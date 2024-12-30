@@ -61,7 +61,7 @@ export const Nav = () => {
 	});
 	return (
 		<motion.nav
-			className="sticky top-0 pt-2 px-1 z-20 flex flex-row sm:px-1"
+			className="fixed top-0 pt-2 px-1 z-20 flex flex-row sm:px-4 w-full"
 			animate={isNavHidden ? 'hidden' : 'visible'}
 			variants={{
 				hidden: {
@@ -74,7 +74,7 @@ export const Nav = () => {
 			transition={{ duration: 0.25 }}
 			whileHover="visible"
 		>
-			<div className="bg-background border-2 p-2 rounded-lg mx-auto w-fit sm:flex sm:w-full">
+			<div className="bg-card border-2 p-2 rounded-lg mx-auto w-fit sm:flex sm:w-full max-w-screen-xl">
 				<div className="justify-center items-center mx-2 hidden sm:flex">
 					<Link href="/"><Logo className="size-8" /></Link>
 				</div>
@@ -124,7 +124,7 @@ const NavItem = ({ state, setIndicatorState }: NavItemProps) => {
 			onMouseEnter={onMouseEnter}
 			className={cn(
 				'relative z-10 block cursor-pointer px-2 py-1 flex-1 uppercase text-sm font-semibold sm:text-lg sm:px-4',
-				'mix-blend-difference text-background dark:text-foreground'
+				'mix-blend-difference text-background dark:text-card-foreground'
 			)}
 		>
 			<Link href={state.href}>{state.label}</Link>
@@ -134,6 +134,6 @@ const NavItem = ({ state, setIndicatorState }: NavItemProps) => {
 
 const Indicator = ({ state }: { state: IndicatorState }) => {
 	return (
-		<motion.li animate={{ ...state }} className="absolute z-0 rounded-md bg-foreground" />
+		<motion.li animate={{ ...state }} className="absolute z-0 rounded-md bg-card-foreground" />
 	);
 };

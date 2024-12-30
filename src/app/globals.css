@@ -11,11 +11,11 @@ body {
     --radius: 0.5rem;
     --background: theme(colors.stone.100);
     --foreground: theme(colors.stone.950);
-    --card: 0 0% 100%;
-    --card-foreground: 20 14.3% 4.1%;
+    --card: theme(colors.stone.200);
+    --card-foreground: theme(colors.stone.950);
     --popover: 0 0% 100%;
     --popover-foreground: 20 14.3% 4.1%;
-    --primary: #3BCEAC;
+    --primary: #EE4165;
     --primary-foreground: theme(colors.stone.950);
     --secondary: 60 4.8% 95.9%;
     --secondary-foreground: 24 9.8% 10%;
@@ -38,11 +38,11 @@ body {
   .dark {
     --background: theme(colors.stone.950);
     --foreground: theme(colors.stone.50);
-    --card: 20 14.3% 4.1%;
-    --card-foreground: 60 9.1% 97.8%;
+    --card: theme(colors.stone.900);
+    --card-foreground: theme(colors.stone.50);
     --popover: 20 14.3% 4.1%;
     --popover-foreground: 60 9.1% 97.8%;
-    --primary: #3BCEAC;
+    --primary: #EE4165;
     --primary-foreground: theme(colors.stone.950);
     --secondary: 12 6.5% 15.1%;
     --secondary-foreground: 60 9.1% 97.8%;
