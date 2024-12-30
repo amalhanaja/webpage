@@ -1,17 +1,19 @@
 'use client';
 
 import { HeroHighlight } from '@/components/ui/hero-highlight';
-import { Card } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { FileUser } from 'lucide-react';
 import Image from 'next/image';
 import me from '../../../public/me.png';
+import IconCloud from '@/components/ui/icon-cloud';
 
 export type HeroProps = {
 	name: string;
 	title: string;
 	shortDescription: string;
 	imageProfileWordList: string;
+
 }
 
 const GreetingBlock = ({ name, title, shortDescription }: HeroProps) => {
@@ -37,6 +39,68 @@ const ImageProfileBlock = ({ imageProfileWordList, name }: HeroProps) => {
 	);
 };
 
+const icons = [
+	'typescript',
+	'dart',
+	'react',
+	'flutter',
+	'android',
+	'html5',
+	'css3',
+	'nodedotjs',
+	'bun',
+	'kotlin',
+	'drizzle',
+	'postgresql',
+	'firebase',
+	'supabase',
+	'nginx',
+	'vercel',
+	'docker',
+	'git',
+	'jira',
+	'androidstudio',
+	'sonarqube',
+	'figma',
+	'sqlite',
+	'go',
+	'rust',
+	'mysql',
+	'miro',
+	'github',
+	'bitbucket',
+	'gitlab',
+	'mongodb',
+	'nextjs',
+	'svelte',
+	'anytype',
+	'arc',
+	'python',
+	'pandas',
+	'tensorflow',
+	'jupyter',
+	'notion',
+	'strapi',
+	'jetpackcompose',
+	"shadcnui",
+	"tailwindcss",
+];
+
+const ToolsBlock = () => {
+	return (
+		<Card className="shadow-none col-span-12 px-4 py-4 flex flex-col gap-4">
+			<CardHeader>
+				<CardTitle><h2 className="text-3xl font-bold">TOOLS I USED</h2></CardTitle>
+				<CardDescription className="text-lg">Continuously learning and adapting to new tools and technologies, with
+					expertise in Android Development using Kotlin</CardDescription>
+			</CardHeader>
+			<CardContent>
+				<IconCloud iconSlugs={icons} />
+			</CardContent>
+		</Card>
+	);
+};
+
 export const Hero = (props: HeroProps) => {
 	return (
 		<section id="hero">
@@ -44,6 +108,7 @@ export const Hero = (props: HeroProps) => {
 				<div className="grid mx-auto max-w-screen-xl grid-cols-12 gap-4">
 					<GreetingBlock {...props} />
 					<ImageProfileBlock {...props} />
+					<ToolsBlock />
 				</div>
 			</HeroHighlight>
 		</section>
