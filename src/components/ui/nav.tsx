@@ -61,7 +61,7 @@ export const Nav = () => {
 	});
 	return (
 		<motion.nav
-			className="fixed top-0 pt-2 px-1 z-20 flex flex-row sm:px-4 w-full"
+			className="fixed top-0 pt-2 px-1 z-50 flex flex-row sm:px-4 w-full"
 			animate={isNavHidden ? 'hidden' : 'visible'}
 			variants={{
 				hidden: {
