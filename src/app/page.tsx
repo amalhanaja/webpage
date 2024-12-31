@@ -21,8 +21,7 @@ export default function Home() {
 	const heroProps = {
 		name: 'Alfian Akmal Hanantio',
 		title: 'Software Engineer',
-		shortDescription: 'Software Engineer with a thirst for knowledge and a dedication to crafting elegant and efficient solutions. Constantly exploring new technologies and best practices.',
-		imageProfileWordList: getWordings(20).join("")
+		imageProfileWordList: getWordings(20).join('')
 	} satisfies HeroProps;
 	return (
 		<>
