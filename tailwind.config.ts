@@ -26,69 +26,93 @@ export default {
 		'./src/app/**/*.{js,ts,jsx,tsx,mdx}'
 	],
 	theme: {
-		extend: {
-			colors: {
-				foreground: 'var(--foreground)',
-				background: 'var(--background)',
-				card: {
-					DEFAULT: 'var(--card)',
-					foreground: 'var(--card-foreground)'
-				},
-				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
-				},
-				primary: {
-					DEFAULT: 'var(--primary)',
-					foreground: 'var(--primary-foreground)'
-				},
-				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
-				},
-				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
-				},
-				accent: {
-					DEFAULT: 'var(--accent)',
-					foreground: 'var(--accent-foreground)'
-				},
-				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))'
-				},
-				border: 'var(--border)',
-				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
-				chart: {
-					'1': 'hsl(var(--chart-1))',
-					'2': 'hsl(var(--chart-2))',
-					'3': 'hsl(var(--chart-3))',
-					'4': 'hsl(var(--chart-4))',
-					'5': 'hsl(var(--chart-5))'
-				},
-				shadow: 'var(--shadow)'
-			},
-			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
-			},
-			boxShadow: {
-				xs: '1px 1px 0 0 var(--shadow)',
-				sm: '2px 2px 0 0 var(--shadow)',
-				DEFAULT: '4px 4px 0 0 var(--shadow)',
-				lg: '6px 6px 0 0 var(--shadow)',
-				xl: '8px 8px 0 0 var(--shadow)',
-				'2xl': '12px 12px 0 0 var(--shadow)',
-				'3xl': '16px 16px 0 0 var(--shadow)'
-			},
-			fontFamily: {
-				sans: ['var(--font-work-sans)'],
-			}
-		}
-	},
+    	extend: {
+    		colors: {
+    			foreground: 'var(--foreground)',
+    			background: 'var(--background)',
+    			card: {
+    				DEFAULT: 'var(--card)',
+    				foreground: 'var(--card-foreground)'
+    			},
+    			popover: {
+    				DEFAULT: 'hsl(var(--popover))',
+    				foreground: 'hsl(var(--popover-foreground))'
+    			},
+    			primary: {
+    				DEFAULT: 'var(--primary)',
+    				foreground: 'var(--primary-foreground)'
+    			},
+    			secondary: {
+    				DEFAULT: 'hsl(var(--secondary))',
+    				foreground: 'hsl(var(--secondary-foreground))'
+    			},
+    			muted: {
+    				DEFAULT: 'hsl(var(--muted))',
+    				foreground: 'hsl(var(--muted-foreground))'
+    			},
+    			accent: {
+    				DEFAULT: 'var(--accent)',
+    				foreground: 'var(--accent-foreground)'
+    			},
+    			destructive: {
+    				DEFAULT: 'hsl(var(--destructive))',
+    				foreground: 'hsl(var(--destructive-foreground))'
+    			},
+    			border: 'var(--border)',
+    			input: 'hsl(var(--input))',
+    			ring: 'hsl(var(--ring))',
+    			chart: {
+    				'1': 'hsl(var(--chart-1))',
+    				'2': 'hsl(var(--chart-2))',
+    				'3': 'hsl(var(--chart-3))',
+    				'4': 'hsl(var(--chart-4))',
+    				'5': 'hsl(var(--chart-5))'
+    			},
+    			shadow: 'var(--shadow)'
+    		},
+    		borderRadius: {
+    			lg: 'var(--radius)',
+    			md: 'calc(var(--radius) - 2px)',
+    			sm: 'calc(var(--radius) - 4px)'
+    		},
+    		boxShadow: {
+    			xs: '1px 1px 0 0 var(--shadow)',
+    			sm: '2px 2px 0 0 var(--shadow)',
+    			DEFAULT: '4px 4px 0 0 var(--shadow)',
+    			lg: '6px 6px 0 0 var(--shadow)',
+    			xl: '8px 8px 0 0 var(--shadow)',
+    			'2xl': '12px 12px 0 0 var(--shadow)',
+    			'3xl': '16px 16px 0 0 var(--shadow)'
+    		},
+    		fontFamily: {
+    			sans: [
+    				'var(--font-work-sans)'
+    			]
+    		},
+    		keyframes: {
+    			marquee: {
+    				from: {
+    					transform: 'translateX(0)'
+    				},
+    				to: {
+    					transform: 'translateX(calc(-100% - var(--gap)))'
+    				}
+    			},
+    			'marquee-vertical': {
+    				from: {
+    					transform: 'translateY(0)'
+    				},
+    				to: {
+    					transform: 'translateY(calc(-100% - var(--gap)))'
+    				}
+    			}
+    		},
+    		animation: {
+    			marquee: 'marquee var(--duration) infinite linear',
+    			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
+    		}
+    	}
+    },
 	plugins: [
 		require('tailwindcss-animate'),
 		plugin(addVariableForColors),

@@ -1,4 +1,5 @@
 import { Hero, HeroProps } from '@/components/sections/hero';
+import { Testimonials } from '@/components/sections/testimonials';
 
 const getWordings = (repeatCount: number) => {
 	const wordList = [
@@ -26,6 +27,7 @@ export default function Home() {
 	return (
 		<>
 			<Hero {...heroProps} />
+			<Testimonials />
 		</>
 	);
 }
