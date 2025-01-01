@@ -6,37 +6,22 @@ import { Briefcase, Building2, ExternalLink, MapPin } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import Link from 'next/link';
 import Image from 'next/image';
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { ArrowLeftToBottom } from '@/components/ui/arrow-left-to-bottom';
-
-type Link = {
-	href: string;
-	label: string;
-}
-
-export type ExperienceContent = {
-	jobTitle: string;
-	location: string;
-	logo?: StaticImport | string,
-	links: Link[]
-	company: string;
-	workingRange: string;
-	description: string;
-}
+import { Experience } from '@/service/experience';
 
 type ExperiencesProps = {
-	experiences: ExperienceContent[]
+	experiences: Experience[]
 }
 
 export const ExperienceItem = ({ experience, index, isLast }: {
-	experience: ExperienceContent,
+	experience: Experience,
 	index: number,
 	isLast: boolean
 }) => {
 	return (
-		<div className="flex flex-row items-center">
+		<div className="flex flex-row items-center">¬
 			{index % 2 === 1 && !isLast && (<div className="hidden xl:block"><ArrowLeftToBottom
 				className="stroke-stone-600 dark:stroke-stone-300 scale-y-[400%] scale-x-[400%] translate-x-[250%]" /></div>)}
 			<Card
