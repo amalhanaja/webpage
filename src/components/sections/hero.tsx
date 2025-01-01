@@ -28,7 +28,8 @@ const GreetingBlock = ({ name, title }: HeroProps) => {
 			<h2 className="font-bold text-3xl text-primary uppercase">{title}</h2>
 			<p className="text-xl tracking-wide leading-8">
 				Building secure, scalable, and accessible digital products for enterprises and fintech industries since 2017.
-				I am currently working as a <span className="border-b-4 font-bold border-primary">Senior Android Developer</span> at Digital
+				I am currently working as a <span
+				className="border-b-4 font-bold border-primary">Senior Android Developer</span> at Digital
 				Daya Teknologi.
 			</p>
 			<Button className="uppercase mt-6 sm:w-fit" size="lg"><FileUser />Download Resume</Button>
@@ -94,7 +95,8 @@ const icons = [
 	'shadcnui',
 	'tailwindcss',
 	'java',
-	'apachekafka'
+	'apachekafka',
+	'jenkins'
 ];
 
 const ToolsBlock = () => {

@@ -3,72 +3,94 @@
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer base {
-  :root {
-    --radius: 0.5rem;
-    --background: theme(colors.stone.100);
-    --foreground: theme(colors.stone.950);
-    --card: theme(colors.stone.200);
-    --card-foreground: theme(colors.stone.950);
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 14.3% 4.1%;
-    --primary: #EE4165;
-    --primary-foreground: theme(colors.stone.950);
-    --secondary: 60 4.8% 95.9%;
-    --secondary-foreground: 24 9.8% 10%;
-    --muted: 60 4.8% 95.9%;
-    --muted-foreground: 25 5.3% 44.7%;
-    --accent: theme(colors.stone.200);
-    --accent-foreground: theme(colors.stone.950);
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 60 9.1% 97.8%;
-    --border: theme(colors.stone.950);
-    --input: 20 5.9% 90%;
-    --ring: 20 14.3% 4.1%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --shadow: theme(colors.stone.950);
-  }
-  .dark {
-    --background: theme(colors.stone.950);
-    --foreground: theme(colors.stone.50);
-    --card: theme(colors.stone.900);
-    --card-foreground: theme(colors.stone.50);
-    --popover: 20 14.3% 4.1%;
-    --popover-foreground: 60 9.1% 97.8%;
-    --primary: #EE4165;
-    --primary-foreground: theme(colors.stone.950);
-    --secondary: 12 6.5% 15.1%;
-    --secondary-foreground: 60 9.1% 97.8%;
-    --muted: 12 6.5% 15.1%;
-    --muted-foreground: 24 5.4% 63.9%;
-    --accent: theme(colors.stone.800);
-    --accent-foreground: theme(colors.stone.50);
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 60 9.1% 97.8%;
-    --border: theme(colors.stone.50);
-    --input: 12 6.5% 15.1%;
-    --ring: 24 5.7% 82.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --shadow: theme(colors.stone.50);
-  }
+    :root {
+        --radius: 0.5rem;
+        --background: theme(colors.stone.100);
+        --foreground: theme(colors.stone.950);
+        --card: theme(colors.stone.200);
+        --card-foreground: theme(colors.stone.950);
+        --popover: 0 0% 100%;
+        --popover-foreground: 20 14.3% 4.1%;
+        --primary: #EE4165;
+        --primary-foreground: theme(colors.stone.100);
+        --secondary: 60 4.8% 95.9%;
+        --secondary-foreground: 24 9.8% 10%;
+        --muted: 60 4.8% 95.9%;
+        --muted-foreground: 25 5.3% 44.7%;
+        --accent: theme(colors.stone.200);
+        --accent-foreground: theme(colors.stone.950);
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 60 9.1% 97.8%;
+        --border: theme(colors.stone.950);
+        --input: 20 5.9% 90%;
+        --ring: 20 14.3% 4.1%;
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+        --shadow: theme(colors.stone.950);
+        --netral: theme(colors.white);
+        --netral-foreground: theme(colors.black);
+    }
+
+    .dark {
+        --background: theme(colors.stone.950);
+        --foreground: theme(colors.stone.50);
+        --card: theme(colors.stone.900);
+        --card-foreground: theme(colors.stone.50);
+        --popover: 20 14.3% 4.1%;
+        --popover-foreground: 60 9.1% 97.8%;
+        --primary: #EE4165;
+        --primary-foreground: theme(colors.stone.100);
+        --secondary: 12 6.5% 15.1%;
+        --secondary-foreground: 60 9.1% 97.8%;
+        --muted: 12 6.5% 15.1%;
+        --muted-foreground: 24 5.4% 63.9%;
+        --accent: theme(colors.stone.800);
+        --accent-foreground: theme(colors.stone.50);
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 60 9.1% 97.8%;
+        --border: theme(colors.stone.50);
+        --input: 12 6.5% 15.1%;
+        --ring: 24 5.7% 82.9%;
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+        --shadow: theme(colors.stone.50);
+        --netral: theme(colors.black);
+        --netral-foreground: theme(colors.white);
+    }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    :root {
+        .bg-grid-cylinder {
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-image: url("/bg/grid-cylinder.svg");
+        }
+    }
+
+    .dark {
+        .bg-grid-cylinder {
+            background-image: url("/bg/grid-cylinder-dark.svg");
+        }
+    }
 }
