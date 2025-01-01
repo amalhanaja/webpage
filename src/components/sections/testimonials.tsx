@@ -81,7 +81,7 @@ export function TestimonialsMarquee() {
 
 export const Testimonials = () => {
 	return (
-		<section id="testimonials" className="bg-card">
+		<section id="testimonials" className="bg-card border-t-4 border-b-4">
 			<div className="flex flex-col w-full: max-w-screen-xl mx-auto gap-4 px-4 py-8">
 				<TestimonialsMarquee />
 			</div>
