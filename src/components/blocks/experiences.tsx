@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { ArrowLeftToBottom } from '@/components/ui/arrow-left-to-bottom';
 import { Experience } from '@/service/experience';
+import { HeroHighlight } from '@/components/ui/hero-highlight';
 
 type ExperiencesProps = {
 	experiences: Experience[]
@@ -21,11 +22,11 @@ export const ExperienceItem = ({ experience, index, isLast }: {
 	isLast: boolean
 }) => {
 	return (
-		<div className="flex flex-row items-center">¬
+		<div className="flex flex-row items-center relative">¬
 			{index % 2 === 1 && !isLast && (<div className="hidden xl:block"><ArrowLeftToBottom
-				className="stroke-stone-600 dark:stroke-stone-300 scale-y-[400%] scale-x-[400%] translate-x-[250%]" /></div>)}
+				className="absolute stroke-stone-600 dark:stroke-stone-300 scale-y-[400%] scale-x-[400%] translate-x-[250%] left-0 bottom-12" /></div>)}
 			<Card
-				className={cn('flex flex-col bg-netral max-w-4xl justify-self-end', index % 2 === 0 ? 'me-auto' : 'ms-auto')}>
+				className={cn('flex flex-col bg-card max-w-4xl justify-self-end', index % 2 === 0 ? 'me-auto' : 'ms-auto')}>
 				<div className="flex flex-row gap-6 p-4">
 					<div className="h-16 aspect-square shadow border-2 rounded-full flex items-center justify-center bg-card">
 						{experience.logo ? (
@@ -59,21 +60,21 @@ export const ExperienceItem = ({ experience, index, isLast }: {
 				</CardContent>
 			</Card>
 			{index % 2 == 0 && !isLast && (<div className="hidden xl:block"><ArrowLeftToBottom
-				className="stroke-stone-600 dark:stroke-stone-300 scale-y-[400%] -scale-x-[400%] -translate-x-[250%]" /></div>)}
+				className="absolute stroke-stone-600 dark:stroke-stone-300 scale-y-[400%] -scale-x-[400%] -translate-x-[250%] right-0 bottom-12" /></div>)}
 		</div>
 	);
 };
 
 export const Experiences = ({ experiences }: ExperiencesProps) => {
 	return (
-		<section id="experiences" className="bg-stone-300 dark:bg-stone-800 bg-grid-cylinder">
-			<div className="w-full max-w-screen-xl mx-auto px-4 py-24 flex flex-col">
-				<SectionTitle className="uppercase bg-netral">
+		<section id="experiences">
+			<HeroHighlight className="w-full max-w-screen-xl mx-auto px-4 py-32 flex flex-col">
+				<SectionTitle className="uppercase bg-card">
 					<Briefcase />
 					<h2>Work Experiences</h2>
 				</SectionTitle>
 				<h3 className="text-4xl tracking-wider font-bold mt-6">A summary of my professional experience.</h3>
-				<div className="flex flex-col gap-4 mt-16 w-full">
+				<div className="flex flex-col gap-8 mt-16 w-full">
 					{experiences.map((experience, index) => {
 						return (
 							<ExperienceItem
@@ -83,10 +84,10 @@ export const Experiences = ({ experiences }: ExperiencesProps) => {
 								isLast={experiences.length - 1 == index} />);
 					})}
 				</div>
-				<div className="mt-8">
-					<Button className="uppercase" variant="primary">View Full Resume <ExternalLink /></Button>
+				<div className="mt-8 flex flex-col items-center">
+					<Button className="uppercase w-fit" variant="primary">View Full Resume <ExternalLink /></Button>
 				</div>
-			</div>
+			</HeroHighlight>
 		</section>
 	);
 };

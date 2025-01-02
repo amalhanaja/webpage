@@ -12,8 +12,8 @@ const SocialMediaLink = ({ href, Icon }: { href: string, Icon: IconType }) => {
 
 export const Footer = () => {
 	return (
-		<footer className="bg-netral text-netral-foreground py-12 border-t-2">
-			<div className="container grid grid-cols-1 md:grid-cols-3 gap-8 mx-4 md:mx-auto max-w-screen-xl">
+		<footer className="bg-card text-card-foreground py-12 border-t-2">
+			<div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-4 md:mx-auto max-w-screen-xl">
 				<div>
 					<h2 className="text-xl font-bold">ALFIAN AKMAL HANANTIO</h2>
 					<p className="text-sm mt-2">Software Engineer</p>
