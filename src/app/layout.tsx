@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { Work_Sans } from 'next/font/google';
 import './globals.css';
-import { Nav } from '@/components/ui/nav';
+import { Nav } from '@/components/blocks/nav';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { ThemeProvider } from '@/components/theme-provider';
 import { cn } from '@/lib/utils';
 import { CanvasCursor } from '@/components/canvas-cursor';
+import { Footer } from '@/components/blocks/footer';
 
 const workSans = Work_Sans({
 	variable: '--font-work-sans',
@@ -36,6 +37,7 @@ export default function RootLayout({
 				{children}
 			</main>
 			<ThemeToggle className="fixed bottom-8 right-8 z-20" />
+			<Footer />
 		</ThemeProvider>
 		</body>
 		</html>

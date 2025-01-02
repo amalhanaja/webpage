@@ -6,6 +6,7 @@ import { useAnimate } from 'framer-motion';
 import { MouseEventHandler } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 const ClipPathLinks = () => {
 	return (
@@ -91,7 +92,7 @@ const LinkBox = ({ Icon, href }: { Icon: IconType, href: string }) => {
 	};
 
 	return (
-		<a
+		<Link
 			href={href}
 			onMouseEnter={(e) => {
 				handleMouseEnter(e);
@@ -113,7 +114,7 @@ const LinkBox = ({ Icon, href }: { Icon: IconType, href: string }) => {
 			>
 				<Icon className="text-2xl" />
 			</div>
-		</a>
+		</Link>
 	);
 };
 

@@ -1,4 +1,4 @@
-import { TestimonialsMarquee } from '@/components/sections/testimonials';
+import { TestimonialsMarquee } from '@/components/blocks/testimonials';
 import { Greetings } from '@/components/blocks/greetings';
 import { ImageProfile } from '@/components/blocks/image-profile';
 import { Tools } from '@/components/blocks/tools';
