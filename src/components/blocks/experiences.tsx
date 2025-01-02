@@ -1,6 +1,6 @@
 'use client';
 
-import { SectionTitle } from '@/components/sections/section-title';
+import { SectionTitle } from '@/components/blocks/section-title';
 import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card';
 import { Briefcase, Building2, ExternalLink, MapPin } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';

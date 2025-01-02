@@ -50,7 +50,8 @@ const icons = [
 	'tailwindcss',
 	'java',
 	'apachekafka',
-	'jenkins'
+	'jenkins',
+	'podman'
 ];
 
 export const Tools = () => {
