@@ -24,17 +24,19 @@ export const ExperienceItem = ({ experience, index, isLast }: {
 	return (
 		<div className="flex flex-row items-center relative">¬
 			{index % 2 === 1 && !isLast && (<div className="hidden xl:block"><ArrowLeftToBottom
-				className="absolute stroke-stone-600 dark:stroke-stone-300 scale-y-[400%] scale-x-[400%] translate-x-[250%] left-0 bottom-12" /></div>)}
+				className="absolute stroke-stone-600 dark:stroke-stone-300 scale-y-[400%] scale-x-[400%] translate-x-[250%] left-0 bottom-12" />
+			</div>)}
 			<Card
-				className={cn('flex flex-col bg-card max-w-4xl justify-self-end', index % 2 === 0 ? 'me-auto' : 'ms-auto')}>
+				className={cn('flex flex-col bg-card w-full max-w-4xl justify-self-end', index % 2 === 0 ? 'me-auto' : 'ms-auto')}>
 				<div className="flex flex-row gap-6 p-4">
 					<div className="h-16 aspect-square shadow border-2 rounded-full flex items-center justify-center bg-card">
 						{experience.logo ? (
-							<Image src={experience.logo} alt={experience.company} className="size-8 object-center" />) : (
+							<Image src={experience.logo} alt={experience.company} width={24} height={24}
+										 className="size-8 object-center" />) : (
 							<Building2 size={32} />)}
 					</div>
 					<div>
-						<CardTitle><h4 className="font-semibold tracking-wider">{experience.jobTitle}</h4></CardTitle>
+						<CardTitle><h4 className="font-semibold tracking-wider">{experience.title}</h4></CardTitle>
 						<CardDescription className="text-foreground">
 							<div className="font-medium">{experience.company}</div>
 							<div className="font-normal mt-1">{experience.workingRange}</div>
@@ -56,11 +58,14 @@ export const ExperienceItem = ({ experience, index, isLast }: {
 							</Link>
 						))}
 					</div>
-					<div dangerouslySetInnerHTML={{ __html: experience.description }}></div>
+					<div>
+						{experience.content}
+					</div>
 				</CardContent>
 			</Card>
 			{index % 2 == 0 && !isLast && (<div className="hidden xl:block"><ArrowLeftToBottom
-				className="absolute stroke-stone-600 dark:stroke-stone-300 scale-y-[400%] -scale-x-[400%] -translate-x-[250%] right-0 bottom-12" /></div>)}
+				className="absolute stroke-stone-600 dark:stroke-stone-300 scale-y-[400%] -scale-x-[400%] -translate-x-[250%] right-0 bottom-12" />
+			</div>)}
 		</div>
 	);
 };

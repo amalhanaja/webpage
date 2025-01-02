@@ -9,11 +9,12 @@ import { Socials } from '@/components/blocks/socials';
 import { HeroHighlight } from '@/components/ui/hero-highlight';
 import { getExperiences } from '@/service/experience';
 
-export default function Home() {
+export default async function Home() {
 
 	const name = 'Alfian Akmal Hanantio';
 	const title = 'Software Engineer';
-	const experiences = getExperiences().slice(0, 3);
+	const experiencesResult = await getExperiences();
+	const experiences = experiencesResult.slice(0, 3);
 	return (
 		<>
 			<HeroHighlight containerClassName="py-16 sm:py-20 px-4">
