@@ -23,11 +23,11 @@ export const ExperienceSummary = ({ experiences }: Props) => {
 								<div
 									className="h-12 aspect-square shadow-sm border-2 rounded-full flex items-center justify-center bg-card">
 									{experience.logo ? (
-										<Image src={experience.logo} alt={experience.company} className="size-6 object-center" />) : (
+										<Image src={experience.logo} alt={experience.company} width={24} height={24} className="size-6 object-center" />) : (
 										<Building2 size={24} />)}
 								</div>
 								<div className="flex flex-col">
-									<h4 className="font-semibold tracking-wider text-lg">{experience.jobTitle}</h4>
+									<h4 className="font-semibold tracking-wider text-lg">{experience.title}</h4>
 									<div className="font-medium">{experience.company}</div>
 									<div className="font-normal">{experience.workingRange}</div>
 								</div>
