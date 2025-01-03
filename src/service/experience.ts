@@ -1,10 +1,7 @@
 'use server';
 
-import { promises as fs } from 'fs';
-import path from 'path';
-import { compileMDX } from 'next-mdx-remote/rsc';
-import { ReactElement } from 'react';
-import { getContents } from '@/lib/mdx';
+import {ReactElement} from 'react';
+import {getContents} from '@/lib/mdx';
 
 export type Link = {
 	label: string;
