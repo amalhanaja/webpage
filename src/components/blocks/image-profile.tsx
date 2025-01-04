@@ -2,7 +2,7 @@
 
 import { Card } from '@/components/ui/card';
 import Image from 'next/image';
-import me from '../../../public/me.png';
+import me from '../../../public/me.webp';
 import { FlickeringGrid } from '@/components/ui/flickering-grid';
 import { useTheme } from 'next-themes';
 
