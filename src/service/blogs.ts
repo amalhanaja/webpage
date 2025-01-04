@@ -45,7 +45,7 @@ type Node = {
 
 export type CoverImage = {
     url: string
-    attributions: string
+    attribution: string
     photographer: string
 }
 

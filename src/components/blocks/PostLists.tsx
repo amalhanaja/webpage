@@ -25,7 +25,7 @@ export const PostLists = ({initial}: Props) => {
         <div className="flex flex-col">
             <SectionTitle className="uppercase bg-card">
                 <BookText/>
-                <h1>Posts</h1>
+                <h1>Blogs</h1>
             </SectionTitle>
             <h2 className="text-4xl tracking-wider font-bold mt-6">
                 Check out my blog where I share my learnings and perspectives on the tech world.
