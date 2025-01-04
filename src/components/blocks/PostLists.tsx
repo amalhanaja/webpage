@@ -3,7 +3,7 @@
 import {Post, PostList} from "@/service/blogs";
 import {useState} from "react";
 import {SectionTitle} from "@/components/blocks/section-title";
-import {BookText, Briefcase, Loader2} from "lucide-react";
+import {BookText, Loader2} from "lucide-react";
 import {PostCard} from "@/components/post-card";
 import {Button} from "@/components/ui/button";
 import {loadMorePosts} from "@/actions/load-more-posts";
