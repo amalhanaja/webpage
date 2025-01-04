@@ -35,7 +35,7 @@ const icons = [
 	'bitbucket',
 	'gitlab',
 	'mongodb',
-	'nextjs',
+	'nextdotjs',
 	'svelte',
 	'anytype',
 	'arc',
@@ -48,7 +48,7 @@ const icons = [
 	'jetpackcompose',
 	'shadcnui',
 	'tailwindcss',
-	'java',
+	'graphql',
 	'apachekafka',
 	'jenkins',
 	'podman'
