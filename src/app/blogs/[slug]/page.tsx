@@ -8,6 +8,8 @@ import {BookOpen, Calendar} from "lucide-react";
 import {formattedDate} from "@/lib/utils";
 import {PostDetailCover} from "@/components/post-detail-cover";
 
+export const dynamic = 'force-dynamic';
+
 export default async function BlogPosts(
     {params}: { params: Promise<{ slug: string }> }
 ) {
