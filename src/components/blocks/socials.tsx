@@ -43,7 +43,7 @@ const EXIT_KEYFRAMES: { [key: string]: string[] } = {
 
 const LinkBox = ({ Icon, href }: { Icon: IconType, href: string }) => {
 	const [scope, animate] = useAnimate();
-
+	// eslint-disable-next-line
 	const getNearestSide = (e: any) => {
 		const box = e.target.getBoundingClientRect();
 

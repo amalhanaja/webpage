@@ -2,7 +2,7 @@
 
 import {SectionTitle} from '@/components/blocks/section-title';
 import {Card, CardContent, CardDescription, CardTitle} from '@/components/ui/card';
-import {Briefcase, Building2, ExternalLink, FileUser, MapPin} from 'lucide-react';
+import {Briefcase, Building2, ExternalLink, MapPin} from 'lucide-react';
 import {Separator} from '@/components/ui/separator';
 import Link from 'next/link';
 import Image from 'next/image';

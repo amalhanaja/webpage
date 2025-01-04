@@ -6,7 +6,6 @@ import {ButtonBack} from "@/components/ui/button-back";
 import {Card} from "@/components/ui/card";
 import {BookOpen, Calendar} from "lucide-react";
 import {formattedDate} from "@/lib/utils";
-import Image from "next/image";
 import {PostDetailCover} from "@/components/post-detail-cover";
 
 export default async function BlogPosts(
