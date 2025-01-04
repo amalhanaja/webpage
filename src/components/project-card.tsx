@@ -33,6 +33,7 @@ export const ProjectCard = ({project}: Props) => {
                 <motion.a
                     href={project.github}
                     target="_blank"
+                    aria-label="github"
                     rel="noopener noreferrer"
                     className="flex items-center text-card-foreground hover:text-primary transition-colors duration-150"
                 >
@@ -44,6 +45,7 @@ export const ProjectCard = ({project}: Props) => {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label="live"
                         className="flex items-center text-card-foreground hover:text-primary transition-colors"
                     >
                         <ExternalLink className="mr-2" size={20}/>

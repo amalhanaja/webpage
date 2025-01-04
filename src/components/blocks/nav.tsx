@@ -76,7 +76,7 @@ export const Nav = () => {
 		>
 			<div className="bg-card border-2 p-2 rounded-lg mx-auto w-fit sm:flex sm:w-full max-w-screen-xl">
 				<div className="justify-center items-center mx-2 hidden sm:flex">
-					<Link href="/"><Logo className="size-8" /></Link>
+					<Link href="/" aria-label="Alfian Akmal Hanantio"><Logo className="size-8" /></Link>
 				</div>
 				<Separator orientation="vertical" className="hidden sm:block mx-2" />
 				<div className="flex-1">
