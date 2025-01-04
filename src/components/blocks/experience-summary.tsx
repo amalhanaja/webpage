@@ -27,7 +27,7 @@ export const ExperienceSummary = ({ experiences }: Props) => {
 										<Building2 size={24} />)}
 								</div>
 								<div className="flex flex-col">
-									<h4 className="font-semibold tracking-wider text-lg">{experience.title}</h4>
+									<h3 className="font-semibold tracking-wider text-lg">{experience.title}</h3>
 									<div className="font-medium">{experience.company}</div>
 									<div className="font-normal">{experience.workingRange}</div>
 								</div>
