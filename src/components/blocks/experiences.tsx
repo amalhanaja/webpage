@@ -2,7 +2,7 @@
 
 import {SectionTitle} from '@/components/blocks/section-title';
 import {Card, CardContent, CardDescription, CardTitle} from '@/components/ui/card';
-import {Briefcase, Building2, ExternalLink, MapPin} from 'lucide-react';
+import {Briefcase, Building2, ExternalLink, FileUser, MapPin} from 'lucide-react';
 import {Separator} from '@/components/ui/separator';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -90,7 +90,13 @@ export const Experiences = ({experiences}: ExperiencesProps) => {
                 })}
             </div>
             <div className="mt-8 flex flex-col items-center">
-                <Button className="uppercase w-fit" variant="primary">View Full Resume <ExternalLink/></Button>
+                <Button className="uppercase w-fit" variant="primary" size="lg" asChild>
+                    <Link href="/alfian-resume.pdf" target="_blank">
+                        <span>View Full Resume</span>
+                        <ExternalLink/>
+                    </Link>
+
+                </Button>
             </div>
         </HeroHighlight>
     );
