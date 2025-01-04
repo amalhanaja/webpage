@@ -4,7 +4,10 @@ import {IconType} from 'react-icons';
 
 const SocialMediaLink = ({href, Icon, label}: { href: string, Icon: IconType, label: string }) => {
     return (
-        <Link href={href} target="_blank" className="hover:text-primary transition-colors duration-250">
+        <Link href={href}
+              target="_blank"
+              className="hover:text-primary transition-colors duration-250"
+              aria-label={label}>
             <Icon className="size-6"/>
         </Link>
     );
