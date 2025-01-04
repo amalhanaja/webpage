@@ -14,7 +14,7 @@ export default async function ProjectsPage() {
             </SectionTitle>
             <h2 className="text-4xl tracking-wider font-bold mt-6">A showcase of my creative coding projects and
                 experiments, exploring the intersection of technology and design.</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 w-full">
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 mt-16 w-full">
                 {projects.map((item) => (
                     <ProjectCard project={item} key={item.id}/>
                 ))}
