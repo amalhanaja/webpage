@@ -11,7 +11,8 @@ type Data = {
 }
 
 type Publication = {
-    posts: Posts
+    posts?: Posts
+    post?: Node
 }
 
 type Posts = {
@@ -23,20 +24,29 @@ type Edge = {
     node: Node
 }
 
+type PostContent = {
+    markdown: string
+    html: string
+}
+
 type Node = {
     id: string
     title: string
+    subtitle: string
     brief: string
     url: string
     slug: string
     coverImage?: CoverImage
+    content?: PostContent
     tags: Tag[]
     readTimeInMinutes: number
     publishedAt: string
 }
 
-type CoverImage = {
+export type CoverImage = {
     url: string
+    attributions: string
+    photographer: string
 }
 
 type Tag = {
@@ -52,9 +62,11 @@ type PageInfo = {
 export type Post = {
     id: string
     title: string
+    subtitle: string
     brief: string
     slug: string
-    coverImage: string
+    coverImage?: CoverImage
+    content: string
     tags: string[]
     readTimeInMinutes: number
     publishedAt: string
@@ -71,11 +83,14 @@ export const getPostList = async ({pageSize, after}: { pageSize: number, after: 
             node {
               id
               title
+              subtitle
               brief
               url
               slug
               coverImage {
                 url
+                attribution
+                photographer
               }
               tags {
                 name
@@ -97,17 +112,55 @@ export const getPostList = async ({pageSize, after}: { pageSize: number, after: 
         after,
         pageSize,
     })
-    const posts = responseBody.data.publication.posts.edges.map(({node}) => (
+    const posts = responseBody.data.publication.posts!.edges.map(({node}) => (
         {
             ...node,
             tags: node.tags.map((v) => v.name),
-            coverImage: node.coverImage?.url ?? "",
+            coverImage: node.coverImage,
+            content: ""
         } satisfies Post
     ))
     return {
         posts,
-        ...responseBody.data.publication.posts.pageInfo,
+        ...responseBody.data.publication.posts!.pageInfo,
     }
+}
+
+export const getPostBySlug = async (slug: string): Promise<Post> => {
+    const query = `
+    query ($host: String, $slug: String!) {
+      publication(host: $host) {
+        post(slug: $slug) {
+          id
+          title
+          brief
+          url
+          subtitle
+          slug
+          content {
+            markdown
+            html
+          }
+          coverImage {
+            url
+            attribution
+            photographer
+          }
+          tags {
+            name
+          }
+          readTimeInMinutes
+          publishedAt
+        }
+      }
+    }`
+    const variables = {
+        host: "amalhanaja.hashnode.dev",
+        slug,
+    }
+    const responseBody = await fetchGql<HashnodeResponse>(query, variables)
+    const post = responseBody.data.publication.post!
+    return {...post, content: post.content?.html ?? "", tags: post.tags?.map((v) => v.name)}
 }
 
 const fetchGql = async <T>(query: string, variables: unknown): Promise<T> => {

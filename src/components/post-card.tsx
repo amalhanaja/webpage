@@ -3,14 +3,10 @@ import Image from "next/image";
 import {Card} from "@/components/ui/card";
 import {Calendar, Clock} from "lucide-react";
 import Link from "next/link";
+import {formattedDate} from "@/lib/utils";
 
 type Props = {
     post: Post
-}
-
-const formattedDate = (date: string) => {
-    const d = new Date(date)
-    return d.toLocaleDateString()
 }
 
 export const PostCard = ({post}: Props) => {
@@ -33,9 +29,9 @@ export const PostCard = ({post}: Props) => {
                         </div>
                     </div>
                 </div>
-                {post.coverImage && (
+                {post.coverImage?.url && (
                     <Image
-                        src={post.coverImage}
+                        src={post.coverImage.url}
                         width={96}
                         height={96}
                         alt={post.title}
