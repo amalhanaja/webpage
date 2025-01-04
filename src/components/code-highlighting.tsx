@@ -10,7 +10,6 @@ export const CodeHighlighting = () => {
         })
         worker.onmessage = (event) => {
             codes.item(event.data.index).innerHTML = event.data.innerHTML
-            console.log("onmessage", codes.item(event.data.index))
         }
     }, [])
     return <></>
