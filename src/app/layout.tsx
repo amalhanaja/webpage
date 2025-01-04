@@ -5,8 +5,8 @@ import {Nav} from '@/components/blocks/nav';
 import {ThemeToggle} from '@/components/theme-toggle';
 import {ThemeProvider} from '@/components/theme-provider';
 import {cn} from '@/lib/utils';
-import {CanvasCursor} from '@/components/canvas-cursor';
 import {Footer} from '@/components/blocks/footer';
+import InkCursor from "@/components/ink-cursor";
 
 const archivo = Archivo({
     variable: '--font-archivo',
@@ -43,7 +43,7 @@ export default function RootLayout(
             )}
         >
         <ThemeProvider attribute="class">
-            <CanvasCursor/>
+            <InkCursor/>
             <Nav/>
             <main>
                 {children}
