@@ -76,9 +76,9 @@ export const Experiences = ({experiences}: ExperiencesProps) => {
         <HeroHighlight className="w-full max-w-screen-xl mx-auto px-4 py-32 flex flex-col">
             <SectionTitle className="uppercase bg-card">
                 <Briefcase/>
-                <h2>Work Experiences</h2>
+                <h1>Work Experiences</h1>
             </SectionTitle>
-            <h3 className="text-4xl tracking-wider font-bold mt-6">A summary of my professional experience.</h3>
+            <h2 className="text-4xl tracking-wider font-bold mt-6">A summary of my professional experience.</h2>
             <div className="flex flex-col gap-8 mt-16 w-full">
                 {experiences.map((experience, index) => {
                     return (
