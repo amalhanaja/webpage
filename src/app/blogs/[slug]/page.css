@@ -36,6 +36,12 @@
         @apply underline hover:text-primary duration-200 transition-all;
     }
 
+    code {
+        @apply font-mono;
+    }
+    :not(pre) > code {
+        @apply bg-stone-800 px-2 rounded-md text-white
+    }
     pre {
         @apply mt-6 mb-12 p-6 bg-stone-800 border-2 shadow-xl rounded-xl text-white;
         overflow: scroll;

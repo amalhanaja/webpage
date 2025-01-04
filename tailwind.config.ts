@@ -93,7 +93,10 @@ export default {
             },
             fontFamily: {
                 sans: [
-                    'var(--font-work-sans)'
+                    'var(--font-archivo)'
+                ],
+                mono: [
+                    'var(--font-space-mono)'
                 ]
             },
             keyframes: {
