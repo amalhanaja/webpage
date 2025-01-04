@@ -1,5 +1,5 @@
 import type {Metadata} from 'next';
-import {Archivo, Archivo_Black, Space_Mono, Work_Sans} from 'next/font/google';
+import {Archivo, Space_Mono} from 'next/font/google';
 import './globals.css';
 import {Nav} from '@/components/blocks/nav';
 import {ThemeToggle} from '@/components/theme-toggle';

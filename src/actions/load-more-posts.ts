@@ -1,6 +1,6 @@
-import {getPostList, Post} from "@/service/blogs";
+import {getPostList, PostList} from "@/service/blogs";
 
-export const loadMorePosts = async (prevState: PostListState): Promise<PostListState> => {
+export const loadMorePosts = async (prevState: PostList): Promise<PostList> => {
     const results = await getPostList({
         pageSize: 6,
         after: prevState.endCursor,
