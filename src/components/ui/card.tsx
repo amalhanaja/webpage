@@ -1,5 +1,5 @@
 "use client"
-import  React from 'react';
+import React from 'react';
 import {cn} from '@/lib/utils';
 import {HTMLMotionProps, motion} from 'motion/react';
 
@@ -60,9 +60,9 @@ CardDescription.displayName = 'CardDescription';
 
 const CardContent = React.forwardRef<
     HTMLDivElement,
-    React.HTMLAttributes<HTMLDivElement>
+    HTMLMotionProps<"div">
 >(({className, ...props}, ref) => (
-    <div ref={ref} className={cn('p-6 pt-0', className)} {...props} />
+    <motion.div ref={ref} className={cn('p-6 pt-0', className)} {...props} />
 ));
 CardContent.displayName = 'CardContent';
 
