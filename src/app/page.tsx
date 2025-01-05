@@ -10,22 +10,6 @@ import {HeroHighlight} from '@/components/ui/hero-highlight';
 import {getExperiences} from '@/service/experience';
 import {Metadata} from "next";
 
-export const metadata: Metadata = {
-    title: 'Alfian Akmal Hanantio - Software Engineer',
-    description: 'Building secure, scalable, and accessible digital products for enterprises and fintech industries.',
-    openGraph: {
-        title: 'Alfian Akmal Hanantio - Software Engineer',
-        description: 'Building secure, scalable, and accessible digital products for enterprises and fintech industries.',
-        url: 'https://amalhanaja.dev/',
-        siteName: 'Alfian Akmal Hanantio',
-        type: 'website',
-    },
-    robots: {
-        index: true,
-        follow: true,
-    },
-};
-
 export default async function Home() {
 
     const name = 'Alfian Akmal Hanantio';
@@ -42,7 +26,7 @@ export default async function Home() {
                     <GithubContributions/>
                     <Card className="shadow-none col-span-12 sm:col-span-8">
                         <CardHeader>
-                            <CardTitle><h2 className="text-3xl font-bold uppercase">My Github activities</h2>
+                            <CardTitle><h2 className="text-3xl font-bold uppercase">Testimonials</h2>
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="relative">
