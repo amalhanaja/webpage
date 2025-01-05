@@ -15,7 +15,7 @@ export const PostCard = ({post}: Props) => {
             <Card className="w-full flex flex-row justify-center h-full items-center p-4 gap-4">
                 <div className="flex flex-col flex-1 h-full">
                     <div className="flex-1">
-                        <h4 className="text-xl font-extrabold">{post.title}</h4>
+                        <h3 className="text-xl font-extrabold">{post.title}</h3>
                         <p className="py-4 line-clamp-2 visible max-h-16">{post.brief}</p>
                     </div>
                     <div className="flex flex-row flex-wrap gap-2 opacity-70 mt-4 text-sm">
