@@ -16,26 +16,24 @@ export default async function Home() {
     const experiencesResult = await getExperiences();
     const experiences = experiencesResult.slice(0, 3);
     return (
-        <>
-            <HeroHighlight containerClassName="py-16 sm:py-20 px-4">
-                <div className="grid mx-auto max-w-screen-xl grid-cols-12 gap-2">
-                    <Greetings name={name} title={title}/>
-                    <ImageProfile alt={name}/>
-                    <Tools/>
-                    <GithubContributions/>
-                    <Card className="shadow-none col-span-12 sm:col-span-8">
-                        <CardHeader>
-                            <CardTitle><h2 className="text-3xl font-bold uppercase">Testimonials</h2>
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent className="relative">
-                            <TestimonialsMarquee/>
-                        </CardContent>
-                    </Card>
-                    <ExperienceSummary experiences={experiences}/>
-                    <Socials/>
-                </div>
-            </HeroHighlight>
-        </>
+        <HeroHighlight containerClassName="py-16 sm:py-20 px-4">
+            <div className="grid mx-auto max-w-screen-xl grid-cols-12 gap-2">
+                <Greetings name={name} title={title}/>
+                <ImageProfile alt={name}/>
+                <Tools/>
+                <GithubContributions/>
+                <Card className="shadow-none col-span-12 sm:col-span-8">
+                    <CardHeader>
+                        <CardTitle><h2 className="text-3xl font-bold uppercase">Testimonials</h2>
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent className="relative">
+                        <TestimonialsMarquee/>
+                    </CardContent>
+                </Card>
+                <ExperienceSummary experiences={experiences}/>
+                <Socials/>
+            </div>
+        </HeroHighlight>
     );
 }
