@@ -23,6 +23,7 @@ export const ProjectCard = ({project}: Props) => {
                     width={300}
                     height={800}
                     className="w-full h-40 object-cover mb-4 rounded border-2 border-netral-foreground relative z-10"
+                    title={project.title}
                 />
             </div>
             <h2 className="text-2xl font-bold mb-2 tracking-wide">{project.title}</h2>
@@ -35,6 +36,7 @@ export const ProjectCard = ({project}: Props) => {
                     target="_blank"
                     aria-label="github"
                     rel="noopener noreferrer"
+                    title="github"
                     className="flex items-center text-card-foreground hover:text-primary transition-colors duration-150"
                 >
                     <SiGithub className="mr-2" size={20}/>
@@ -46,6 +48,7 @@ export const ProjectCard = ({project}: Props) => {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="live"
+                        title="live"
                         className="flex items-center text-card-foreground hover:text-primary transition-colors"
                     >
                         <ExternalLink className="mr-2" size={20}/>

@@ -3,6 +3,16 @@ import {FolderGit} from "lucide-react";
 import {HeroHighlight} from "@/components/ui/hero-highlight";
 import {getProjects} from "@/service/project";
 import {ProjectCard} from "@/components/project-card";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+    title: "Projects - Alfian Akmal Hanantio",
+    description: "Explore my creative coding projects and experiments, pushing the boundaries of technology and design. Discover how I blend technical skills with artistic vision to create innovative and engaging solutions.",
+    openGraph: {
+        title: "Projects - Alfian Akmal Hanantio",
+        description: "Explore my creative coding projects and experiments, pushing the boundaries of technology and design. Discover how I blend technical skills with artistic vision to create innovative and engaging solutions."
+    }
+}
 
 export default async function ProjectsPage() {
     const projects = await getProjects()
