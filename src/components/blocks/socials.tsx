@@ -2,7 +2,7 @@
 
 import {SiGithub, SiHashnode, SiLinkedin, SiTiktok, SiX, SiYoutube} from 'react-icons/si';
 import {IconType} from 'react-icons';
-import {useAnimate} from 'framer-motion';
+import {useAnimate} from 'motion/react';
 import {MouseEventHandler} from 'react';
 import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {cn} from '@/lib/utils';
