@@ -7,7 +7,9 @@ const SocialMediaLink = ({href, Icon, label}: { href: string, Icon: IconType, la
         <Link href={href}
               target="_blank"
               className="hover:text-primary transition-colors duration-250"
-              aria-label={label}>
+              aria-label={label}
+              title={label}
+        >
             <Icon className="size-6"/>
         </Link>
     );
@@ -29,11 +31,54 @@ export const Footer = () => {
                 <div>
                     <h2 className="text-xl font-bold">Quick Links</h2>
                     <ul className="mt-2 h-fit grid grid-cols-1 gap-2">
-                        <li><Link href="/" className="hover:underline">Home</Link></li>
-                        <li><Link href="/experiences" className="hover:underline">Experiences</Link></li>
-                        <li><Link href="/projects" className="hover:underline">Projects</Link></li>
-                        <li><Link href="/blogs" className="hover:underline">Blog</Link></li>
-                        <li><Link href="/uses" className="hover:underline">Uses</Link></li>
+                        <li>
+                            <Link href="/"
+                                  className="hover:underline"
+                                  title="Alfian Akmal Hanantio"
+                                  aria-label="Alfian Akmal Hanantio">
+                                Home
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                href="/experiences"
+                                className="hover:underline"
+                                title="Experiences"
+                                aria-label="Experiences"
+                            >
+                                Experiences
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                href="/projects"
+                                className="hover:underline"
+                                title="Projects"
+                                aria-label="Projects"
+                            >
+                                Projects
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                href="/blogs"
+                                className="hover:underline"
+                                title="Blog"
+                                aria-label="Blog"
+                            >
+                                Blog
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                href="/uses"
+                                className="hover:underline"
+                                title="Uses"
+                                aria-label="Uses"
+                            >
+                                Uses
+                            </Link>
+                        </li>
                     </ul>
                 </div>
 

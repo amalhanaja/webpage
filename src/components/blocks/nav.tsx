@@ -76,7 +76,9 @@ export const Nav = () => {
 		>
 			<div className="bg-card border-2 p-2 rounded-lg mx-auto w-fit sm:flex sm:w-full max-w-screen-xl">
 				<div className="justify-center items-center mx-2 hidden sm:flex">
-					<Link href="/" aria-label="Alfian Akmal Hanantio"><Logo className="size-8" /></Link>
+					<Link href="/" aria-label="Alfian Akmal Hanantio" title="Alfian Akmal Hanantio">
+                        <Logo className="size-8" />
+                    </Link>
 				</div>
 				<Separator orientation="vertical" className="hidden sm:block mx-2" />
 				<div className="flex-1">
@@ -127,7 +129,7 @@ const NavItem = ({ state, setIndicatorState }: NavItemProps) => {
 				'mix-blend-difference text-background dark:text-card-foreground'
 			)}
 		>
-			<Link href={state.href}>{state.label}</Link>
+			<Link href={state.href} aria-label={state.label} title={state.label}>{state.label}</Link>
 		</motion.li>
 	);
 };

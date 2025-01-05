@@ -16,7 +16,7 @@ export const Greetings = ({name, title}: { name: string, title: string }) => {
                 Daya Teknologi.
             </p>
             <Button className="uppercase mt-6 sm:w-fit" size="lg" asChild>
-                <Link href="/alfian-resume.pdf" target="_blank">
+                <Link href="/alfian-resume.pdf" target="_blank" aria-label="resume" title="resume">
                     <FileUser/>
                     <span>Download Resume</span>
                 </Link>
