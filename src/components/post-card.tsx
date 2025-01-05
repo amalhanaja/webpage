@@ -11,7 +11,7 @@ type Props = {
 
 export const PostCard = ({post}: Props) => {
     return (
-        <Link href={`/blogs/${post.slug}`} className="h-full">
+        <Link href={`/blogs/${post.slug}`} className="h-full" title={post.title}>
             <Card className="w-full flex flex-row justify-center h-full items-center p-4 gap-4">
                 <div className="flex flex-col flex-1 h-full">
                     <div className="flex-1">
@@ -35,6 +35,7 @@ export const PostCard = ({post}: Props) => {
                         width={96}
                         height={96}
                         alt={post.title}
+                        title={post.title}
                         className="aspect-square object-cover hidden xs:block"/>
                 )}
             </Card>
