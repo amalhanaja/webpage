@@ -7,15 +7,16 @@ import {useEffect} from "react";
 
 export const Greetings = ({name, title}: { name: string, title: string }) => {
     const [scope, animate] = useAnimate();
-    const isInView = useInView(scope)
+    const isInView = useInView(scope, {once: true})
     const performAnimateWhileInView = async () => {
-        await animate(scope.current, {scale: 1, opacity: 1}, {type: "spring", stiffness: 100, damping: 10});
-        await animate("h1", {x: 0, opacity: 1}, {duration: 0.15, ease: 'easeIn', delay: 0.3});
+        animate(scope.current, {scale: 1, opacity: 1}, {type: "spring", stiffness: 100, damping: 10});
+        await animate("h1", {x: 0, opacity: 1}, {duration: 0.15, ease: 'easeIn'});
         await animate("h2", {x: 0, opacity: 1}, {duration: 0.15, ease: 'easeIn'});
         await animate("p", {y: 0, opacity: 1}, {duration: 0.1, ease: 'easeIn'});
         await animate('a', {y: 0, opacity: 1}, {duration: 0.1, ease: 'easeIn'});
     }
     useEffect(() => {
+        if (!isInView) return
         performAnimateWhileInView()
     }, [isInView])
     return (
