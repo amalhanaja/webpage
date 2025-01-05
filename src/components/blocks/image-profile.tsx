@@ -5,20 +5,23 @@ import Image from 'next/image';
 import me from '../../../public/me.webp';
 import {FlickeringGrid} from '@/components/ui/flickering-grid';
 import {useTheme} from 'next-themes';
-import {useAnimate, useInView} from "motion/react";
+import {useAnimate} from "motion/react";
 import {useEffect} from "react";
 
 export const ImageProfile = ({alt}: { alt: string }) => {
     const {theme} = useTheme();
     const [scope, animate] = useAnimate()
-    const isInView = useInView(scope, {once: true})
     const performAnimateWhileInView = async () => {
-        await animate(scope.current, {scale: 1, opacity: 1}, {type: "spring", stiffness: 100, damping: 15, delay: 0.25});
+        await animate(scope.current, {scale: 1, opacity: 1}, {
+            type: "spring",
+            stiffness: 100,
+            damping: 15,
+            delay: 0.25
+        });
     }
     useEffect(() => {
-        if (!isInView) return
         performAnimateWhileInView()
-    }, [isInView])
+    }, [])
     return (
         <Card
             ref={scope}
@@ -35,7 +38,7 @@ export const ImageProfile = ({alt}: { alt: string }) => {
                 height={1600}
                 width={1600}
             />
-            <Image src={me} alt={alt} className="translate-y-10 h-full w-full object-cover" title={alt}/>
+            <Image src={me} alt={alt} className="translate-y-12 h-full w-full object-cover" title={alt}/>
         </Card>
     );
 };

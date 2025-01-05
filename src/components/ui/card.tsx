@@ -48,11 +48,11 @@ CardTitle.displayName = 'CardTitle';
 
 const CardDescription = React.forwardRef<
     HTMLParagraphElement,
-    React.HTMLAttributes<HTMLParagraphElement>
+    HTMLMotionProps<"div">
 >(({className, ...props}, ref) => (
-    <div
+    <motion.div
         ref={ref}
-        className={cn('text-sm text-mtext font-base !mt-3', className)}
+        className={cn('text-sm font-base !mt-3', className)}
         {...props}
     />
 ));
