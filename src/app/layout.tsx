@@ -22,7 +22,43 @@ const spaceMono = Space_Mono({
 
 export const metadata: Metadata = {
     title: 'Alfian Akmal Hanantio - Software Engineer',
-    description: 'Building secure, scalable, and accessible digital products for enterprises and fintech industries.'
+    description: 'Building secure, scalable, and accessible digital products for enterprises and fintech industries since 2017. I am currently working as a Senior Android Developer at Digital Daya Teknologi.',
+    openGraph: {
+        title: 'Alfian Akmal Hanantio - Software Engineer',
+        description: 'Building secure, scalable, and accessible digital products for enterprises and fintech industries since 2017. I am currently working as a Senior Android Developer at Digital Daya Teknologi.',
+        url: 'https://amalhanaja.dev/',
+        siteName: 'Alfian Akmal Hanantio',
+        type: 'website',
+    },
+    alternates: {
+        canonical: "https://amalhanaja.my.id/",
+    },
+    robots: {
+        follow: true,
+        index: true,
+    },
+    authors: {
+        name: 'Alfian Akmal Hanantio',
+    },
+    keywords: [
+        "alfian",
+        "akmal",
+        "hanantio",
+        "software engineer",
+        "software",
+        "android",
+        "android developer",
+        "kotlin",
+        "mobile developer",
+        "backend",
+        "web developer",
+        "frontend",
+        "senior",
+        "secure",
+        "application",
+        "scalable",
+        "best practices",
+    ]
 };
 
 export default function RootLayout(
