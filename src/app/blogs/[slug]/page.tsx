@@ -8,8 +8,28 @@ import {formattedDate} from "@/lib/utils";
 import {PostDetailCover} from "@/components/post-detail-cover";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
+import type {Metadata} from "next";
 
 export const dynamic = 'force-dynamic';
+
+export async function generateMetadata(
+    {params}: { params: Promise<{ slug: string }> }
+): Promise<Metadata> {
+    const slug = (await params).slug
+    const post = await getPostBySlug(slug)
+    return {
+        title: post.title,
+        description: post.brief,
+        openGraph: {
+            title: post.title,
+            description: post.brief,
+            images: {
+                url: post.coverImage?.url ?? "/",
+                alt: post.title,
+            }
+        },
+    }
+}
 
 export default async function BlogPosts(
     {params}: { params: Promise<{ slug: string }> }
