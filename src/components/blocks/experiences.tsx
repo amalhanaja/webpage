@@ -32,12 +32,12 @@ export const ExperienceItem = ({experience, index, isLast}: {
                     <div
                         className="h-16 aspect-square shadow border-2 rounded-full flex items-center justify-center bg-card">
                         {experience.logo ? (
-                            <Image src={experience.logo} alt={experience.company} width={24} height={24}
+                            <Image src={experience.logo} alt={experience.company} title={experience.company} width={24} height={24}
                                    className="size-8 object-center"/>) : (
-                            <Building2 size={32}/>)}
+                            <Building2 size={32} aria-label={experience.company}/>)}
                     </div>
                     <div>
-                        <CardTitle><h4 className="font-semibold tracking-wider">{experience.title}</h4></CardTitle>
+                        <CardTitle><h3 className="font-semibold tracking-wider">{experience.title}</h3></CardTitle>
                         <CardDescription className="text-foreground">
                             <div className="font-medium">{experience.company}</div>
                             <div className="font-normal mt-1">{experience.workingRange}</div>
@@ -52,7 +52,7 @@ export const ExperienceItem = ({experience, index, isLast}: {
                             {experience.location}
                         </div>
                         {experience.links.map(link => (
-                            <Link key={link.href} href={link.href}
+                            <Link key={link.href} href={link.href} aria-label={link.label} title={link.label}
                                   className="flex flex-row gap-1 items-center text-sm text-primary underline">
                                 <span className="text-primary"><ExternalLink size={14}/></span>
                                 {link.label}
@@ -91,7 +91,7 @@ export const Experiences = ({experiences}: ExperiencesProps) => {
             </div>
             <div className="mt-8 flex flex-col items-center">
                 <Button className="uppercase w-fit" variant="primary" size="lg" asChild>
-                    <Link href="/alfian-resume.pdf" target="_blank">
+                    <Link href="/alfian-resume.pdf" target="_blank" title="resume">
                         <span>View Full Resume</span>
                         <ExternalLink/>
                     </Link>

@@ -22,8 +22,14 @@ export const Footer = () => {
                 <div>
                     <h2 className="text-xl font-bold">ALFIAN AKMAL HANANTIO</h2>
                     <p className="text-sm mt-2">Software Engineer</p>
-                    <p className="mt-4">Email: <a href="mailto:amalhanaja@gmail.com"
-                                                  className="underline">amalhanaja@gmail.com</a>
+                    <p className="mt-4">
+                        Email: <Link href="mailto:amalhanaja@gmail.com"
+                                     aria-label="email"
+                                     title="email"
+                                     className="underline"
+                    >
+                        amalhanaja@gmail.com
+                    </Link>
                     </p>
                     <p>Location: Jakarta, ID</p>
                 </div>
