@@ -104,6 +104,7 @@ const LinkBox = ({Icon, href, label}: { Icon: IconType, href: string, label: str
             }}
             className="relative grid w-full place-content-center px-4 py-4 lg:py-8 xl:py-10 bg-background"
             target="_blank"
+            title={label}
         >
             <Icon className="text-2xl"/>
 
