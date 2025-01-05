@@ -8,7 +8,6 @@ import {ExperienceSummary} from '@/components/blocks/experience-summary';
 import {Socials} from '@/components/blocks/socials';
 import {HeroHighlight} from '@/components/ui/hero-highlight';
 import {getExperiences} from '@/service/experience';
-import {Metadata} from "next";
 
 export default async function Home() {
 
