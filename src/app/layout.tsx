@@ -20,46 +20,49 @@ const spaceMono = Space_Mono({
     variable: '--font-space-mono'
 })
 
-export const metadata: Metadata = {
-    title: 'Alfian Akmal Hanantio - Software Engineer',
-    description: 'Building secure, scalable, and accessible digital products for enterprises and fintech industries since 2017. I am currently working as a Senior Android Developer at Digital Daya Teknologi.',
-    openGraph: {
+export async function generateMetadata(): Promise<Metadata> {
+    const hostname = process.env.NEXT_PUBLIC_HOSTNAME || 'localhost';
+    return {
         title: 'Alfian Akmal Hanantio - Software Engineer',
         description: 'Building secure, scalable, and accessible digital products for enterprises and fintech industries since 2017. I am currently working as a Senior Android Developer at Digital Daya Teknologi.',
-        url: 'https://amalhanaja.dev/',
-        siteName: 'Alfian Akmal Hanantio',
-        type: 'website',
-    },
-    alternates: {
-        canonical: "https://amalhanaja.my.id/",
-    },
-    robots: {
-        follow: true,
-        index: true,
-    },
-    authors: {
-        name: 'Alfian Akmal Hanantio',
-    },
-    keywords: [
-        "alfian",
-        "akmal",
-        "hanantio",
-        "software engineer",
-        "software",
-        "android",
-        "android developer",
-        "kotlin",
-        "mobile developer",
-        "backend",
-        "web developer",
-        "frontend",
-        "senior",
-        "secure",
-        "application",
-        "scalable",
-        "best practices",
-    ]
-};
+        openGraph: {
+            title: 'Alfian Akmal Hanantio - Software Engineer',
+            description: 'Building secure, scalable, and accessible digital products for enterprises and fintech industries since 2017. I am currently working as a Senior Android Developer at Digital Daya Teknologi.',
+            url: `https://${hostname}/`,
+            siteName: 'Alfian Akmal Hanantio',
+            type: 'website',
+        },
+        alternates: {
+            canonical: `https://${hostname}/`,
+        },
+        robots: {
+            follow: true,
+            index: true,
+        },
+        authors: {
+            name: 'Alfian Akmal Hanantio',
+        },
+        keywords: [
+            "alfian",
+            "akmal",
+            "hanantio",
+            "software engineer",
+            "software",
+            "android",
+            "android developer",
+            "kotlin",
+            "mobile developer",
+            "backend",
+            "web developer",
+            "frontend",
+            "senior",
+            "secure",
+            "application",
+            "scalable",
+            "best practices",
+        ]
+    }
+}
 
 export default function RootLayout(
     {
