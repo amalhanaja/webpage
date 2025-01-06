@@ -1,5 +1,5 @@
 import {getPostList} from "@/service/blogs";
-import {PostLists} from "@/components/blocks/PostLists";
+import {Posts} from "@/components/blocks/post-list";
 import {HeroHighlight} from "@/components/ui/hero-highlight";
 import {Metadata} from "next";
 
@@ -18,7 +18,7 @@ export default async function BlogsPage() {
     const initialPosts = await getPostList({pageSize: 6, after: ""})
     return (
         <HeroHighlight className="w-full max-w-screen-xl py-32 mx-auto px-4">
-            <PostLists initial={initialPosts}/>
+            <Posts initial={initialPosts}/>
         </HeroHighlight>
     )
 }

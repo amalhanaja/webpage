@@ -12,7 +12,13 @@ type Props = {
 export const PostCard = ({post}: Props) => {
     return (
         <Link href={`/blogs/${post.slug}`} className="h-full" title={post.title}>
-            <Card className="w-full flex flex-row justify-center h-full items-center p-4 gap-4">
+            <Card
+                variants={{
+                    initial: {opacity: 0, scale: 0},
+                    show: {opacity: 1, scale: 1},
+                }}
+                className="w-full flex flex-row justify-center h-full items-center p-4 gap-4"
+            >
                 <div className="flex flex-col flex-1 h-full">
                     <div className="flex-1">
                         <h3 className="text-xl font-extrabold">{post.title}</h3>

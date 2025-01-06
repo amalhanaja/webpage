@@ -1,9 +1,8 @@
-import {Testimonials, TestimonialsMarquee} from '@/components/blocks/testimonials';
+import {Testimonials} from '@/components/blocks/testimonials';
 import {Greetings} from '@/components/blocks/greetings';
 import {ImageProfile} from '@/components/blocks/image-profile';
 import {Tools} from '@/components/blocks/tools';
 import {GithubContributions} from '@/components/blocks/github-contributions';
-import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {ExperienceSummary} from '@/components/blocks/experience-summary';
 import {Socials} from '@/components/blocks/socials';
 import {HeroHighlight} from '@/components/ui/hero-highlight';
