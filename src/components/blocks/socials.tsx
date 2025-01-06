@@ -2,7 +2,7 @@
 
 import {SiGithub, SiHashnode, SiLinkedin, SiTiktok, SiX, SiYoutube} from 'react-icons/si';
 import {IconType} from 'react-icons';
-import {useAnimate} from 'motion/react';
+import {motion, useAnimate} from 'motion/react';
 import {MouseEventHandler} from 'react';
 import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {cn} from '@/lib/utils';
@@ -126,12 +126,44 @@ type SocialsProps = {
 }
 
 export const Socials = ({className}: SocialsProps) => {
+    const containerVariants = {
+        initial: {
+            opacity: 0,
+            scale: 0
+        },
+        show: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                type: 'spring',
+                stiffness: 100,
+                damping: 15,
+                delay: 1.2,
+                staggerChildren: 0.2,
+                delayChildren: 1.4
+            }
+        }
+    }
+    const childVariants = {
+        initial: {
+            opacity: 0,
+            transform: 'translateY(60px)',
+        },
+        show: {
+            opacity: 1,
+            transform: 'translateY(0)',
+        }
+    }
     return (
-        <Card className={cn('shadow-none col-span-12 sm:col-span-6 flex flex-col', className)}>
+        <Card className={cn('shadow-none col-span-12 sm:col-span-6 flex flex-col', className)}
+              variants={containerVariants} initial="initial" animate="show">
             <CardHeader>
-                <CardTitle><h2 className="text-3xl font-bold uppercase">Find me here</h2></CardTitle>
+                <CardTitle>
+                    <motion.h2 className="text-3xl font-bold uppercase" variants={childVariants}>Find me here
+                    </motion.h2>
+                </CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-1 flex-col">
+            <CardContent className="flex flex-1 flex-col" variants={childVariants}>
                 <ClipPathLinks/>
             </CardContent>
         </Card>
