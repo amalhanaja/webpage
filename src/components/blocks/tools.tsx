@@ -2,8 +2,7 @@
 
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
 import dynamic from "next/dynamic";
-import {motion, useAnimate, useInView} from "motion/react";
-import {useEffect} from "react";
+import {motion} from "motion/react";
 
 const DynamicIconCloud = dynamic(() => import('../ui/icon-cloud'), {ssr: false})
 
