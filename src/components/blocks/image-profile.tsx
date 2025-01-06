@@ -5,28 +5,15 @@ import Image from 'next/image';
 import me from '../../../public/me.webp';
 import {FlickeringGrid} from '@/components/ui/flickering-grid';
 import {useTheme} from 'next-themes';
-import {useAnimate} from "motion/react";
-import {useEffect} from "react";
 
 export const ImageProfile = ({alt}: { alt: string }) => {
     const {theme} = useTheme();
-    const [scope, animate] = useAnimate()
-    const performAnimateWhileInView = async () => {
-        await animate(scope.current, {scale: 1, opacity: 1}, {
-            type: "spring",
-            stiffness: 100,
-            damping: 15,
-            delay: 0.25
-        });
-    }
-    useEffect(() => {
-        performAnimateWhileInView()
-    }, [])
     return (
         <Card
-            ref={scope}
             className="shadow-none col-span-12 flex flex-col gap-4 overflow-clip relative sm:col-span-4"
             initial={{opacity: 0, scale: 0}}
+            animate={{scale: 1, opacity: 1}}
+            transition={{type: 'spring', stiffness: 100, damping: 15, delay: 0.2}}
         >
             <FlickeringGrid
                 className="absolute left-0 z-0 [mask:radial-gradient(circle_at_center,#fff_2000px,transparent_0)]"
