@@ -15,6 +15,10 @@ export const ProjectCard = ({project}: Props) => {
     return (
         <motion.div
             className="bg-card border-4 border-netral-foreground shadow-xl p-6 rounded-lg relative overflow-hidden flex flex-col w-full mb-8"
+            variants={{
+                initial: {opacity: 0, scale: 0},
+                show: {opacity: 1, scale: 1},
+            }}
         >
             <div className="w-full">
                 <Image
