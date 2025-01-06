@@ -6,6 +6,8 @@ import zulfa from '../../../public/testimonials/zulfa.jpeg';
 import filbert from '../../../public/testimonials/filbert.jpeg';
 import ricky from '../../../public/testimonials/ricky.jpeg';
 import Image, {StaticImageData} from 'next/image';
+import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
+import {motion} from 'motion/react';
 
 const reviews = [
     {
@@ -63,7 +65,7 @@ const ReviewCard = ({img, name, title, body}: {
     );
 };
 
-export function TestimonialsMarquee() {
+function TestimonialsMarquee() {
     return (
         <div
             className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-card">
@@ -83,10 +85,32 @@ export function TestimonialsMarquee() {
 
 export const Testimonials = () => {
     return (
-        <section id="testimonials" className="bg-card border-t-4 border-b-4">
-            <div className="flex flex-col w-full: max-w-screen-xl mx-auto gap-4 px-4 py-8">
+        <Card
+            className="shadow-none col-span-12 sm:col-span-8"
+            initial={{opacity: 0, scale: 0}}
+            animate={{opacity: 1, scale: 1}}
+            transition={{type: "spring", stiffness: 100, damping: 15, delay: 0.8}}
+        >
+            <CardHeader>
+                <CardTitle>
+                    <motion.h2
+                        initial={{transform: 'translateY(60px)', opacity: 0}}
+                        animate={{transform: 'translateY(0)', opacity: 1}}
+                        transition={{duration: 0.2, ease: 'easeIn', delay: 1.05}}
+                        className="text-3xl font-bold uppercase"
+                    >
+                        Testimonials
+                    </motion.h2>
+                </CardTitle>
+            </CardHeader>
+            <CardContent
+                className="relative"
+                initial={{ opacity: 0, transform: 'translateX(60px)' }}
+                animate={{ opacity: 1, transform: 'translateX(0)' }}
+                transition={{duration: 0.2, ease: 'easeIn', delay: 1.15}}
+            >
                 <TestimonialsMarquee/>
-            </div>
-        </section>
+            </CardContent>
+        </Card>
     );
 };

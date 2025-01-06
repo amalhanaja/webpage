@@ -1,4 +1,4 @@
-import {TestimonialsMarquee} from '@/components/blocks/testimonials';
+import {Testimonials, TestimonialsMarquee} from '@/components/blocks/testimonials';
 import {Greetings} from '@/components/blocks/greetings';
 import {ImageProfile} from '@/components/blocks/image-profile';
 import {Tools} from '@/components/blocks/tools';
@@ -22,15 +22,7 @@ export default async function Home() {
                 <ImageProfile alt={name}/>
                 <Tools/>
                 <GithubContributions/>
-                <Card className="shadow-none col-span-12 sm:col-span-8">
-                    <CardHeader>
-                        <CardTitle><h2 className="text-3xl font-bold uppercase">Testimonials</h2>
-                        </CardTitle>
-                    </CardHeader>
-                    <CardContent className="relative">
-                        <TestimonialsMarquee/>
-                    </CardContent>
-                </Card>
+                <Testimonials />
                 <ExperienceSummary experiences={experiences}/>
                 <Socials/>
             </div>

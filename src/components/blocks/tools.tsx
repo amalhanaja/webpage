@@ -63,7 +63,7 @@ export const Tools = () => {
         <Card
             initial={{opacity: 0, scale: 0}}
             animate={{opacity: 1, scale: 1}}
-            transition={{type: 'spring', stiffness: 100, damping: 15, delay: 0.5}}
+            transition={{type: 'spring', stiffness: 100, damping: 15, delay: 0.4}}
             className="shadow-none col-span-12 flex flex-col gap-4 sm:col-span-4 sm:row-span-2"
         >
             <CardHeader>
@@ -72,7 +72,7 @@ export const Tools = () => {
                         className="text-3xl font-bold"
                         initial={{transform: 'translateY(40px)', opacity: 0}}
                         animate={{transform: 'translateY(0)', opacity: 1}}
-                        transition={{duration: 0.2, ease: 'easeIn', delay: 0.7}}
+                        transition={{duration: 0.2, ease: 'easeIn', delay: 0.65}}
                     >
                         TOOLS
                     </motion.h2>
@@ -81,7 +81,7 @@ export const Tools = () => {
                     className="tools-description"
                     initial={{opacity: 0, transform: "translateY(60px)"}}
                     animate={{transform: 'translateY(0)', opacity: 1}}
-                    transition={{duration: 0.2, ease: 'easeIn', delay: 0.8}}
+                    transition={{duration: 0.2, ease: 'easeIn', delay: 0.75}}
                 >
                     Continuously learning and adapting to new tools and technologies, with
                     expertise in Android Development using Kotlin
@@ -91,7 +91,7 @@ export const Tools = () => {
                 className="lg:h-[400px] lg:mb-12"
                 initial={{opacity: 0, scale: 0}}
                 animate={{opacity: 1, scale: 1}}
-                transition={{duration: 0.2, ease: 'easeIn', delay: 0.9}}
+                transition={{duration: 0.2, ease: 'easeIn', delay: 0.85}}
             >
                 <DynamicIconCloud iconSlugs={icons}/>
             </CardContent>
