@@ -14,12 +14,17 @@ type NavItemState = {
 
 type IndicatorState = {
     left: number;
+    top: number;
     width: number;
     height: number;
     opacity: number;
 }
 
 const items = [
+    {
+        href: "/",
+        label: "Home",
+    },
     {
         href: '/experiences',
         label: 'Experiences'
@@ -38,6 +43,7 @@ export const Nav = () => {
     const ulRef = useRef<HTMLUListElement>(null);
     const [indicatorState, setIndicatorState] = useState<IndicatorState>({
         left: 0,
+        top: 0,
         width: 0,
         height: 0,
         opacity: 0
@@ -116,6 +122,7 @@ const NavItem = ({state, setIndicatorState}: NavItemProps) => {
         const rect = ref.current.getBoundingClientRect();
         setIndicatorState({
             left: ref.current.offsetLeft,
+            top: ref.current.offsetTop,
             width: rect.width,
             height: rect.height,
             opacity: 1

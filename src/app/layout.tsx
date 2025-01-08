@@ -82,12 +82,12 @@ export default function RootLayout(
             )}
         >
         <ThemeProvider attribute="class">
-            <InkCursor/>
+            {/*<InkCursor/>*/}
             <Nav/>
             <main>
                 {children}
             </main>
-            <ThemeToggle className="fixed bottom-8 right-8 z-20"/>
+            <ThemeToggle className="fixed bottom-8 right-8 z-20 sm:hidden"/>
             <Footer/>
         </ThemeProvider>
         </body>
