@@ -22,17 +22,13 @@ export const ExperienceItem = ({experience, index, isLast}: {
     index: number,
     isLast: boolean,
 }) => {
-    const oddVariants = {
-        initial: {opacity: 0, transform: 'translateX(-50px)'},
-        show: {opacity: 1, transform: 'translateX(0)'},
-    }
-    const evenVariants = {
-        initial: {opacity: 0, transform: 'translateX(50px)'},
-        show: {opacity: 1, transform: 'translateX(0)'},
+    const itemVariants = {
+        initial: {opacity: 0, transform: 'translateY(50px)'},
+        show: {opacity: 1, transform: 'translateY(0)'},
     }
     return (
         <motion.div className="flex flex-row items-center relative"
-                    variants={index % 2 == 0 ? oddVariants : evenVariants}>
+                    variants={itemVariants}>
             {index % 2 === 1 && !isLast && (<div className="hidden xl:block"><ArrowLeftToBottom
                 className="absolute stroke-stone-600 dark:stroke-stone-300 scale-y-[400%] scale-x-[400%] translate-x-[250%] left-0 bottom-12"/>
             </div>)}
