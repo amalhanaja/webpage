@@ -87,7 +87,7 @@ export default function RootLayout(
             <main>
                 {children}
             </main>
-            <ThemeToggle className="fixed bottom-8 right-8 z-20"/>
+            <ThemeToggle className="fixed bottom-8 right-8 z-20 sm:hidden"/>
             <Footer/>
         </ThemeProvider>
         </body>
