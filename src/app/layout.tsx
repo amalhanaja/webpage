@@ -7,6 +7,7 @@ import {ThemeProvider} from '@/components/theme-provider';
 import {cn} from '@/lib/utils';
 import {Footer} from '@/components/blocks/footer';
 import InkCursor from "@/components/ink-cursor";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const archivo = Archivo({
     variable: '--font-archivo',
@@ -90,6 +91,7 @@ export default function RootLayout(
             <ThemeToggle className="fixed bottom-8 right-8 z-20 sm:hidden"/>
             <Footer/>
         </ThemeProvider>
+        <SpeedInsights />
         </body>
         </html>
     );
